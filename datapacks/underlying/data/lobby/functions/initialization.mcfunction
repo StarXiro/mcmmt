@@ -1,0 +1,2 @@
+#scoreboard初始化
+function lobby:scoreboard_initialization

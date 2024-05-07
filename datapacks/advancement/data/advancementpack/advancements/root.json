@@ -1,0 +1,32 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:iron_sword"
+        },
+        "title": "初识MCMT",
+        "description": "进入MCMT服务器",
+        "frame": "task",
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria":{
+        "get_into_the_server":{
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player":{
+                    "location":{
+                        "position": {
+                             "x":10000,
+                             "z":10000
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        ["get_into_the_server"]
+    ]
+}
