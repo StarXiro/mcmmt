@@ -20,6 +20,17 @@ scoreboard players set @a[team=blue] tag_team 700
 scoreboard players set @a[team=pink] tag_team 800
 team join spectator @a[team=non_separated]
 team modify red collisionRule never
+team modify orange prefix "愺 "
+team modify yellow prefix "愺 "
+team modify green prefix "愺 "
+team modify lime prefix "愺 "
+team modify blue prefix "愺 "
+team modify pink prefix "愺 "
+team modify dev prefix "愺 "
+team modify spectator prefix "愺 "
+team modify non_separated prefix "愺 "
+team modify aqua prefix "愺 "
+team modify red collisionRule never
 team modify orange collisionRule never 
 team modify yellow collisionRule never 
 team modify green collisionRule never 
@@ -30,5 +41,6 @@ team modify dev collisionRule never
 team modify spectator collisionRule never 
 team modify non_separated collisionRule never 
 team modify aqua collisionRule never 
+
 
 
