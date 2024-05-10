@@ -12,7 +12,7 @@ summon marker 10000 100 10000 {CustomName:'{"text":"ccf"}',Tags:[config]}
 summon marker 10000 100 10000 {CustomName:'{"text":"pkt"}',Tags:[config]} 
 summon marker 10000 100 10000 {CustomName:'{"text":"skb"}',Tags:[config]} 
 summon marker 10000 100 10000 {CustomName:'{"text":"ar"}',Tags:[config]} 
-summon marker 10000 100 10000 {CustomName:'{"text":"bb"}',Tags:[config]} 
+summon marker 10000 100 10000 {CustomName:'{"text":"Battle Box"}',Tags:[config]} 
 summon marker 10000 100 10000 {CustomName:'{"text":"all"}',Tags:[config]} 
 summon marker 10000 100 10000 {CustomName:'{"text":"minute"}',Tags:[config]} 
 summon marker 10000 100 10000 {CustomName:'{"text":"second"}',Tags:[config]} 
