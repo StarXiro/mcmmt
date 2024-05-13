@@ -11,6 +11,6 @@
     },
     "requirements": [["statistics_phe"]],
     "rewards": {
-        "function": "mmt_core:verbs/player_hurt_entity"
+        "function": "mmt_core:verbs/damage/player_hurt_entity"
     }
 }

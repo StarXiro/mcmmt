@@ -14,6 +14,6 @@
     },
     "requirements": [["statistics_php"]],
     "rewards": {
-        "function": "mmt_core:verbs/player_hurt_player"
+        "function": "mmt_core:verbs/damage/player_hurt_player"
     }
 }

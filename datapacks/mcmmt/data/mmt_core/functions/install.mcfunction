@@ -34,6 +34,8 @@ scoreboard objectives add stas_last_death dummy
 scoreboard objectives add stas_this_death deathCount
 scoreboard objectives add stas_last_walk dummy
 scoreboard objectives add stas_this_walk minecraft.custom:walk_one_cm
+scoreboard objectives add stas_last_elytra dummy
+scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
 execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
 
 # setup mini games
