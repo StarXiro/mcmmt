@@ -11,6 +11,8 @@ execute if score logon core_setting matches 1 run say Stop loop
 #--- Custom Inserts
 function mmt_dynaball:stop
 function mmt_dynaball:uninstall
+function mmt_tgttos:stop
+function mmt_tgttos:uninstall
 
 # remove scoreboard
 execute if score logon core_setting matches 1 run say Removing scoreboards

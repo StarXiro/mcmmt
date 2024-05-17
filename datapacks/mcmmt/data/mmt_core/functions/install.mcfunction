@@ -42,6 +42,7 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for sta
 execute if score logon core_setting matches 1 run say Installing mini games...
 #--- Custom Inserts
 function mmt_dynaball:install
+function mmt_tgttos:install
 
 # run loop
 execute if score logon core_setting matches 1 run say Start loop
