@@ -1,7 +1,7 @@
 '''
 Date: 2024-05-17 21:10:38
 Author: DarkskyX15
-LastEditTime: 2024-05-17 22:21:19
+LastEditTime: 2024-05-18 17:49:38
 '''
 from json import dumps
 
@@ -37,7 +37,6 @@ if __name__ == '__main__':
         name_list = selectPeriod(name_list, '>', '<')
         id_list = selectPeriod(id_list, back='<')
         id_list = addNamespace(id_list, 'minecraft:')
-        id_list = [str_id for str_id in id_list if 'pane' in str_id]
         data = {}
         data['values'] = id_list
     
