@@ -1,7 +1,7 @@
 '''
 Date: 2024-05-18 16:20:19
 Author: DarkskyX15
-LastEditTime: 2024-05-18 17:41:56
+LastEditTime: 2024-05-20 19:41:28
 '''
 
 # REQUIRE MODULE: NBT >= 1.5.1
@@ -10,8 +10,8 @@ LastEditTime: 2024-05-18 17:41:56
 from nbt import nbt
 
 PATH_PREFIX = 'scripts\\Structure2MCfunction\\'
-STRUCTURE_PATH = 'struct1.nbt'
-SAVE_PATH = 'result.mcfunction'
+STRUCTURE_PATH = 'pkt_map1.nbt'
+SAVE_PATH = 'result1.mcfunction'
 EXCLUDE_LIST = ['minecraft:air']
 
 def getBlockStr(template: nbt.TAG_Compound) -> str:
