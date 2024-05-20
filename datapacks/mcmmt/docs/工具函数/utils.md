@@ -1,10 +1,10 @@
 <!--
  * @Date: 2024-05-10 14:28:44
  * @Author: DarkskyX15
- * @LastEditTime: 2024-05-10 15:13:29
+ * @LastEditTime: 2024-05-11 01:19:51
 -->
 
-# MMTCore.Utils  
+# Core.Utils  
 
 *内置工具类函数*  
 

@@ -11,6 +11,6 @@
     },
     "requirements": [["statistics_ekp"]],
     "rewards": {
-        "function": "mmt_core:verbs/entity_killed_player"
+        "function": "mmt_core:verbs/damage/entity_killed_player"
     }
 }

@@ -9,7 +9,10 @@ execute if score logon core_setting matches 1 run say Stop loop
 
 # Uninstall Games
 #--- Custom Inserts
+function mmt_dynaball:stop
 function mmt_dynaball:uninstall
+function mmt_tgttos:stop
+function mmt_tgttos:uninstall
 
 # remove scoreboard
 execute if score logon core_setting matches 1 run say Removing scoreboards
@@ -17,6 +20,10 @@ scoreboard objectives remove core_utils_rand
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death
 scoreboard objectives remove stas_this_death
+scoreboard objectives remove stas_last_walk
+scoreboard objectives remove stas_this_walk
+scoreboard objectives remove stas_last_elytra
+scoreboard objectives remove stas_this_elytra
 
 # remove storage
 execute if score logon core_setting matches 1 run say Removing storage

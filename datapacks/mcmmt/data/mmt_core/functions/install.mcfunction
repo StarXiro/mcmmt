@@ -1,5 +1,6 @@
 # install mcmmt
 
+execute if data storage mcmmt:core installed run return fail
 # setup internal database
 
 # setup scoreboard for core
@@ -31,12 +32,17 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for cor
 # statistics
 scoreboard objectives add stas_last_death dummy
 scoreboard objectives add stas_this_death deathCount
+scoreboard objectives add stas_last_walk dummy
+scoreboard objectives add stas_this_walk minecraft.custom:walk_one_cm
+scoreboard objectives add stas_last_elytra dummy
+scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
 execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
 
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
 #--- Custom Inserts
 function mmt_dynaball:install
+function mmt_tgttos:install
 
 # run loop
 execute if score logon core_setting matches 1 run say Start loop
