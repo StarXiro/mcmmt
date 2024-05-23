@@ -1,17 +1,33 @@
 '''
 Date: 2024-05-18 16:20:19
 Author: DarkskyX15
-LastEditTime: 2024-05-20 19:41:28
+LastEditTime: 2024-05-21 08:34:41
 '''
+
+from os import walk as _walk
+from os.path import join as _join
+
+def getMultiPaths(folder_path: str) -> tuple[list[str], list[str]]:
+    r"""
+    返回一对路径列表:`(file_paths, folder_paths)`
+    - `file_paths`:`folder_path`下所有文件的路径列表
+    - `folder_paths`:`folder_path`下所有文件夹的路径列表 (包括`folder_path`本身)
+    """
+    file_path_list = list()
+    folder_list = list()
+    for filepath, folder_names, filenames in _walk(folder_path):
+        for filename in filenames:
+            file_path_list.append(_join(filepath, filename))
+        folder_list.append(filepath)
+    return (file_path_list, folder_list)
 
 # REQUIRE MODULE: NBT >= 1.5.1
 # https://pypi.org/project/NBT/
 
 from nbt import nbt
 
-PATH_PREFIX = 'scripts\\Structure2MCfunction\\'
-STRUCTURE_PATH = 'pkt_map1.nbt'
-SAVE_PATH = 'result1.mcfunction'
+SRC_PATH = '.\\scripts\\Structure2MCfunction\\src'
+RESULT_PATH = '.\\scripts\\Structure2MCfunction\\results'
 EXCLUDE_LIST = ['minecraft:air']
 
 def getBlockStr(template: nbt.TAG_Compound) -> str:
@@ -27,8 +43,8 @@ def getBlockStr(template: nbt.TAG_Compound) -> str:
             connected_prop.append(property.namestr() + '=' + property.valuestr())
     return block_id + '[' + ','.join(connected_prop) + ']'
 
-if __name__ == '__main__':
-    nbt_file = nbt.NBTFile(PATH_PREFIX + STRUCTURE_PATH, 'rb')
+def generateFunction(src_path: str, filename: str) -> None:
+    nbt_file = nbt.NBTFile(src_path, 'rb')
     block_data = nbt_file['blocks']
     block_mapping = nbt_file['palette']
 
@@ -54,5 +70,11 @@ if __name__ == '__main__':
         function_str = 'setblock ' + position_str + ' ' + str_block_list[palette_pos]
         block_sets.append(function_str + '\n')
     
-    with open(PATH_PREFIX + SAVE_PATH, 'w') as f:
+    with open(RESULT_PATH + '\\' + filename + '.mcfunction', 'w') as f:
         f.writelines(block_sets)
+
+if __name__ == '__main__':
+    file_paths, folders = getMultiPaths(SRC_PATH)
+    for file_path in file_paths:
+        filename = file_path.split('\\')[-1].split('.')[0]
+        generateFunction(file_path, filename)

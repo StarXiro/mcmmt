@@ -1,0 +1,2 @@
+GAME_NAME MMT_Dynaball
+111 BIND|24
