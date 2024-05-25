@@ -1,4 +1,4 @@
 
 
 # loop
-schedule function mmt_dynaball:on_second 1s
+schedule function mmt_dynaball:on_second 1s replace

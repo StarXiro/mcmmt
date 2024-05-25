@@ -12,4 +12,4 @@ function mmt_core:statistics/player_walk
 function mmt_core:statistics/player_aviate
 
 # loop it
-schedule function mmt_core:per_tick 1t
+schedule function mmt_core:per_tick 1t replace

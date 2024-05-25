@@ -1,11 +1,15 @@
 
 # tnt arrow
-execute as @e[type=minecraft:arrow, nbt={item:{tag:{Potion:"dynaball:tnt_arrow"}}, HasBeenShot:1b}] at @s run function mmt_dynaball:weapons/tnt_arrow/tnt_arrow
-execute as @e[type=minecraft:tnt, tag=dynaball_tnt_fly] at @s if function mmt_dynaball:weapons/tnt_arrow/tnt_stop_check run function mmt_dynaball:weapons/tnt_arrow/stop_tnt
-execute as @e[type=minecraft:tnt, tag=dynaball_tnt_froze] at @s run function mmt_dynaball:weapons/tnt_arrow/maintain_froze
+function mmt_dynaball:weapons/tnt_arrow/on_tick
+
+# stuck
+execute as @a[tag=player_dynaball, tag=dnb_stuck_with_tnt] at @s run function mmt_dynaball:stuck/do_stuck
+execute as @a[tag=player_dynaball, tag=dnb_self_explose] at @s run function mmt_dynaball:stuck/check_explose
 
 # fix blocks
+# ignored custom model data: 11
+# ~$ execute as @e[type=minecraft:item, nbt=!{Item:{tag:{CustomModelData:${fix_block_ignore}}}}] at @s run function mmt_dynaball:blocks/drop_replace
 execute as @e[type=minecraft:item, nbt=!{Item:{tag:{CustomModelData:11}}}] at @s run function mmt_dynaball:blocks/drop_replace
 
 # loop
-schedule function mmt_dynaball:on_tick 1t
+schedule function mmt_dynaball:on_tick 1t replace
