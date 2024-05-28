@@ -14,7 +14,7 @@ execute if score logon core_setting matches 1 run say Inited core
 
 # setup storage for core.utils
 data modify storage mcmmt:core_utils rand set value {result: 0}
-data modify storage mcmmt:core_utils ray_trace set value {end_block: {}, if_touched: 0b, iter_cnt: 0}
+data modify storage mcmmt:core_utils ray_trace set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
 # utils.rand
@@ -28,6 +28,14 @@ scoreboard players set range core_utils_rand 99999999
 scoreboard players set rand core_utils_rand 1
 scoreboard players set result core_utils_rand 1
 execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.rand
+
+# utils.ray_trace
+scoreboard objectives add core_utils_rtrace dummy
+scoreboard players set rtrace_limit core_utils_rtrace 100
+scoreboard players set rtrace_last_iter core_utils_rtrace 0
+scoreboard players set rtrace_present core_utils_rtrace 0
+scoreboard players set rtrace_success core_utils_rtrace 0
+execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.ray_trace
 
 # statistics
 scoreboard objectives add stas_last_death dummy

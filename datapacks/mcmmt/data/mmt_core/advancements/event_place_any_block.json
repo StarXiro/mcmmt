@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "place_any_block": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "player": {
+                    "nbt": "{Tags:[\"mmt_track\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [["place_any_block"]],
+    "rewards": {
+        "function": "mmt_core:verbs/place_block/any_block"
+    }
+}

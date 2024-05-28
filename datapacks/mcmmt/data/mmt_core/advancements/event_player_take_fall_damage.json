@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "take_fall_damage": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+                "player": {
+                    "nbt": "{Tags:[\"mmt_track\"]}"
+                },
+                "damage": {
+                    "type": {
+                        "tags": [
+                            {"expected": true, "id": "minecraft:is_fall"}
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [["take_fall_damage"]],
+    "rewards": {
+        "function": "mmt_core:verbs/damage/player_take_fall_damage"
+    }
+}

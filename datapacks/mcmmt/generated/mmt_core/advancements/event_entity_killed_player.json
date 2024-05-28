@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "statistics_ekp": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "player": {
+                    "nbt": "{Tags:[\"mmt_track\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [["statistics_ekp"]],
+    "rewards": {
+        "function": "mmt_core:verbs/damage/entity_killed_player"
+    }
+}
