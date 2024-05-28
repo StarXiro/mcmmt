@@ -1,13 +1,15 @@
 '''
 Date: 2024-05-11 20:45:58
 Author: DarkskyX15
-LastEditTime: 2024-05-23 14:44:45
+LastEditTime: 2024-05-28 08:39:41
 '''
 
 from os import walk as _walk
 from os.path import join as _join
 from logger import ThreadLogger
 import os
+
+# V1.0.1
 
 def getMultiPaths(folder_path: str) -> tuple[list[str], list[str]]:
     r"""
@@ -143,9 +145,12 @@ def processFuncFile(src_path: str, target_path: str, game: Game, namespace: str,
                 continue
             command = ' '.join(cmd_args[1:])
             for item in variable_dict.items():
-                command = cmdReplace(command, *item)
-            logger.info('Replaced command:', shortLine(command))
-            target_output.write(command + '\n')
+                replaced = cmdReplace(command, *item)
+                if replaced == command:
+                    logger.info('Nothing is replaced, ignored:', shortLine(command, 60))
+                else:
+                    logger.info('Replaced command:', shortLine(replaced))
+                    target_output.write(replaced + '\n')
         else:
             target_output.write(cmd + '\n')
     target_output.close()
@@ -469,6 +474,7 @@ if __name__ == '__main__':
         logger.error("Bindings path doesn't exist!")
     else:
         file_bindings, _ = getMultiPaths(binding_dir)
+        file_bindings.sort(key=lambda path: path.split('\\')[-1])
         for file_binding in file_bindings:
             processBindingFile(file_binding)
 
@@ -517,6 +523,4 @@ if __name__ == '__main__':
     processMap()
 
     logger.info('Generation finished!')
-    
     logger.stopLogger()
-    os.system('pause')

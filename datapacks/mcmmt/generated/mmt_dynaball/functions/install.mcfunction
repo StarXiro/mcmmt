@@ -5,8 +5,8 @@ scoreboard players set rand_mod dynaball_data 10
 scoreboard players set rand_temp dynaball_data 0
 execute if score logon core_setting matches 1 run tellraw @a {"text": "------------------------------", "color": "red"}
 #~EVENT damage.entity_hurt_player/movement.player_using_elytra
-#~VARIABLE name 111
-execute if score logon core_setting matches 24 run say Installed Game: Dynaball
+#~VARIABLE name X
+execute if score logon core_setting matches 1 run say Installed Game: Dynaball
 execute if score logon core_setting matches 1 run say Written by: Darksky
 execute if score logon core_setting matches 1 run say Version: a0.1.5
 execute if score logon core_setting matches 1 run tellraw @a {"text": "------------------------------", "color": "red"}
