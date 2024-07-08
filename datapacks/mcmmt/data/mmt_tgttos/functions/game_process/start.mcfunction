@@ -1,4 +1,4 @@
-#timer mod -2时为开始阶段
+#gameprocess=2 -> ingame
 scoreboard players set countdown timer 2419
 scoreboard players set timemode timer -4
 effect clear @a[tag=tgttos]
