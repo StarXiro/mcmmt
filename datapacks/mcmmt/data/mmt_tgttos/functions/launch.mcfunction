@@ -5,16 +5,20 @@
 #initialize
 tp @a 9000 101 9000
 function mmt_tgttos:game_process/reload0
+#↑之后会改
 #scoreboard players set @e[name="tgttos",limit=1] config 10
 scoreboard players add @e[name="game_count"] config 1
 scoreboard players add @e[name="round_count"] config 1
+scoreboard objectives setdisplay sidebar tgttosscoreboard
 tag @a[tag=player] add tgttos
 clear @a[tag=tgttos] 
 gamemode adventure @a[tag=player]
-function mmt_tgttos:time_check/timer
+function mmt_tgttos:on_tick
+function mmt_tgttos:on_5tick
+
 
 #item supply
-item replace entity @a[tag=tgttos] hotbar.0 with shears{display:{Name:'{"text":"喵喵剪","color":"gray","italic":false}'},CanDestroy:["#mmt_core:survival_blocks"],"Unbreakable":1}
+item replace entity @a[tag=tgttos] hotbar.0 with shears{display:{Name:'{"text":"喵喵剪","color":"gray","italic":false}'},CanDestroy:["#mmt_core:team_wools"],"Unbreakable":1}
 item replace entity @a[tag=tgttos,team=red] hotbar.1 with red_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"]} 64
 item replace entity @a[tag=tgttos,team=orange] hotbar.1 with orange_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"]} 64
 item replace entity @a[tag=tgttos,team=yellow] hotbar.1 with yellow_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"]} 64
