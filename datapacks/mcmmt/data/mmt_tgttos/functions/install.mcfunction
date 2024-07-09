@@ -2,6 +2,8 @@
 execute if score logon core_setting matches 1 run function mmt_tgttos:info
 
 #initialize
+scoreboard objectives add player_count dummy
+scoreboard objectives add finish_count dummy
 scoreboard objectives add tgttos dummy
 scoreboard objectives add tgttosconfig dummy
 summon marker 10000 100 10000 {CustomName:'{"text":"round_count"}',Tags:[config]} 
@@ -11,13 +13,13 @@ scoreboard players set @e[tag=map] map_name 0
 
 #scoreboard initialize
 #scoreboard objectives remove tgttosscoreboard
-scoreboard objectives add tgttosscoreboard dummy {"text":"TGTTOS","color":"gold","bold":true}
+scoreboard objectives add tgttosscoreboard dummy {"text":"TGTTOSAFTC","color":"gold","bold":true}
 scoreboard players reset * tgttosscoreboard
 #scoreboard players reset 当前版本 tgttosscoreboard
 scoreboard objectives modify tgttosscoreboard numberformat blank
 scoreboard objectives modify tgttosscoreboard displayautoupdate true
 
-#sidplay initialization
+#display initialization
 scoreboard players set 玩家数 tgttosscoreboard -5
 scoreboard players set 占位2 tgttosscoreboard -4
 scoreboard players set 队伍4 tgttosscoreboard -3

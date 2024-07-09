@@ -8,5 +8,4 @@ scoreboard players add @e[name="second"] tgttos 1
 scoreboard players operation @e[name="second"] tgttos %= secs config
 scoreboard players operation @e[name="second"] tgttos /= secs2 config
 #execute if score countdown tgttos matches 18 run scoreboard players set countdown tgttos -1
-schedule function mmt_tgttos:time_check/timer 1t
 
