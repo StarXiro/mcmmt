@@ -1,7 +1,7 @@
-#player_count check /is must?
+#player_count check /is must? y
 scoreboard players reset * player_count
 scoreboard players set @a[tag=player] player_count 1
-scoreboard players operation @e[name="all",limit=1] player_count += @a[tag=player] player_count
+scoreboard players operation all player_count += @a[tag=player] player_count
 scoreboard players operation red player_count += @a[tag=player,team=red] player_count
 scoreboard players operation orange player_count += @a[tag=player,team=orange] player_count
 scoreboard players operation yellow player_count += @a[tag=player,team=yellow] player_count
@@ -14,7 +14,7 @@ scoreboard players operation pink player_count += @a[tag=player,team=pink] playe
 #finish_count
 scoreboard players reset * finish_count
 scoreboard players set @a[tag=player] finish_count 0
-scoreboard players operation @e[name="all",limit=1] finish_count += @a[tag=player] finish_count
+scoreboard players operation all finish_count += @a[tag=player] finish_count
 scoreboard players operation red finish_count += @a[tag=player,team=red] finish_count
 scoreboard players operation orange finish_count += @a[tag=player,team=orange] finish_count
 scoreboard players operation yellow finish_count += @a[tag=player,team=yellow] finish_count
@@ -24,21 +24,21 @@ scoreboard players operation aqua finish_count += @a[tag=player,team=aqua] finis
 scoreboard players operation blue finish_count += @a[tag=player,team=blue] finish_count
 scoreboard players operation pink finish_count += @a[tag=player,team=pink] finish_count
 
-#scoreboard players display name 当前版本 tgttosscoreboard [{"text":"当前版本 : ","italic":false},{"text":"pre-0.0.1","color":"gray"}]
-data remove storage tgttos:scoreboard game_count
-data modify storage tgttos:scoreboard game_name set value '" "'
-#execute store result storage tgttos:scoreboard game_count int 1 run execute store result score @e[name="game_count"] config run execute store result storage tgttos:scoreboard game_count int 1 run function tgttos:scoreboardextra with storage tgttos:scoreboard game_count
-execute as @e[name="game_count"] store result storage tgttos:scoreboard game int 1 run scoreboard players get @s config
+#execute as @e[name="game_count"] store result storage tgttos:scoreboard game_count int 1 run scoreboard players get @s config    已弃用,此处保留以作提示。
+
+#get scoreboard marks for data
+execute as @r store result storage tgttos:scoreboard game_count int 1 run scoreboard players get game_count config
+execute as @r store result storage tgttos:scoreboard round_count int 1 run scoreboard players get round_count tgttos
+execute as @r store result storage tgttos:scoreboard minute int 1 run scoreboard players get minute tgttos
+execute as @r store result storage tgttos:scoreboard second int 1 run scoreboard players get second tgttos
+execute as @r store result storage tgttos:scoreboard player_count int 1 run scoreboard players get all player_count
+execute as @r store result storage tgttos:scoreboard finish_count int 1 run scoreboard players get all finish_count
+
+#get map_name
 data modify storage tgttos:scoreboard map_name set from entity @e[scores={tgttosconfig=1},tag=map,limit=1] CustomName
-#execute as @e[name="game_count"] run function tgttos:scoreboardextra with storage tgttos:scoreboard
-#execute as @a[tag=player] store result storage tgttos:scoreboard score int 1 run scoreboard players get @s score
-#execute as @a[tag=player] run function tgttos:scoreboardextra with storage tgttos:scoreboard
-#execute if score @e[name="game_count",limit=1] config matches 0 run scoreboard players display name 当前游戏 lobbyscoreboard {"text":"游戏未开始","color":"red"}
-scoreboard players display name 游戏积分 tgttosscoreboard {"text":"本游戏积分:","color":"aqua"}
-execute as @e[name="minute"] store result storage tgttos:scoreboard minute int 1 run scoreboard players get @s tgttos
-execute as @e[name="second"] store result storage tgttos:scoreboard second int 1 run scoreboard players get @s tgttos
-execute if score countdown tgttos matches -1 run scoreboard players display name 剩余时间 tgttosscoreboard {"text":"请等待","color":"gray"}
-execute as @r store result storage tgttos:scoreboard player_count int 1 run scoreboard players get @e[name="all",limit=1] player_count
-execute as @r store result storage tgttos:scoreboard finish_count int 1 run scoreboard players get @e[name="all",limit=1] finish_count
+
+#run 宏function
 execute as @r run function mmt_tgttos:scoreboard/scoreboardextra with storage tgttos:scoreboard
+
+#loop
 schedule function mmt_tgttos:scoreboard/scoreboard 1t replace

@@ -1,4 +1,3 @@
-
 #death message
 execute store result score randscore rand run random value 1..10
 execute store result score randscore2 rand run random value 1..10
