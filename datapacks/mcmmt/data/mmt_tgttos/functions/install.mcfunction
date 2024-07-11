@@ -29,6 +29,7 @@ scoreboard players set 当前地图 tgttosscoreboard 6
 scoreboard players set 游戏进度 tgttosscoreboard 7
 scoreboard players display name 占位 tgttosscoreboard [{"text":"  "}]
 scoreboard players display name 占位2 tgttosscoreboard [{"text":"  "}]
+scoreboard objectives add finish_check dummy
 
 #scoreboard other configs
 scoreboard players display name 游戏积分 tgttosscoreboard {"text":"本游戏积分:","color":"aqua"}
