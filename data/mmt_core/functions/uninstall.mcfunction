@@ -33,6 +33,8 @@ execute if score logon core_setting matches 1 run say Removing storage
 data remove storage mcmmt:core installed
 data remove storage mcmmt:core_utils rand
 data remove storage mcmmt:core_utils sight_cast
+data remove storage mcmmt:core_utils sqrt
+data remove storage mcmmt:core_utils sincos
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting

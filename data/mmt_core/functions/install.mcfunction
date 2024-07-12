@@ -13,6 +13,8 @@ data modify storage mcmmt:core installed set value 1b
 execute if score logon core_setting matches 1 run say Inited core
 
 # setup storage for core.utils
+data modify storage mcmmt:core_utils sincos set value {result: 0.0f, value: 0.0d}
+data modify storage mcmmt:core_utils sqrt set value {result: 0.0d, scaler: 1.0f, value: 0.0d}
 data modify storage mcmmt:core_utils rand set value {result: 0}
 data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
@@ -39,6 +41,7 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for cor
 
 # utils.sqrt
 scoreboard objectives add core_utils_sqrt dummy
+scoreboard players set scaler core_utils_sqrt 1
 scoreboard players set input core_utils_sqrt 0
 scoreboard players set result core_utils_sqrt 0
 scoreboard players set x core_utils_sqrt 0
