@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "statistics_ehp": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+                "player": {
+                    "nbt": "{Tags:[\"mmt_track\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [["statistics_ehp"]],
+    "rewards": {
+        "function": "mmt_core:verbs/damage/entity_hurt_player"
+    }
+}

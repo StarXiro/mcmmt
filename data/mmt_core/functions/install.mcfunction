@@ -13,10 +13,8 @@ data modify storage mcmmt:core installed set value 1b
 execute if score logon core_setting matches 1 run say Inited core
 
 # setup storage for core.utils
-data modify storage mcmmt:core_utils sincos set value {result: 0.0f, value: 0.0d}
-data modify storage mcmmt:core_utils sqrt set value {result: 0.0d, scaler: 1.0f, value: 0.0d}
 data modify storage mcmmt:core_utils rand set value {result: 0}
-data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
+data modify storage mcmmt:core_utils ray_trace set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
 # utils.rand
@@ -31,38 +29,13 @@ scoreboard players set rand core_utils_rand 1
 scoreboard players set result core_utils_rand 1
 execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.rand
 
-
-# utils.sight_cast
-scoreboard objectives add core_utils_scast dummy
-scoreboard players set scast_limit core_utils_scast 100
-scoreboard players set scast_last_iter core_utils_scast 0
-scoreboard players set scast_present core_utils_scast 0
-scoreboard players set scast_success core_utils_scast 0
-execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sight_cast
-
-# utils.sqrt
-scoreboard objectives add core_utils_sqrt dummy
-scoreboard players set scaler core_utils_sqrt 1
-scoreboard players set input core_utils_sqrt 0
-scoreboard players set result core_utils_sqrt 0
-scoreboard players set x core_utils_sqrt 0
-scoreboard players set temp1 core_utils_sqrt 0
-scoreboard players set temp2 core_utils_sqrt 0
-scoreboard players set last_x core_utils_sqrt 0
-scoreboard players set constant core_utils_sqrt 2
-execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sqrt
-
-# utils.sin & utils.cos
-scoreboard objectives add core_utils_sincos dummy
-scoreboard players set input core_utils_sincos 0
-scoreboard players set result core_utils_sincos 0
-scoreboard players set scaler core_utils_sincos 1000000
-scoreboard players set neg_cons core_utils_sincos -1
-scoreboard players set processed core_utils_sincos 0
-scoreboard players set rev_flg core_utils_sincos 0
-scoreboard players set ant_flg core_utils_sincos 0
-execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sincos
-
+# utils.ray_trace
+scoreboard objectives add core_utils_rtrace dummy
+scoreboard players set rtrace_limit core_utils_rtrace 100
+scoreboard players set rtrace_last_iter core_utils_rtrace 0
+scoreboard players set rtrace_present core_utils_rtrace 0
+scoreboard players set rtrace_success core_utils_rtrace 0
+execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.ray_trace
 
 # statistics
 scoreboard objectives add stas_last_death dummy

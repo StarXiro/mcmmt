@@ -6,4 +6,3 @@ scoreboard objectives remove dynaball_data
 scoreboard objectives remove dnb_self_explose
 scoreboard objectives remove dnb_motion_x
 scoreboard objectives remove dnb_motion_z
-scoreboard objectives remove dnb_air_strike

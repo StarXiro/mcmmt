@@ -1,0 +1,2 @@
+GAME_NAME MMT_Dynaball
+fix_block_ignore 11
