@@ -12,6 +12,15 @@ scoreboard players operation blue player_count += @a[tag=player,team=blue] playe
 scoreboard players operation pink player_count += @a[tag=player,team=pink] player_count
 
 #finish_count
+scoreboard players reset all finish_count
+scoreboard players reset red finish_count
+scoreboard players reset orange finish_count
+scoreboard players reset yellow finish_count
+scoreboard players reset lime finish_count
+scoreboard players reset green finish_count
+scoreboard players reset aqua finish_count
+scoreboard players reset blue finish_count
+scoreboard players reset pink finish_count
 scoreboard players operation all finish_count += @a[tag=player] finish_count
 scoreboard players operation red finish_count += @a[tag=player,team=red] finish_count
 scoreboard players operation orange finish_count += @a[tag=player,team=orange] finish_count
