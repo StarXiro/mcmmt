@@ -4,7 +4,11 @@
 # entity_killed_player
 # player_hurt_entity
 # player_hurt_player
-# player_walk
+# player_take_fall_damage
+# player_take_void_damage
+# place_any_block
+# place_any_wool
+
 
 # Managed by scoreboards
 function mmt_core:statistics/player_death
