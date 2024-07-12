@@ -18,8 +18,8 @@ scoreboard players set @a[tag=player] finish_count 0
 function mmt_tgttos:on_tick
 function mmt_tgttos:on_5tick
 
+#game_start  ****need to change
+function mmt_tgttos:game_process/one_use/transroundend
+
 #intro
 function mmt_tgttos:game_process/intro
-
-#game_start  ****need to change
-function mmt_tgttos:map/reload0
