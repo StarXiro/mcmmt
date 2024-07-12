@@ -1,0 +1,4 @@
+scoreboard objectives remove CACconfig
+scoreboard objectives remove CACdisplay
+scoreboard objectives remove CACkill
+scoreboard objectives remove CreeperAndCat
