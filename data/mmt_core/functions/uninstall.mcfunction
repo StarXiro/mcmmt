@@ -20,6 +20,7 @@ scoreboard objectives remove core_utils_rand
 scoreboard objectives remove core_utils_scast
 scoreboard objectives remove core_utils_sqrt
 scoreboard objectives remove core_utils_sincos
+
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death
 scoreboard objectives remove stas_this_death

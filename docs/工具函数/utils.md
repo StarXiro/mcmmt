@@ -155,3 +155,4 @@ data modify entity @e[limit=1, type=armor_stand] Motion[] set from storage mcmmt
 
 - `mmt_core:utils/cos_do`
 - `mmt_core:utils/cos_with_score`
+

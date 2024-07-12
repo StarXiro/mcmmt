@@ -9,6 +9,7 @@
 # place_any_block
 # place_any_wool
 
+
 # Managed by scoreboards
 function mmt_core:statistics/player_death
 function mmt_core:statistics/player_walk

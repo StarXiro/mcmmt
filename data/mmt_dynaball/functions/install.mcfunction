@@ -9,6 +9,7 @@ scoreboard objectives add dnb_air_strike dummy
 scoreboard objectives add dnb_motion_x dummy
 scoreboard objectives add dnb_motion_z dummy
 scoreboard players set negative dynaball_data -1
+
 scoreboard players set rand_mod dynaball_data 10
 scoreboard players set rand_positive_mod dynaball_data 2
 scoreboard players set rand_positive dynaball_data 1

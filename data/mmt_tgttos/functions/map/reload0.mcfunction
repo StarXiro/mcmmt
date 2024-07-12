@@ -1,5 +1,8 @@
 # map 1 - cod in the sea
 
+#kill
+kill @e[type=ocelot]
+
 #map reload
 scoreboard players set @e[name='codake'] tgttosconfig 1
 forceload add 7978 7966 8090 8030
@@ -18,6 +21,9 @@ item replace entity @a[tag=tgttos,team=lime] hotbar.1 with lime_wool{CanDestroy:
 item replace entity @a[tag=tgttos,team=aqua] hotbar.1 with cyan_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"],HideFlags:28} 64
 item replace entity @a[tag=tgttos,team=blue] hotbar.1 with blue_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"],HideFlags:28} 64
 item replace entity @a[tag=tgttos,team=pink] hotbar.1 with pink_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"],HideFlags:28} 64
+
+#cat summon
+execute as @a[tag=tgttos] run summon ocelot 9067 75 8997 {Trusting:1b}
 
 #log
 execute if score logon core_setting matches 1 run tellraw @a {"text":"TGTTOS MAP#1 codake 重置完成喵"}

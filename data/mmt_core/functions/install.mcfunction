@@ -31,6 +31,7 @@ scoreboard players set rand core_utils_rand 1
 scoreboard players set result core_utils_rand 1
 execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.rand
 
+
 # utils.sight_cast
 scoreboard objectives add core_utils_scast dummy
 scoreboard players set scast_limit core_utils_scast 100
@@ -61,6 +62,7 @@ scoreboard players set processed core_utils_sincos 0
 scoreboard players set rev_flg core_utils_sincos 0
 scoreboard players set ant_flg core_utils_sincos 0
 execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sincos
+
 
 # statistics
 scoreboard objectives add stas_last_death dummy

@@ -10,5 +10,7 @@ execute if score gameprocess tgttos matches 2 run function mmt_tgttos:game_proce
 execute if score gameprocess tgttos matches 3 run function mmt_tgttos:game_process/loop/round_end
 execute as @a[tag=tgttos,x=8958,z=8936,dx=150,dz=130,y=20,dy=40] run function mmt_tgttos:death_check/death_check
 
+function mmt_tgttos:game_process/finish_check
+
 #loop
 schedule function mmt_tgttos:on_tick 1t replace
