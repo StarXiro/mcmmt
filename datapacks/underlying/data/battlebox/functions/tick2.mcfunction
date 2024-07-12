@@ -1,1 +1,0 @@
-execute as @a[tag=bb,advancements={bottompack:useblock=true}] run function battlebox:supply

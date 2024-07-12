@@ -1,1 +1,0 @@
-execute as @a[tag=tgttos,advancements={bottompack:useblock=true}] run function tgttos:supply
