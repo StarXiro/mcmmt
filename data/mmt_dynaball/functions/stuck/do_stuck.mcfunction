@@ -1,6 +1,6 @@
 
 title @s title {"text": "被粘住", "bold": true, "color":"red"}
-playsound entity.creeper.primed hostile @s ~ ~ ~
+playsound entity.slime.squish ambient @s ~ ~ ~
 item replace entity @s armor.head with minecraft:tnt{Enchantments:[{id:"minecraft:binding_curse", lvl:1}]} 1
 team join self_explosion @s
 effect give @s glowing 3 0 true
