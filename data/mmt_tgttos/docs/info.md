@@ -3,35 +3,35 @@
  * @Author: StarXiro
  * @LastEditTime: 2024-07-08 16:07:23
 -->
-#信息记录
+# 信息记录
 此文档记录TGTTOS小游戏数据包核心部分相关信息的记录，方便读取和调用。
 
-##坐标记录
+## 坐标记录
 此处提供TGTTOS游戏坐标、地图坐标等记录。
-#####游戏运行环境
+##### 游戏运行环境
 坐标:9000 101 9000
-#####MAP1 codake
+##### MAP1 codake
 坐标:8000 100 8000
 
-##名词解释
+## 名词解释
 此处提供比较难记、难懂的名词和简称对照表，便于理解。
 
-##模块架构
-###death_check
-###game_process
-###item
-###map
-###protection
-###scoreboard
+## 模块架构
+### death_check
+### game_process
+### item
+### map
+### protection
+### scoreboard
 |文件名|类型|内容|调用函数|被调用|
 |:---:|:---:|---|---|---|
 |**scoreboard.mcfunction**|loop|玩家数量更新<br>完成数量更新<br>extra传参准备|$scoreboard/scoreboardextra.mcfunction|on_tick.mcfunction|
 |**scoreboardcextra.mcfunction**|loop|记分板宏函数执行|/|scoreboard.mcfunction|
-###time_check
+### time_check
 |文件名|类型|内容|调用函数|被调用|
 |:---:|:---:|---|---|---|
 |**timer.mcfunction**|loop|倒计时<br>分钟和秒数显示<br>显示修正|/|install.mcfunction|
-###根文件夹
+### 根文件夹
 |文件名|类型|内容|调用函数|被调用|
 |:---:|:---:|---|---|---|
 |**info.mcfunction**|single|版本号等信息展示|/|install.mcfunction|
@@ -42,27 +42,27 @@
 |**stop.mcfunction**|single|双循环函数停止|/|/|
 |**uninstall.mcfunction**|single|记分板注销<br>data注销<br>marker卸载|/|/|
 
-##更新记录
-###2024/07
-####2024/07/08前  
-#####V0.0.0-V0.1.0  
+## 更新记录
+### 2024/07
+#### 2024/07/08前  
+##### V0.0.0-V0.1.0  
 更新TGTTOS地图1，创建数据包文件、对数据包进行架构。  
-####2024/07/08
-#####V0.1.1
+#### 2024/07/08
+##### V0.1.1
 重置架构，贴合**Darksky**编制的MCMMT编写规范，暴露接口，提供调用。
-#####V0.1.2
+##### V0.1.2
 timer模块完善，架构继续重置。
-####2024/07/09
-#####V0.1.3
+#### 2024/07/09
+##### V0.1.3
 scoreboard模块修改，抛弃underlying旧架构，剥离底层逻辑。
-####2024/07/10
-#####V0.1.4
-####2024/07/11
-#####V0.1.5-V0.1.6
+#### 2024/07/10
+##### V0.1.4
+#### 2024/07/11
+##### V0.1.5-V0.1.6
 时序完善、function文件注释完善。
-####2024/07/12
-#####V0.1.7-V0.1.8
+#### 2024/07/12
+##### V0.1.7-V0.1.8
 finish检测模块开始，豹猫生成、喂养检测机制完成。
-####2024/07/13
-#####V0.1.9
+#### 2024/07/13
+##### V0.1.9
 结束判据完善、结束输出完善。
