@@ -27,6 +27,3 @@ execute as @a[tag=tgttos] run summon ocelot 9067 75 8997 {Trusting:1b,Age:10}
 
 #log
 execute if score logon core_setting matches 1 run tellraw @a {"text":"TGTTOS MAP#1 codake 重置完成喵"}
-
-#function 
-function mmt_tgttos:game_process/one_use/transroundend
