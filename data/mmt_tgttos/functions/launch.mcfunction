@@ -10,10 +10,6 @@ tag @a[tag=player] add tgttos
 clear @a[tag=tgttos] 
 gamemode adventure @a[tag=player]
 
-#scoreboard initialize
-scoreboard players reset * finish_count
-scoreboard players set @a[tag=player] finish_count 0
-
 #trigger loop
 function mmt_tgttos:on_tick
 function mmt_tgttos:on_5tick

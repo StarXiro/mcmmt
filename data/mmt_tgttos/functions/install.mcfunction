@@ -31,6 +31,8 @@ scoreboard players display name 占位 tgttosscoreboard [{"text":"  "}]
 scoreboard players display name 占位2 tgttosscoreboard [{"text":"  "}]
 scoreboard objectives add finish_check dummy
 scoreboard objectives add LoveCause dummy
+scoreboard players reset * finish_count
+scoreboard players set @a[tag=player] finish_count 0
 
 #scoreboard other configs
 scoreboard players display name 游戏积分 tgttosscoreboard {"text":"本游戏积分:","color":"aqua"}
