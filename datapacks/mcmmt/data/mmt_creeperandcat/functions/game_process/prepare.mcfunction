@@ -11,6 +11,7 @@ execute as @a run attribute @s generic.max_health base set 20
 effect clear @a
 effect give @a instant_health 2 10 false
 effect give @a saturation infinite 1 true
+gamemode adventure @a[tag=CAC]
 
 setblock -4992 121 -4968 air
 setblock -4992 121 -4967 air
