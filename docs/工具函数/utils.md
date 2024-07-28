@@ -104,7 +104,7 @@ function mmt_core:utils/sight_cast_clear
   ```mcfunction
   # subj 追踪项名称
   # obj 计分板名称
-  function mmt_core:utils/sqrt_with_score 
+  function mmt_core:utils/sqrt_with_score {subj:test, obj:data_store}
   ```
 
 **使用示例：**
@@ -156,3 +156,39 @@ data modify entity @e[limit=1, type=armor_stand] Motion[] set from storage mcmmt
 - `mmt_core:utils/cos_do`
 - `mmt_core:utils/cos_with_score`
 
+## Core.Utils.UUIDMatch
+
+提供UUID比较。
+
+**可用方法：**
+
+- `mmt_core:utils/uuid_match_set`  
+  **需传入参数。**  
+  设置UUID匹配的目标。  
+  传入的`Compound`类型NBT标签中，必须含有`UUID`标签。  
+  例子：  
+
+  ```mcfunction
+  # 对于直接使用实体的UUID
+  function mmt_core:utils/uuid_match_set with entity @s
+  # 对于使用其他标签内的UUID
+  # 此处@s假设为 minecraft:ocelot
+  data modify storage mcmmt:core_utils uuid_match.UUID set from entity @s LoveCause
+  function mmt_core:utils/uuid_match_set with storage mcmmt:core_utils uuid_match
+  ```
+
+- `mmt_core:utils/uuid_match_pred`  
+  类似谓词设计的UUID比较检测。  
+  若命令执行者的UUID与设置的UUID匹配目标一致，返回1，否则返回fail。例子：  
+
+  ```mcfunction
+  execute as @e[type=minecraft:ocelot] if function mmt_core:utils/uuid_match_pred run say It's me!
+  ```
+
+## Core.Utils.Bfs
+
+## Core.Utils.ToBin
+
+## Core.Utils.ArcSin
+
+## Core.Utils.ArcCos

@@ -22,6 +22,9 @@ scoreboard objectives remove core_utils_rand
 scoreboard objectives remove core_utils_scast
 scoreboard objectives remove core_utils_sqrt
 scoreboard objectives remove core_utils_sincos
+scoreboard objectives remove core_utils_uuid_match
+scoreboard objectives remove core_utils_search
+scoreboard objectives remove core_utils_to_bin
 
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death
@@ -38,6 +41,8 @@ data remove storage mcmmt:core_utils rand
 data remove storage mcmmt:core_utils sight_cast
 data remove storage mcmmt:core_utils sqrt
 data remove storage mcmmt:core_utils sincos
+data remove storage mcmmt:core_utils uuid_match
+data remove storage mcmmt:core_utils to_bin
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
