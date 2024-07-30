@@ -1,12 +1,12 @@
 
-print(bin(-2147483648))
-
 PATH = r'scripts\ConstantGen'
 
-index = 1
-path_template = '{}\\do_position_{}.mcfunction'
-template = 'scoreboard players set pos{} core_utils_to_bin 1\nscoreboard players remove input core_utils_to_bin {}\n'
-for i in range(32):
-    with open(path_template.format(PATH, i), 'w', encoding='utf-8') as f:
-        f.write(template.format(i, index, index))
-    index <<= 1
+template = 'execute if score pos{} core_utils_to_bin matches 1 positioned ~{} ~{} ~{} run function mmt_core:utils/private_bfs/create_ptr\n'
+
+index = -1
+with open(PATH + '\\result.txt', 'w', encoding='utf-8') as f:
+    for a in ['', '-1', '1']:
+        for b in ['', '-1', '1']:
+            for c in ['', '-1', '1']:
+                f.write(template.format(index, a, b, c))
+                index += 1

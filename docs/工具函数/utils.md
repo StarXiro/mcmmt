@@ -185,9 +185,37 @@ data modify entity @e[limit=1, type=armor_stand] Motion[] set from storage mcmmt
   execute as @e[type=minecraft:ocelot] if function mmt_core:utils/uuid_match_pred run say It's me!
   ```
 
-## Core.Utils.Bfs
-
 ## Core.Utils.ToBin
+
+提供十进制向二进制的转换。  
+转换后结果将以32位Byte数组保存在储存的`mcmmt:core_utils.to_bin.bin`路径，或每一位以追踪项名`pos{位置}`储存在计分板`core_utils_to_bin`中。  
+
+例如：  
+对于十进制数5，其二进制表示为101。则函数运行后有以下结果：  
+在mcmmt:core_utils.to_bin.bin: `[B; 1b,0b,1b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b]`。  
+在计分板core_utils_to_bin：pos0、pos2为1，其余pos3~pos31与pos1都为0。  
+
+**可用方法：**
+
+- `mmt_core:utils/to_bin`  
+  **需要传入参数。** 例子：  
+
+  ```mcfunction
+  # value: 需要转成二进制的十进制数。
+  function mmt_core:utils/to_bin {value: 5}
+  ```
+
+- `mmt_core:utils/to_bin_with_score`  
+  使用计分板参数的特化方法。  
+  **需要传入参数。** 例子：  
+
+  ```mcfunction
+  # subj 追踪项名
+  # obj 计分板名
+  function mmt_core:utils/to_bin {subj: test, obj: test_board}
+  ```
+
+## Core.Utils.Bfs
 
 ## Core.Utils.ArcSin
 

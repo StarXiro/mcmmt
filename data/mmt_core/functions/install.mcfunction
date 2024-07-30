@@ -22,7 +22,8 @@ data modify storage mcmmt:core_utils sqrt set value {result: 0.0d, scaler: 1.0f,
 data modify storage mcmmt:core_utils rand set value {result: 0}
 data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
-data modify storage mcmmt:core_utils to_bin set value {bin: [B; 0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b]}
+data modify storage mcmmt:core_utils to_bin set value {bin: [B; 0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b], value: 0}
+data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/private_bfs/presets/no_air", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
 # utils.rand
@@ -79,21 +80,23 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 
 # utils.bfs
 scoreboard objectives add core_utils_search dummy
+scoreboard objectives add core_utils_ptr_depth dummy
 scoreboard players set origin_x core_utils_search 0
 scoreboard players set origin_y core_utils_search 0
 scoreboard players set origin_z core_utils_search 0
 scoreboard players set max_depth core_utils_search 50
 scoreboard players set max_steps core_utils_search 200
 scoreboard players set direction core_utils_search 63
+scoreboard players set visible_ptr core_utils_search 0
 scoreboard players set x_pos_range core_utils_search 10
 scoreboard players set x_neg_range core_utils_search -10
 scoreboard players set y_pos_range core_utils_search 10
 scoreboard players set y_neg_range core_utils_search -10
 scoreboard players set z_pos_range core_utils_search 10
 scoreboard players set z_neg_range core_utils_search -10
-scoreboard players set temp1 core_utils_search 0
-scoreboard players set temp2 core_utils_search 0
-scoreboard players set temp3 core_utils_search 0
+scoreboard players set steps core_utils_search 0
+scoreboard players set temp core_utils_search 0
+execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.bfs
 
 # utils.to_bin
 scoreboard objectives add core_utils_to_bin dummy
@@ -133,6 +136,7 @@ scoreboard players set pos28 core_utils_to_bin 0
 scoreboard players set pos29 core_utils_to_bin 0
 scoreboard players set pos30 core_utils_to_bin 0
 scoreboard players set pos31 core_utils_to_bin 0
+execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.to_bin
 
 # statistics
 scoreboard objectives add stas_last_death dummy
