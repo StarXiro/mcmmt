@@ -2,3 +2,7 @@ scoreboard objectives remove CACconfig
 scoreboard objectives remove CACdisplay
 scoreboard objectives remove CACkill
 scoreboard objectives remove CreeperAndCat
+schedule clear mmt_creeperandcat:game_process/catbuttoncheck
+schedule clear mmt_creeperandcat:game_process/on_tick
+schedule clear mmt_creeperandcat:game_process/end
+schedule clear mmt_creeperandcat:game_process/startcountdown
