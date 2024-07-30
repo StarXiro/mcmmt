@@ -1,0 +1,18 @@
+traditional skb:
+prepare:
+  teleport everyone to the map
+  a brief view form one sight
+  a 5s countdown
+three rounds:
+  in every round:
+    start game:
+      teleport everyone to the cage
+      10s game start countdown
+      release players
+    on game:
+      on_tick:death message
+              border damage
+      border movement
+    one team player alive:
+      round end
+      10s countdown
