@@ -26,6 +26,7 @@ scoreboard objectives remove core_utils_uuid_match
 scoreboard objectives remove core_utils_search
 scoreboard objectives remove core_utils_to_bin
 scoreboard objectives remove core_utils_ptr_depth
+scoreboard objectives remove core_utils_timer
 
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death

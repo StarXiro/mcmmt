@@ -98,6 +98,13 @@ scoreboard players set steps core_utils_search 0
 scoreboard players set temp core_utils_search 0
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.bfs
 
+# utils.timer
+scoreboard objectives add core_utils_timer dummy
+scoreboard players set second core_utils_timer 0
+scoreboard players set tick core_utils_timer 0
+scoreboard players set status core_utils_timer 0
+execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.timer
+
 # utils.to_bin
 scoreboard objectives add core_utils_to_bin dummy
 scoreboard players set input core_utils_to_bin 0

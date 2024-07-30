@@ -15,5 +15,7 @@ function mmt_core:statistics/player_death
 function mmt_core:statistics/player_walk
 function mmt_core:statistics/player_aviate
 
+function mmt_core:utils/private_timer/per_tick
+
 # loop it
 schedule function mmt_core:per_tick 1t replace
