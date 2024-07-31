@@ -46,6 +46,7 @@ data remove storage mcmmt:core_utils sincos
 data remove storage mcmmt:core_utils uuid_match
 data remove storage mcmmt:core_utils to_bin
 data remove storage mcmmt:core_utils search
+data remove storage mcmmt:core_utils timer
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
