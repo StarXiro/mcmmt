@@ -2,10 +2,9 @@
 clear @a[tag=player]
 
 #map reload  ****need to update
-function mmt_tgttos:map/reload0
+function mmt_tgttos:map/reload1
 
 #preparation
-tp @a 9000 101 9000
 gamemode adventure @a[tag=player]
 stopsound @a
 effect give @a[tag=tgttos] weakness infinite 255 true
