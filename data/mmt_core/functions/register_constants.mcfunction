@@ -2,6 +2,8 @@
 scoreboard players set 0 core_datatemp 0
 scoreboard players set -1 core_datatemp -1
 
+scoreboard players set 20 core_datatemp 20
+
 scoreboard players set 2^0 core_datatemp 1
 scoreboard players set 2^1 core_datatemp 2
 scoreboard players set 2^2 core_datatemp 4

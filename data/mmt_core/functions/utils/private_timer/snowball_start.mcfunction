@@ -1,3 +1,3 @@
 
-scoreboard players set status core_utils_timer 2
+function mmt_core:utils/timer_start
 kill @s

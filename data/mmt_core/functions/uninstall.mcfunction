@@ -2,6 +2,9 @@
 
 execute unless data storage mcmmt:core installed run return fail
 
+# stop utils.timer
+schedule clear mmt_core:utils/private_timer/per_tick
+
 # stop core
 schedule clear mmt_core:per_sec
 schedule clear mmt_core:per_tick
@@ -27,6 +30,7 @@ scoreboard objectives remove core_utils_search
 scoreboard objectives remove core_utils_to_bin
 scoreboard objectives remove core_utils_ptr_depth
 scoreboard objectives remove core_utils_timer
+scoreboard objectives remove core_utils_display_timer
 
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death

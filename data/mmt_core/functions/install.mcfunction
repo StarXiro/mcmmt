@@ -24,7 +24,7 @@ data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d,
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
 data modify storage mcmmt:core_utils to_bin set value {bin: [B; 0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b], value: 0}
 data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/private_bfs/presets/no_air", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}}
-data modify storage mcmmt:core_utils timer set value {stamp: 1}
+data modify storage mcmmt:core_utils timer set value {stamp: 1, name: "none"}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
 # utils.rand
@@ -102,15 +102,17 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 # utils.timer
 scoreboard objectives add core_utils_timer dummy
 scoreboard objectives add core_utils_display_timer dummy
+scoreboard players set last_sec core_utils_timer -2147483648
 scoreboard players set second core_utils_timer 0
 scoreboard players set tick core_utils_timer 0
 scoreboard players set status core_utils_timer 0
-scoreboard players set offset core_utils_timer -3
+scoreboard players set offset core_utils_timer -60
 scoreboard players set stamp_index core_utils_timer 1
 scoreboard players set tick core_utils_display_timer 0
 scoreboard players display name tick core_utils_display_timer "游戏刻："
 scoreboard players set second core_utils_display_timer 0
 scoreboard players display name second core_utils_display_timer "秒："
+scoreboard objectives modify core_utils_display_timer displayname {"type": "translatable", "translate": "计时器-[%s]", "with": [{"text": "停止", "color": "gray"}]}
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.timer
 
 # utils.to_bin
