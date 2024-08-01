@@ -42,7 +42,7 @@ Pos - -7020 72 -7010
 |**install.mcfunction**|single|记分板创建与重置<br>地图相关marker生成|info.mcfunction|/|
 |**launch.mcfunction**|single|玩家传送与状态修改<br>游戏数据更新<br>记分板展示<br>循环开始|on_tick.mcfunction<br>on_5tick.mcfunction<br>game_process/one_use/transroundend.mcfunction<br>game_process/intro.mcfunction|/|
 |**on_5tick.mcfunction**|loop|物品给予判定|item/supply.mcfunction|launch.mcfunction|
-|**on_tick.mcfunction**|loop|时间模块调用<br>记分板更新<br>物品追踪<br>三种游戏进程判定及调用<br>三种游戏转换判定及调用<br>死亡追踪<br>结束追踪|time_check/timer.mcfunction<br>scoreboard/scoreboard.mcfunction<br>item/chaser.mcfunction<br>game_process/one_use/transroundxxx.mcfunction<br>game_process/loop/round_xxx.mcfunction<br>death_check/death_check.mcfunction<br>game_process/loop/finish_check.mcfunction|launch.mcfunction|
+|**on_tick.mcfunction**|loop|时间模块调用<br>记分板更新<br>物品追踪<br>三种游戏进程判定及调用<br>三种游戏转换判定及调用<br>死亡追踪<br>结束追踪|time_check/timer.mcfunction<br>scoreboard/scoreboard.mcfunction<br>item/chaser.mcfunction<br>game_process/one_use/transroundxxx.mcfunction<br>game_process/loop/round_xxx.mcfunction<br>death_check/death_check.mcfunction<br>game_process/loop/tgttos_finish_check.mcfunction|launch.mcfunction|
 |**stop.mcfunction**|single|双循环函数停止|/|/|
 |**uninstall.mcfunction**|single|记分板注销<br>data注销<br>marker卸载|/|/|
 

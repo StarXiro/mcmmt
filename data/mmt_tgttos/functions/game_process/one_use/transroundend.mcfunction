@@ -9,7 +9,7 @@ gamemode adventure @a[tag=player]
 stopsound @a
 effect give @a[tag=tgttos] weakness infinite 255 true
 effect give @a[tag=tgttos] saturation infinite 255 true
-scoreboard players set @a[tag=player] finish_count 0
+scoreboard players set @a[tag=player] tgttos_finish_count 0
 
 #round++
 scoreboard players add round_count tgttos 1

@@ -4,7 +4,7 @@
 kill @e[type=ocelot]
 
 #map reload
-scoreboard players set @e[name="noname"] tgttosconfig 1
+scoreboard players set @e[name="noname"] tgttos_config 1
 
 #item supply
 item replace entity @a[tag=tgttos] armor.chest with elytra 
