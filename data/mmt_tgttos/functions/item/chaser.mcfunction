@@ -8,5 +8,6 @@ execute at @e[type=item,name="蓝色羊毛"] as @p[distance=..1.5,team=blue] if 
 execute at @e[type=item,name="青色羊毛"] as @p[distance=..1.5,team=aqua] if entity @s[nbt=!{SelectedItem:{id:"minecraft:shears"}}] run item replace entity @s weapon.mainhand with cyan_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"],HideFlags:28} 64
 execute at @e[type=item,name="粉红色羊毛"] as @p[distance=..1.5,team=pink] if entity @s[nbt=!{SelectedItem:{id:"minecraft:shears"}}] run item replace entity @s weapon.mainhand with pink_wool{CanDestroy:["#mmt_core:team_wools"],CanPlaceOn:["#mmt_core:survival_blocks"],HideFlags:28} 64
 execute at @e[type=item,name="剪刀"] as @p run item replace entity @s weapon.mainhand with shears{display:{Name:'{"text":"喵喵剪","color":"gray","italic":false}'},CanDestroy:["#mmt_core:team_wools"],"Unbreakable":1,HideFlags:28}
+execute at @e[type=item,name="生鳕鱼"] as @p run item replace entity @s hotbar.8 with cod 64
 execute at @a[tag=tgttos] if entity @s[nbt=!{SelectedItem:{id:"minecraft:shears"}}] run item modify entity @s weapon count64
 function mmt_tgttos:item/killer
