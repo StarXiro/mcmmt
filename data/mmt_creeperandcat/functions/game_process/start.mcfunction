@@ -9,7 +9,7 @@ scoreboard players set second CACconfig 0
 scoreboard players set ticker CACconfig 0
 
 effect give @a[tag=cat] strength infinite 255 true
-effect give @a[tag=creeper] glowing infinite
+effect give @a[tag=creeper] glowing infinite 1 true
 #attribute @a[tag=creeper] generic.max_health base set 1
 execute as @a[tag=creeper] run attribute @s generic.max_health base set 1
 
