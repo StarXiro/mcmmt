@@ -34,7 +34,7 @@ scoreboard players operation pink tgttos_finish_count += @a[tag=player,team=pink
 #execute as @e[name="game_count"] store result storage tgttos:scoreboard game_count int 1 run scoreboard players get @s config    已弃用,此处保留以作提示。
 
 #get scoreboard marks for data
-execute as @r store result storage tgttos:scoreboard game_count int 1 run scoreboard players get game_count config
+execute as @r store result storage tgttos:scoreboard game_count int 1 run scoreboard players get game_count core_game_config
 execute as @r store result storage tgttos:scoreboard round_count int 1 run scoreboard players get round_count tgttos
 execute as @r store result storage tgttos:scoreboard minute int 1 run scoreboard players get minute tgttos
 execute as @r store result storage tgttos:scoreboard second int 1 run scoreboard players get second tgttos

@@ -181,6 +181,11 @@ scoreboard objectives add stas_last_elytra dummy
 scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
 execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
 
+# setup global variables
+scoreboard objectives add core_game_config dummy
+scoreboard objectives add core_player_score dummy
+scoreboard objectives add core_personalscore trigger
+
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
 #--- Custom Inserts
