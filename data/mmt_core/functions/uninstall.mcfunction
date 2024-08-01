@@ -31,6 +31,7 @@ scoreboard objectives remove core_utils_to_bin
 scoreboard objectives remove core_utils_ptr_depth
 scoreboard objectives remove core_utils_timer
 scoreboard objectives remove core_utils_display_timer
+scoreboard objectives remove core_utils_color_panel
 
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death
@@ -51,6 +52,7 @@ data remove storage mcmmt:core_utils uuid_match
 data remove storage mcmmt:core_utils to_bin
 data remove storage mcmmt:core_utils search
 data remove storage mcmmt:core_utils timer
+data remove storage mcmmt:core_utils color_panel
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
