@@ -1,5 +1,4 @@
-# vscode
-datapacks/mcmmt/.vscode
+.vscode
 
 # pycache
-datapacks/mcmmt/__pycache__
+__pycache__
