@@ -33,12 +33,12 @@ execute if score ticker CACconfig matches 20 run say 1114
 ##finish later
 
 ##round end
-execute as @a[tag=cat] run execute if score @s CACkill matches 3 run gamemode spectator @s
-execute as @a[tag=cat] run execute if score @s CACkill matches 3 run schedule clear mmt_creeperandcat:game_process/on_tick
-execute as @a[tag=cat] run execute if score @s CACkill matches 3 run say Round End
-execute as @a[tag=cat] run execute if score @s CACkill matches 3 run scoreboard players set ticker CACconfig 0
-execute as @a[tag=cat] run execute if score @s CACkill matches 3 run scoreboard players set second CACconfig 0
-execute as @a[tag=cat] run execute if score @s CACkill matches 3 run function mmt_creeperandcat:game_process/end
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run gamemode spectator @s
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run schedule clear mmt_creeperandcat:game_process/on_tick
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run say Round End
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run scoreboard players set ticker CACconfig 0
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig scoreboard players set second CACconfig 0
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run function mmt_creeperandcat:game_process/end
 
 execute if score second CACconfig matches 60 run schedule clear mmt_creeperandcat:game_process/on_tick
 execute if score second CACconfig matches 60 run say Round End
@@ -46,3 +46,4 @@ execute if score second CACconfig matches 60 run function mmt_creeperandcat:game
 execute if score second CACconfig matches 60 run scoreboard players set ticker CACconfig 0
 execute if score second CACconfig matches 60 run scoreboard players set second CACconfig 0
 
+execute as @e[type=ender_pearl] run function mmt_creeperandcat:game_process/pearl
