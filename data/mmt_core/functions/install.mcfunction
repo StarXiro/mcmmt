@@ -26,7 +26,7 @@ data modify storage mcmmt:core_utils to_bin set value {bin: [B; 0b,0b,0b,0b,0b,0
 data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/private_bfs/presets/no_air", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}}
 data modify storage mcmmt:core_utils color_panel set value {r: 0.0d, g: 0.0d, b:0.0d, args: {angle: 0.0f, distance: 0}, particle: "minecraft:dust", trailing: "1 ~ ~ ~ 0 0 0 1 1 force @a"}
 data modify storage mcmmt:core_utils timer set value {stamp: 1}
-data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], callback: ""}
+data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}}
 data modify storage mcmmt:core_utils linear_map set value {from: [0, 100], to: [0, 100], temp: [0, 0]}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
@@ -177,6 +177,13 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 # utils.check_point
 scoreboard objectives add core_utils_check_point dummy
 scoreboard objectives add core_utils_check_point_id dummy
+scoreboard players set show_marker core_utils_check_point 0
+scoreboard players set force_ascend core_utils_check_point 0
+scoreboard players set max_index core_utils_check_point 0
+scoreboard players set out_of_bound core_utils_check_point 0
+scoreboard players set index core_utils_check_point 0
+scoreboard players set temp core_utils_check_point 0
+execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.check_point
 
 # utils.linear_map
 scoreboard objectives add core_utils_linear_map dummy
@@ -189,6 +196,7 @@ scoreboard players set temp2 core_utils_linear_map 0
 scoreboard players set temp3 core_utils_linear_map 0
 scoreboard players set input core_utils_linear_map 0
 scoreboard players set result core_utils_linear_map 0
+execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.linear_map
 
 # statistics
 scoreboard objectives add stas_last_death dummy
