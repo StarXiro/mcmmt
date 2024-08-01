@@ -37,7 +37,7 @@ execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig r
 execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run schedule clear mmt_creeperandcat:game_process/on_tick
 execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run say Round End
 execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run scoreboard players set ticker CACconfig 0
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig scoreboard players set second CACconfig 0
+execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run scoreboard players set second CACconfig 0
 execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run function mmt_creeperandcat:game_process/end
 
 execute if score second CACconfig matches 60 run schedule clear mmt_creeperandcat:game_process/on_tick
