@@ -1,35 +1,35 @@
-#player_count check /is must? y
-scoreboard players reset * player_count
-scoreboard players set @a[tag=player] player_count 1
-scoreboard players operation all player_count += @a[tag=player] player_count
-scoreboard players operation red player_count += @a[tag=player,team=red] player_count
-scoreboard players operation orange player_count += @a[tag=player,team=orange] player_count
-scoreboard players operation yellow player_count += @a[tag=player,team=yellow] player_count
-scoreboard players operation lime player_count += @a[tag=player,team=lime] player_count
-scoreboard players operation green player_count += @a[tag=player,team=green] player_count
-scoreboard players operation aqua player_count += @a[tag=player,team=aqua] player_count
-scoreboard players operation blue player_count += @a[tag=player,team=blue] player_count
-scoreboard players operation pink player_count += @a[tag=player,team=pink] player_count
+#tgttos_player_count check /is must? y
+scoreboard players reset * tgttos_player_count
+scoreboard players set @a[tag=player] tgttos_player_count 1
+scoreboard players operation all tgttos_player_count += @a[tag=player] tgttos_player_count
+scoreboard players operation red tgttos_player_count += @a[tag=player,team=red] tgttos_player_count
+scoreboard players operation orange tgttos_player_count += @a[tag=player,team=orange] tgttos_player_count
+scoreboard players operation yellow tgttos_player_count += @a[tag=player,team=yellow] tgttos_player_count
+scoreboard players operation lime tgttos_player_count += @a[tag=player,team=lime] tgttos_player_count
+scoreboard players operation green tgttos_player_count += @a[tag=player,team=green] tgttos_player_count
+scoreboard players operation aqua tgttos_player_count += @a[tag=player,team=aqua] tgttos_player_count
+scoreboard players operation blue tgttos_player_count += @a[tag=player,team=blue] tgttos_player_count
+scoreboard players operation pink tgttos_player_count += @a[tag=player,team=pink] tgttos_player_count
 
-#finish_count
-scoreboard players reset all finish_count
-scoreboard players reset red finish_count
-scoreboard players reset orange finish_count
-scoreboard players reset yellow finish_count
-scoreboard players reset lime finish_count
-scoreboard players reset green finish_count
-scoreboard players reset aqua finish_count
-scoreboard players reset blue finish_count
-scoreboard players reset pink finish_count
-scoreboard players operation all finish_count += @a[tag=player] finish_count
-scoreboard players operation red finish_count += @a[tag=player,team=red] finish_count
-scoreboard players operation orange finish_count += @a[tag=player,team=orange] finish_count
-scoreboard players operation yellow finish_count += @a[tag=player,team=yellow] finish_count
-scoreboard players operation lime finish_count += @a[tag=player,team=lime] finish_count
-scoreboard players operation green finish_count += @a[tag=player,team=green] finish_count
-scoreboard players operation aqua finish_count += @a[tag=player,team=aqua] finish_count
-scoreboard players operation blue finish_count += @a[tag=player,team=blue] finish_count
-scoreboard players operation pink finish_count += @a[tag=player,team=pink] finish_count
+#tgttos_finish_count
+scoreboard players reset all tgttos_finish_count
+scoreboard players reset red tgttos_finish_count
+scoreboard players reset orange tgttos_finish_count
+scoreboard players reset yellow tgttos_finish_count
+scoreboard players reset lime tgttos_finish_count
+scoreboard players reset green tgttos_finish_count
+scoreboard players reset aqua tgttos_finish_count
+scoreboard players reset blue tgttos_finish_count
+scoreboard players reset pink tgttos_finish_count
+scoreboard players operation all tgttos_finish_count += @a[tag=player] tgttos_finish_count
+scoreboard players operation red tgttos_finish_count += @a[tag=player,team=red] tgttos_finish_count
+scoreboard players operation orange tgttos_finish_count += @a[tag=player,team=orange] tgttos_finish_count
+scoreboard players operation yellow tgttos_finish_count += @a[tag=player,team=yellow] tgttos_finish_count
+scoreboard players operation lime tgttos_finish_count += @a[tag=player,team=lime] tgttos_finish_count
+scoreboard players operation green tgttos_finish_count += @a[tag=player,team=green] tgttos_finish_count
+scoreboard players operation aqua tgttos_finish_count += @a[tag=player,team=aqua] tgttos_finish_count
+scoreboard players operation blue tgttos_finish_count += @a[tag=player,team=blue] tgttos_finish_count
+scoreboard players operation pink tgttos_finish_count += @a[tag=player,team=pink] tgttos_finish_count
 
 #execute as @e[name="game_count"] store result storage tgttos:scoreboard game_count int 1 run scoreboard players get @s config    已弃用,此处保留以作提示。
 
@@ -38,8 +38,8 @@ execute as @r store result storage tgttos:scoreboard game_count int 1 run scoreb
 execute as @r store result storage tgttos:scoreboard round_count int 1 run scoreboard players get round_count tgttos
 execute as @r store result storage tgttos:scoreboard minute int 1 run scoreboard players get minute tgttos
 execute as @r store result storage tgttos:scoreboard second int 1 run scoreboard players get second tgttos
-execute as @r store result storage tgttos:scoreboard player_count int 1 run scoreboard players get all player_count
-execute as @r store result storage tgttos:scoreboard finish_count int 1 run scoreboard players get all finish_count
+execute as @r store result storage tgttos:scoreboard tgttos_player_count int 1 run scoreboard players get all tgttos_player_count
+execute as @r store result storage tgttos:scoreboard tgttos_finish_count int 1 run scoreboard players get all tgttos_finish_count
 
 #get map_name
 data modify storage tgttos:scoreboard map_name set from entity @e[scores={tgttosconfig=1},tag=map,limit=1] CustomName

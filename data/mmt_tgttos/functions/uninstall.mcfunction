@@ -7,8 +7,8 @@ data remove storage tgttosscoreboard *
 
 #scoreboard del
 scoreboard objectives remove tgttosscoreboard
-scoreboard objectives remove player_count
-scoreboard objectives remove finish_count
+scoreboard objectives remove tgttos_player_count
+scoreboard objectives remove tgttos_finish_count
 scoreboard objectives remove tgttos
 scoreboard objectives remove tgttosconfig
 

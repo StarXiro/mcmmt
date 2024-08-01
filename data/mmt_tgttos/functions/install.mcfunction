@@ -2,8 +2,8 @@
 execute if score logon core_setting matches 1 run function mmt_tgttos:info
 
 #initialize
-scoreboard objectives add player_count dummy
-scoreboard objectives add finish_count dummy
+scoreboard objectives add tgttos_player_count dummy
+scoreboard objectives add tgttos_finish_count dummy
 scoreboard objectives add tgttos dummy
 scoreboard objectives add tgttosconfig dummy
 scoreboard players set round_count tgttos 0
@@ -31,8 +31,8 @@ scoreboard players display name 占位 tgttosscoreboard [{"text":"  "}]
 scoreboard players display name 占位2 tgttosscoreboard [{"text":"  "}]
 scoreboard objectives add finish_check dummy
 scoreboard objectives add LoveCause dummy
-scoreboard players reset * finish_count
-scoreboard players set @a[tag=player] finish_count 0
+scoreboard players reset * tgttos_finish_count
+scoreboard players set @a[tag=player] tgttos_finish_count 0
 
 #scoreboard other configs
 scoreboard players display name 游戏积分 tgttosscoreboard {"text":"本游戏积分:","color":"aqua"}

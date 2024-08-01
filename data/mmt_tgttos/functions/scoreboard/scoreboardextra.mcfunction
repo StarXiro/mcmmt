@@ -5,7 +5,7 @@ $execute as @r run scoreboard players display name 游戏进度 tgttosscoreboard
 $execute as @r run scoreboard players display name 当前地图 tgttosscoreboard [{"text":"当前地图: ","color":"aqua"},{"color":"white","text":$(map_name)}]
 
 #player_finished with sum
-$execute as @r run scoreboard players display name 玩家数 tgttosscoreboard [{"text":"已完成玩家: ","color":"green"},{"text":"$(finish_count)","color":"green"},{"text":"/","color":"green"},{"text":"$(player_count)","color":"green"}]
+$execute as @r run scoreboard players display name 玩家数 tgttosscoreboard [{"text":"已完成玩家: ","color":"green"},{"text":"$(tgttos_finish_count)","color":"green"},{"text":"/","color":"green"},{"text":"$(tgttos_player_count)","color":"green"}]
 
 #round_count
 $execute as @r run scoreboard players display name 当前回合 tgttosscoreboard [{"text":"当前回合: ","color":"aqua"},{"text":"$(round_count)","color":"white"},{"text":"/6","color":"white"}]
