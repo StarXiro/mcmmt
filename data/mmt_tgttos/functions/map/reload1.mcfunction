@@ -4,7 +4,7 @@
 kill @e[type=ocelot]
 
 #map reload
-scoreboard players set @e[name="codake"] tgttosconfig 1
+scoreboard players set @e[name="codake"] tgttos_config 1
 forceload add 7978 7966 8090 8030
 forceload add 8978 8966 9090 9030
 clone 7978 72 7966 8090 115 8030 8978 72 8966 

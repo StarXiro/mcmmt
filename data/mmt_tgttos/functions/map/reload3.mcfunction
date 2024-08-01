@@ -4,7 +4,7 @@
 kill @e[type=ocelot]
 
 #map reload
-scoreboard players set @e[name="My Go!!"] tgttosconfig 1
+scoreboard players set @e[name="My Go!!"] tgttos_config 1
 
 #item supply
 item replace entity @a[tag=tgttos] hotbar.8 with cod 64

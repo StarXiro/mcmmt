@@ -42,7 +42,7 @@ execute as @r store result storage tgttos:scoreboard tgttos_player_count int 1 r
 execute as @r store result storage tgttos:scoreboard tgttos_finish_count int 1 run scoreboard players get all tgttos_finish_count
 
 #get map_name
-data modify storage tgttos:scoreboard map_name set from entity @e[scores={tgttosconfig=1},tag=map,limit=1] CustomName
+data modify storage tgttos:scoreboard map_name set from entity @e[scores={tgttos_config=1},tag=map,limit=1] CustomName
 
 #run 宏function
 execute as @r run function mmt_tgttos:scoreboard/scoreboardextra with storage tgttos:scoreboard
