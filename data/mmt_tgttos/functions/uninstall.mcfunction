@@ -10,6 +10,7 @@ data remove storage tgttos_scoreboard *
 scoreboard objectives remove tgttos_scoreboard
 scoreboard objectives remove tgttos_player_count
 scoreboard objectives remove tgttos_finish_count
+scoreboard objectives remove tgttos_finish_check
 scoreboard objectives remove tgttos
 scoreboard objectives remove tgttos_config
 

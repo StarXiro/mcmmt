@@ -43,7 +43,7 @@ scoreboard objectives remove stas_this_elytra
 
 scoreboard objectives remove core_game_config
 scoreboard objectives remove core_player_score
-scoreboard objectives remove core_personalscore
+scoreboard objectives remove personalscore
 # remove storage
 execute if score logon core_setting matches 1 run say Removing storage
 data remove storage mcmmt:core installed
