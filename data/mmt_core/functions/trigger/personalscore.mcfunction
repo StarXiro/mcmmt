@@ -1,6 +1,7 @@
 tellraw @s "当前个人积分:"
 tellraw @s " "
-data modify storage mcmmt:core_utils SBSconfig set value {loop_max:32,scoreboardname:"core_player_score",loop_cnt:0,score:0}
+data modify storage mcmmt:core_utils SBSconfig.scoreboardname set value "core_player_score"
+data modify storage mcmmt:core_utils SBSconfig.loop_max set value 32
 function mmt_core:utils/sbs_with_score with storage mcmmt:core_utils SBSconfig
 execute as @a if score @s core_player_score = 1 core_utils_sbs_rank run tellraw @a[scores={personalscore=1..}] {"translate":"1. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"core_player_score"}}]}
 execute as @a if score @s core_player_score = 2 core_utils_sbs_rank run tellraw @a[scores={personalscore=1..}] {"translate":"2. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"core_player_score"}}]}
