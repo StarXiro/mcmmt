@@ -35,6 +35,8 @@ scoreboard objectives remove core_utils_color_panel
 scoreboard objectives remove core_utils_check_point
 scoreboard objectives remove core_utils_check_point_id
 scoreboard objectives remove core_utils_linear_map
+scoreboard objectives remove core_utils_sbs_temp
+scoreboard objectives remove core_utils_sbs_rank
 
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death
@@ -46,7 +48,7 @@ scoreboard objectives remove stas_this_elytra
 
 scoreboard objectives remove core_game_config
 scoreboard objectives remove core_player_score
-scoreboard objectives remove core_personalscore
+scoreboard objectives remove personalscore
 # remove storage
 execute if score logon core_setting matches 1 run say Removing storage
 data remove storage mcmmt:core installed

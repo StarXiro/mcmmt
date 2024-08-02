@@ -212,7 +212,14 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for sta
 # setup global variables
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy
-scoreboard objectives add core_personalscore trigger
+
+# utils personalscore initialize
+scoreboard objectives add personalscore trigger
+scoreboard players enable @a personalscore
+
+# utils scoreboard bubble sort
+scoreboard objectives add core_utils_sbs_temp dummy
+scoreboard objectives add core_utils_sbs_rank dummy
 
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
@@ -220,6 +227,7 @@ execute if score logon core_setting matches 1 run say Installing mini games...
 function mmt_dynaball:install
 function mmt_tgttos:install
 function mmt_creeperandcat:install
+function mmt_lobby:install
 
 # run loop
 execute if score logon core_setting matches 1 run say Start loop

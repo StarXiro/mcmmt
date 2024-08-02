@@ -18,7 +18,10 @@ scoreboard players reset * CACdisplay
 scoreboard objectives modify CACdisplay numberformat blank
 scoreboard objectives modify CACdisplay displayautoupdate true
 
-data modify storage creeperandcat:map set append value Village
+data modify storage creeperandcat map append value Village
+data modify storage creeperandcat round append value 1
+data modify storage creeperandcat second append value 1
+
 
 #temp time display
 #scoreboard objectives setdisplay list 

@@ -17,5 +17,6 @@ function mmt_core:statistics/player_aviate
 
 function mmt_core:utils/private_timer/snowball_check
 
+execute as @a[scores={personalscore=1..}] run function mmt_core:trigger/personalscore
 # loop it
 schedule function mmt_core:per_tick 1t replace

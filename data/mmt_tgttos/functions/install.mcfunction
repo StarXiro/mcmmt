@@ -8,6 +8,8 @@ scoreboard objectives add tgttos dummy
 scoreboard objectives add tgttos_config dummy
 scoreboard players set round_count tgttos 0
 scoreboard players set @e[tag=map] map_name 0
+scoreboard players set secs tgttos 1200
+scoreboard players set secs2 tgttos 20
 
 #scoreboard display initialization
 scoreboard objectives add tgttos_scoreboard dummy {"text":"TGTTOSAFTC","color":"gold","bold":true}
