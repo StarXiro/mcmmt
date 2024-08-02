@@ -23,7 +23,7 @@ data modify storage mcmmt:core_utils rand set value {result: 0}
 data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
 data modify storage mcmmt:core_utils to_bin set value {bin: [B; 0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b], value: 0}
-data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/private_bfs/presets/no_air", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}}
+data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/private_bfs/presets/no_air", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}, map_args: {from: [0, 0], to: [-1500, 1500]}}
 data modify storage mcmmt:core_utils color_panel set value {r: 0.0d, g: 0.0d, b:0.0d, args: {angle: 0.0f, distance: 0}, particle: "minecraft:dust", trailing: "1 ~ ~ ~ 0 0 0 1 1 force @a"}
 data modify storage mcmmt:core_utils timer set value {stamp: 1}
 data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}, vec3_temp: [0, 0, 0]}
@@ -85,14 +85,12 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 
 # utils.bfs
 scoreboard objectives add core_utils_search dummy
-scoreboard objectives add core_utils_ptr_depth dummy
 scoreboard players set origin_x core_utils_search 0
 scoreboard players set origin_y core_utils_search 0
 scoreboard players set origin_z core_utils_search 0
 scoreboard players set max_depth core_utils_search 50
 scoreboard players set max_steps core_utils_search 200
 scoreboard players set direction core_utils_search 63
-scoreboard players set visible_ptr core_utils_search 0
 scoreboard players set x_pos_range core_utils_search 10
 scoreboard players set x_neg_range core_utils_search -10
 scoreboard players set y_pos_range core_utils_search 10
@@ -100,6 +98,7 @@ scoreboard players set y_neg_range core_utils_search -10
 scoreboard players set z_pos_range core_utils_search 10
 scoreboard players set z_neg_range core_utils_search -10
 scoreboard players set steps core_utils_search 0
+scoreboard players set depth core_utils_search 0
 scoreboard players set temp core_utils_search 0
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.bfs
 
@@ -162,7 +161,7 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 # utils.color_panel
 scoreboard objectives add core_utils_color_panel dummy
 scoreboard players set angle core_utils_color_panel 0
-scoreboard players set distance core_utils_color_panel 0
+scoreboard players set distance core_utils_color_panel 500
 scoreboard players set red core_utils_color_panel 0
 scoreboard players set blue core_utils_color_panel 0
 scoreboard players set green core_utils_color_panel 0
