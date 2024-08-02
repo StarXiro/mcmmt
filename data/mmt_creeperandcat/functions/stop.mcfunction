@@ -6,3 +6,5 @@ schedule clear mmt_creeperandcat:game_process/catbuttoncheck
 schedule clear mmt_creeperandcat:game_process/on_tick
 schedule clear mmt_creeperandcat:game_process/end
 schedule clear mmt_creeperandcat:game_process/startcountdown
+
+execute as @a run attribute @s generic.max_health base set 20

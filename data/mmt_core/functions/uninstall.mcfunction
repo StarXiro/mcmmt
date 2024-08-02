@@ -64,6 +64,7 @@ data remove storage mcmmt:core_utils timer
 data remove storage mcmmt:core_utils color_panel
 data remove storage mcmmt:core_utils check_point
 data remove storage mcmmt:core_utils linear_map
+data remove storage mcmmt:core_utils SBSconfig
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
