@@ -4,7 +4,7 @@
 # force_ascend
 
 $data modify storage mcmmt:core_utils check_point.points set value $(points)
-$data modify storage mcmmt:core_utils check_point.callback set value $(callback)
+$data modify storage mcmmt:core_utils check_point.callback set value "$(callback)"
 $scoreboard players set force_ascend core_utils_check_point $(force_ascend)
 
 function mmt_core:utils/private_check_point/get_max_index

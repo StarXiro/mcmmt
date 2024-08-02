@@ -4,7 +4,7 @@
 # z
 # id
 
-function mmt_core:utils/linear_map_set with storage mcmmt:core_utils map_args
+function mmt_core:utils/linear_map_set with storage mcmmt:core_utils check_point.map_args
 $scoreboard players set input core_utils_linear_map $(id)
 function mmt_core:utils/private_linear_map/calc
 
