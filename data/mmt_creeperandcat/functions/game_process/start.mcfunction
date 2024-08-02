@@ -12,13 +12,13 @@ scoreboard players set kill CACconfig 0
 execute as @a[tag=player] run scoreboard players set @s CACdeath 0
 
 effect give @a[tag=cat] strength infinite 255 true
+effect give @a[tag=creeper] weakness infinite 10 true
 effect give @a[tag=creeper] glowing infinite 1 true
 #attribute @a[tag=creeper] generic.max_health base set 1
 execute as @a[tag=creeper] run attribute @s generic.max_health base set 1
 
 scoreboard players set runnercount CACconfig 0
 execute as @a[team=red] run scoreboard players add runnercount CACconfig 1
-give @a[tag=creeper] ender_pearl 2
 give @a[tag=cat] splash_potion{custom_potion_effects:[{id:"minecraft:speed",duration:100}],Potion:"shabi"}
 
 scoreboard players set second1 CACconfig 5
