@@ -29,6 +29,7 @@ data modify storage mcmmt:core_utils timer set value {stamp: 1}
 data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}, vec3_temp: [0, 0, 0]}
 data modify storage mcmmt:core_utils linear_map set value {from: [0, 100], to: [0, 100], temp: [0, 0]}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
+data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
 
 # utils.rand
 scoreboard objectives add core_utils_rand dummy
@@ -209,6 +210,13 @@ scoreboard objectives add stas_last_elytra dummy
 scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
 execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
 
+# utils scoreboard bubble sort
+scoreboard objectives add core_utils_sbs_temp dummy
+scoreboard objectives add core_utils_sbs_rank dummy
+scoreboard objectives add core_utils_sbs_sort dummy
+scoreboard players set SBS_temp core_utils_sbs_sort 0
+execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sbs
+
 # setup global variables
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy
@@ -218,12 +226,6 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for glo
 scoreboard objectives add personalscore trigger
 scoreboard players enable @a personalscore
 execute if score logon core_setting matches 1 run say Inited scoreboards for triggers
-
-# utils scoreboard bubble sort
-scoreboard objectives add core_utils_sbs_temp dummy
-scoreboard objectives add core_utils_sbs_rank dummy
-scoreboard objectives add core_utils_sbs_sort dummy
-execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sbs
 
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
