@@ -8,5 +8,6 @@ execute if score second CACconfig matches 5 run schedule clear mmt_creeperandcat
 execute if score second CACconfig matches 5 run scoreboard players set ticker CACconfig 0
 execute if score second CACconfig matches 5 run function mmt_creeperandcat:game_process/on_tick
 execute if score second CACconfig matches 5 run scoreboard players set timemode CACconfig 4
+execute if score second CACconfig matches 5 run scoreboard players set second1 CACconfig 60
 execute if score second CACconfig matches 5 run scoreboard players set second CACconfig 0
 

@@ -27,24 +27,27 @@ setblock -4951 105 -4970 air
 ##timer
 scoreboard players add ticker CACconfig 1
 execute if score ticker CACconfig matches 20 run scoreboard players add second CACconfig 1
+execute if score ticker CACconfig matches 20 run scoreboard players remove second1 CACconfig 1
 execute if score ticker CACconfig matches 20 run scoreboard players remove ticker CACconfig 20
 execute if score ticker CACconfig matches 20 run say 1114
 ##creeper caught
 ##finish later
-execute as @a[tag=cat] run execute if score @s CACkill > kill CACconfig run scoreboard players add kill CACconfig 1
+execute as @a[tag=cat] run execute if score @s CACkill > kill CACconfig run function mmt_creeperandcat:game_process/killcreeper
 
 ##round end
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run gamemode spectator @s
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run schedule clear mmt_creeperandcat:game_process/on_tick
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run say Round End
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run scoreboard players set ticker CACconfig 0
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run scoreboard players set second CACconfig 0
-execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run function mmt_creeperandcat:game_process/end
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run gamemode spectator @s
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run schedule clear mmt_creeperandcat:game_process/on_tick
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run say Round End
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run scoreboard players set ticker CACconfig 0
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run scoreboard players set second CACconfig 0
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run scoreboard players set second1 CACconfig 20
+execute as @a[tag=cat] run execute if score @s CACkill = runnercount CACconfig run function mmt_creeperandcat:game_process/end
 
 execute if score second CACconfig matches 60 run schedule clear mmt_creeperandcat:game_process/on_tick
 execute if score second CACconfig matches 60 run say Round End
 execute if score second CACconfig matches 60 run function mmt_creeperandcat:game_process/end
 execute if score second CACconfig matches 60 run scoreboard players set ticker CACconfig 0
 execute if score second CACconfig matches 60 run scoreboard players set second CACconfig 0
+execute if score second CACconfig matches 60 run scoreboard players set second1 CACconfig 20
 
 execute as @e[type=ender_pearl] run function mmt_creeperandcat:game_process/pearl
