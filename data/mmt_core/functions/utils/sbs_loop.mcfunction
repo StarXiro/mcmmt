@@ -1,5 +1,5 @@
 #start loop
-schedule function mmt_core:utils/sbs_loop
+schedule function mmt_core:utils/sbs_loop 1t
 
 #max score
 scoreboard players set @a[scores={core_utils_sbs_sort=-2147483648..2147483647}] core_utils_sbs_sort -2147483640
