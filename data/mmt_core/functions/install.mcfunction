@@ -211,9 +211,13 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for sta
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy
 
-#personalscore initialize
+# utils personalscore initialize
 scoreboard objectives add personalscore trigger
 scoreboard players enable @a personalscore
+
+# utils scoreboard bubble sort
+scoreboard objectives add core_utils_sbs_temp dummy
+scoreboard objectives add core_utils_sbs_rank dummy
 
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
