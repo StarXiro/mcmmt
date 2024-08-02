@@ -1,4 +1,5 @@
 #start loop
+schedule function mmt_core:utils/sbs_loop
 
 #max score
 scoreboard players set @a[scores={core_utils_sbs_sort=-2147483648..2147483647}] core_utils_sbs_sort -2147483640
@@ -14,4 +15,4 @@ $execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] if score @s
 
 #remove
 execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] if score @s core_utils_sbs_temp = @s core_utils_sbs_sort run scoreboard players set @s core_utils_sbs_temp -9999
-execute if score loop_cnt core_utils_sbs_sort < loop_max core_utils_sbs_sort run function mmt_core:utils/sbs_loop
+execute if score loop_cnt core_utils_sbs_sort >= loop_max core_utils_sbs_sort run schedule clear mmt_core:utils/sbs_loop
