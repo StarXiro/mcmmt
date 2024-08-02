@@ -4,3 +4,4 @@ setblock -4992 121 -4968 white_stained_glass
 setblock -4992 121 -4967 white_stained_glass
 setblock -4992 121 -4966 white_stained_glass
 team join blue @s
+setblock -4998 121 -4967 air

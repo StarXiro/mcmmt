@@ -31,6 +31,7 @@ execute if score ticker CACconfig matches 20 run scoreboard players remove ticke
 execute if score ticker CACconfig matches 20 run say 1114
 ##creeper caught
 ##finish later
+execute as @a[tag=cat] run execute if score @s CACkill > kill CACconfig run scoreboard players add kill CACconfig 1
 
 ##round end
 execute as @a[tag=cat] run execute if score @s CACkill = playercount CACconfig run gamemode spectator @s

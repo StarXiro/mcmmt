@@ -1,4 +1,5 @@
 schedule function mmt_creeperandcat:game_process/end 1t
+scoreboard players set timemode CACconfig 5
 
 scoreboard players add ticker CACconfig 1
 execute if score ticker CACconfig matches 20 run scoreboard players add second CACconfig 1
