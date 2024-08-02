@@ -4,7 +4,6 @@
 # z [z轴差值区间]
 # max_depth 最大深度
 # max_steps 最大步数
-# visible_ptr 指针是否可见
 # direction 方向（复合参数）
 # on_block 函数路径
 
@@ -22,8 +21,9 @@ execute store result score z_neg_range core_utils_search run data get storage mc
 execute store result score z_pos_range core_utils_search run data get storage mcmmt:core_utils search.args.z[1] 1.0
 
 $scoreboard players set max_depth core_utils_search $(max_depth)
+$data modify storage mcmmt:core_utils search.map_args.from[1] set value $(max_depth)
+
 $scoreboard players set max_steps core_utils_search $(max_steps)
 $scoreboard players set direction core_utils_search $(direction)
-$scoreboard players set visible_ptr core_utils_search $(visible_ptr)
 
-$data modify storage mcmmt:core_utils search.on_block set value $(on_block)
+$data modify storage mcmmt:core_utils search.on_block set value "$(on_block)"

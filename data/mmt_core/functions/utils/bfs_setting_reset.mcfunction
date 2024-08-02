@@ -10,4 +10,3 @@ scoreboard players set y_pos_range core_utils_search 10
 scoreboard players set y_neg_range core_utils_search -10
 scoreboard players set z_pos_range core_utils_search 10
 scoreboard players set z_neg_range core_utils_search -10
-scoreboard players set visible_ptr core_utils_search 0
