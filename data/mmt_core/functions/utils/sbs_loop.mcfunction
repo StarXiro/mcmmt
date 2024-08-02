@@ -13,5 +13,5 @@ execute as @r store result storage mcmmt:core_utils SBSconfig.loop_cnt int 1 run
 $execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] if score @s core_utils_sbs_temp = @s core_utils_sbs_sort run scoreboard players set $(loop_cnt) core_utils_sbs_rank $(score)
 
 #remove
-execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] if score @s core_utils_sbs_temp = @s core_utils_sbs_sort run scoreboard players reset @s core_utils_sbs_temp
+execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] if score @s core_utils_sbs_temp = @s core_utils_sbs_sort run scoreboard players set @s core_utils_sbs_temp -9999
 execute if score loop_cnt core_utils_sbs_sort < loop_max core_utils_sbs_sort run function mmt_core:utils/sbs_loop
