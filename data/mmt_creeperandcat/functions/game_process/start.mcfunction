@@ -9,6 +9,7 @@ scoreboard players set second CACconfig 0
 scoreboard players set ticker CACconfig 0
 scoreboard players set timemode CACconfig 3
 scoreboard players set kill CACconfig 0
+execute as @a[tag=player] run scoreboard players set @s CACdeath 0
 
 effect give @a[tag=cat] strength infinite 255 true
 effect give @a[tag=creeper] glowing infinite 1 true

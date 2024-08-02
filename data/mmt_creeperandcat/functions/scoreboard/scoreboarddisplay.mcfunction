@@ -2,7 +2,7 @@
 $execute as @r run scoreboard players display name 游戏进度 CACdisplay [{"text":"游戏进度: ","color":"aqua"},{"text":"$(game_count)","color":"white"},{"text":"/8","color":"white"}]
 
 #map_name
-$execute as @r run scoreboard players display name 当前地图 CACdisplay [{"text":"当前地图: ","color":"aqua"},{"color":"white","text":$(map)}]
+$execute as @r run scoreboard players display name 当前地图 CACdisplay [{"text":"当前地图: ","color":"aqua"},{"color":"white","text":"$(map)"}]
 
 #player_finished with sum
 $execute as @r run scoreboard players display name 玩家数 CACdisplay [{"text":"已抓捕: ","color":"green"},{"text":"$(playercount)","color":"green"},{"text":"/","color":"green"},{"text":"$(playercount)","color":"green"}]

@@ -5,6 +5,7 @@ execute if score logon core_setting matches 1 run function mmt_tgttos:info
 scoreboard objectives add CreeperAndCat dummy
 scoreboard objectives add CACconfig dummy
 scoreboard objectives add CACkill playerKillCount
+scoreboard objectives add CACdeath deathCount
 
 summon marker -5000 230 -5000 {CustomName:'{"text":"round_count"}',Tags:[config]}
 summon marker -5000 230 -5000 {CustomName:'{"text":"countdown"}',Tags:[map]}
