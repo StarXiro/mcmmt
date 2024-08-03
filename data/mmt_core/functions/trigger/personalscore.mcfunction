@@ -9,6 +9,6 @@ execute as @a if score @s core_player_score = 3 core_utils_sbs_rank run tellraw 
 execute as @a if score @s core_player_score = 4 core_utils_sbs_rank run tellraw @a[scores={personalscore=1..}] {"translate":"4. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"core_player_score"}}]}
 execute as @a if score @s core_player_score = 5 core_utils_sbs_rank run tellraw @a[scores={personalscore=1..}] {"translate":"5. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"core_player_score"}}]}
 tellraw @s " "
-#tellraw @s {""}
+tellraw @s {"translate":"%s. %s: %s","with":[{"score":{"name":"@s","objective":"core_player_rank"}},{"selector":"@s"},{"score":{"name":"@s","objective":"core_player_score"}}]}
 scoreboard players set @s personalscore 0
 scoreboard players enable @a personalscore
