@@ -1,6 +1,6 @@
 
 execute if score steps core_utils_search >= max_steps core_utils_search run return fail
-execute if score depth core_utils_search > max_steps core_utils_search run return fail
+execute if score depth core_utils_search > max_depth core_utils_search run return fail
 
 execute store result score temp core_utils_search run data get entity @s Pos[0] 1.0
 scoreboard players operation temp core_utils_search -= origin_x core_utils_search
