@@ -1,7 +1,7 @@
 #start loop
 #max score
 scoreboard players set @e[scores={core_utils_sbs_sort=-2147483648..2147483647}] core_utils_sbs_sort -2147483640
-execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] run scoreboard players operation @s core_utils_sbs_sort > @e[scores={core_utils_sbs_sort=-2147483648..2147483647}] core_utils_sbs_temp
+execute as @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] run scoreboard players operation @s core_utils_sbs_sort > @e[scores={core_utils_sbs_temp=-2147483648..2147483647}] core_utils_sbs_temp
 execute as @r store result storage mcmmt:core_utils SBSconfig.maxscore int 1 run scoreboard players get @r[scores={core_utils_sbs_sort=-2147483648..2147483647}] core_utils_sbs_sort
 
 #loop ++
