@@ -28,7 +28,6 @@ scoreboard objectives remove core_utils_sincos
 scoreboard objectives remove core_utils_uuid_match
 scoreboard objectives remove core_utils_search
 scoreboard objectives remove core_utils_to_bin
-scoreboard objectives remove core_utils_ptr_depth
 scoreboard objectives remove core_utils_timer
 scoreboard objectives remove core_utils_display_timer
 scoreboard objectives remove core_utils_color_panel

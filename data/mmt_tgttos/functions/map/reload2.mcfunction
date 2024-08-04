@@ -7,7 +7,7 @@ kill @e[type=ocelot]
 scoreboard players set @e[name="noname"] tgttos_config 1
 
 #item supply
-item replace entity @a[tag=tgttos] armor.chest with elytra 
+item replace entity @a[tag=tgttos] armor.chest with elytra
 item replace entity @a[tag=tgttos] hotbar.8 with cod 64
 
 #cat summon

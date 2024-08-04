@@ -7,7 +7,7 @@ scoreboard objectives setdisplay sidebar tgttos_scoreboard
 
 #work for players
 tag @a[tag=player] add tgttos
-clear @a[tag=tgttos] 
+clear @a[tag=tgttos]
 gamemode adventure @a[tag=player]
 
 #trigger loop
