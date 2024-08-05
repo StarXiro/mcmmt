@@ -26,9 +26,6 @@ execute if score logon core_setting matches 1 run say Inited core
 
 # setup storage for core.utils
 
-data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
-data modify storage mcmmt:core_utils for_each set value {loop_cnt: 0, object: {}}
-
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
 function mmt_core:utils/rand/__setup__
@@ -57,13 +54,7 @@ function mmt_core:utils/linear_map/__setup__
 
 function mmt_core:utils/pillar_check/__setup__
 
-# utils scoreboard bubble sort
-scoreboard objectives add core_utils_sbs_temp dummy
-scoreboard objectives add core_utils_sbs_rank dummy
-scoreboard objectives add core_utils_sbs_prank dummy
-scoreboard objectives add core_utils_sbs_sort dummy
-scoreboard players set SBS_temp core_utils_sbs_sort 0
-execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sbs
+function mmt_core:utils/sbs/__setup__
 
 # utils.for_each
 scoreboard objectives add core_utils_for_each dummy
