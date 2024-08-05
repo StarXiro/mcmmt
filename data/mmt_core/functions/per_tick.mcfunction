@@ -15,6 +15,8 @@ function mmt_core:statistics/player_death
 function mmt_core:statistics/player_walk
 function mmt_core:statistics/player_aviate
 
+function mmt_core:utils/timer/private/per_tick
+
 execute as @a[scores={personalscore=1..}] run function mmt_core:trigger/personalscore
 # loop it
 schedule function mmt_core:per_tick 1t replace

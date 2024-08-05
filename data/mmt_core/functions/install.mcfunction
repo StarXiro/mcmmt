@@ -22,11 +22,12 @@ scoreboard players set valid_check core_datatemp 0
 function mmt_core:register_constants
 
 data modify storage mcmmt:core installed set value 1b
-execute if score logon core_setting matches 1 run say Inited core
+execute if score logon core_setting matches 1 run say Core inited.
 
-# setup storage for core.utils
-
+# setup utils
+execute if score logon core_setting matches 1 run say Initializing utils...
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
+data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
 
 function mmt_core:utils/rand/__setup__
 
@@ -55,11 +56,6 @@ function mmt_core:utils/linear_map/__setup__
 function mmt_core:utils/pillar_check/__setup__
 
 function mmt_core:utils/sbs/__setup__
-
-# utils.for_each
-scoreboard objectives add core_utils_for_each dummy
-scoreboard players set iter core_utils_for_each 0
-execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.for_each
 
 # setup global variables
 scoreboard objectives add core_game_config dummy
