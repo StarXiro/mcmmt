@@ -28,7 +28,6 @@ data modify storage mcmmt:core_utils sqrt set value {result: 0.0d, scaler: 1.0f,
 data modify storage mcmmt:core_utils rand set value {result: 0}
 data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
-data modify storage mcmmt:core_utils color_panel set value {r: 0.0d, g: 0.0d, b:0.0d, args: {angle: 0.0f, distance: 0}, particle: "minecraft:dust", trailing: "1 ~ ~ ~ 0 0 0 1 1 force @a"}
 data modify storage mcmmt:core_utils timer set value {stamp: 1}
 data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}, vec3_temp: [0, 0, 0]}
 data modify storage mcmmt:core_utils linear_map set value {from: [0, 100], to: [0, 100], temp: [0, 0]}
@@ -108,21 +107,7 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 
 function mmt_core:utils/to_bin/__setup__
 
-# utils.color_panel
-scoreboard objectives add core_utils_color_panel dummy
-scoreboard players set angle core_utils_color_panel 0
-scoreboard players set distance core_utils_color_panel 500
-scoreboard players set red core_utils_color_panel 0
-scoreboard players set blue core_utils_color_panel 0
-scoreboard players set green core_utils_color_panel 0
-scoreboard players set constant core_utils_color_panel 392156
-scoreboard players set circum core_utils_color_panel 0
-scoreboard players set 1000 core_utils_color_panel 1000
-scoreboard players set 600 core_utils_color_panel 600
-scoreboard players set 255 core_utils_color_panel 255
-scoreboard players set liner core_utils_color_panel 0
-scoreboard players set temp core_utils_color_panel 0
-execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.color_panel
+function mmt_core:utils/color_panel/__setup__
 
 # utils.check_point
 scoreboard objectives add core_utils_check_point dummy
