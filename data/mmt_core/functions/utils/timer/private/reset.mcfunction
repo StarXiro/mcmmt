@@ -4,7 +4,7 @@ scoreboard players set status core_utils_timer 0
 scoreboard players operation tick core_utils_timer = offset core_utils_timer
 scoreboard players operation second core_utils_timer = offset core_utils_timer
 scoreboard players operation second core_utils_timer /= 20 core_datatemp
-function mmt_core:utils/private_timer/recrusive
+function mmt_core:utils/timer/private/recrusive
 scoreboard players set stamp_index core_utils_timer 1
 
 scoreboard players operation tick core_utils_display_timer = tick core_utils_timer
