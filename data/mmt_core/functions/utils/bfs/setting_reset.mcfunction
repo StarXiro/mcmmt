@@ -1,5 +1,5 @@
 
-data modify storage mcmmt:core_utils search.onblock set value "mmt_core:utils/private_bfs/presets/no_air"
+data modify storage mcmmt:core_utils search.onblock set value "mmt_core:utils/bfs/private/presets/no_air"
 
 scoreboard players set max_depth core_utils_search 50
 scoreboard players set max_steps core_utils_search 200

@@ -1,5 +1,4 @@
 
-
 data modify storage mcmmt:dynaball shot_tnt set value {motion: [0.0d, 0.0d, 0.0d]}
 data modify storage mcmmt:dynaball random_motion set value [0.0d, 0.0d, 0.0d]
 data modify storage mcmmt:dynaball bomb_egg set value {motion: [0.0d, 0.0d, 0.0d]}

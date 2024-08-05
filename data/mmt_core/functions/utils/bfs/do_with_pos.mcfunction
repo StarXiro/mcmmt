@@ -9,4 +9,4 @@ scoreboard players set steps core_utils_search 0
 scoreboard players set depth core_utils_search 0
 scoreboard players set end_sign core_utils_search 0
 
-$execute positioned $(x) $(y) $(z) summon minecraft:marker run function mmt_core:utils/private_bfs/bfs_entry
+$execute positioned $(x) $(y) $(z) summon minecraft:marker run function mmt_core:utils/bfs/private/bfs_entry

@@ -8,4 +8,4 @@ execute store result score origin_z core_utils_search run data get entity @s Pos
 scoreboard players set steps core_utils_search 0
 scoreboard players set depth core_utils_search 0
 
-execute positioned ~ ~ ~ summon minecraft:marker run function mmt_core:utils/private_bfs/bfs_entry
+execute positioned ~ ~ ~ summon minecraft:marker run function mmt_core:utils/bfs/private/bfs_entry

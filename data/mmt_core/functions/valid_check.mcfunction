@@ -1,4 +1,5 @@
 
+# statistics
 # death validation
 execute store success score valid_check core_datatemp run scoreboard players get @s stas_last_death
 execute if score valid_check core_datatemp matches 0 run scoreboard players set @s stas_last_death 0
@@ -9,6 +10,9 @@ execute if score valid_check core_datatemp matches 0 run scoreboard players set 
 execute store success score valid_check core_datatemp run scoreboard players get @s stas_last_elytra
 execute if score valid_check core_datatemp matches 0 run scoreboard players set @s stas_last_elytra 0
 
+# core.pid
+execute store success score valid_check core_datatemp run scoreboard players get @s core_pid
+execute if score valid_check core_datatemp matches 0 run function mmt_core:pid/create_pid
 
 # utils.check_point validation
 execute store success score valid_check core_datatemp run scoreboard players get @s core_utils_check_point_id

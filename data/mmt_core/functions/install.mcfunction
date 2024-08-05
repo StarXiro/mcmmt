@@ -7,7 +7,13 @@ execute if data storage mcmmt:core installed run return fail
 # core
 scoreboard objectives add core_datatemp dummy
 scoreboard objectives add core_setting dummy
+scoreboard objectives add core_pid dummy
+
 scoreboard players set logon core_setting 1
+scoreboard players set online_player core_setting 0
+scoreboard players set max_pid core_setting 0
+
+scoreboard players set pid_iter core_datatemp 0
 scoreboard players set valid_check core_datatemp 0
 
 # register constants
@@ -22,14 +28,13 @@ data modify storage mcmmt:core_utils sqrt set value {result: 0.0d, scaler: 1.0f,
 data modify storage mcmmt:core_utils rand set value {result: 0}
 data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
-data modify storage mcmmt:core_utils to_bin set value {bin: [B; 0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b,0b], value: 0}
-data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/private_bfs/presets/no_air", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}, map_args: {from: [0, 0], to: [-1500, 1500]}, presets: {same_block: "minecraft:stone"}}
 data modify storage mcmmt:core_utils color_panel set value {r: 0.0d, g: 0.0d, b:0.0d, args: {angle: 0.0f, distance: 0}, particle: "minecraft:dust", trailing: "1 ~ ~ ~ 0 0 0 1 1 force @a"}
 data modify storage mcmmt:core_utils timer set value {stamp: 1}
 data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}, vec3_temp: [0, 0, 0]}
 data modify storage mcmmt:core_utils linear_map set value {from: [0, 100], to: [0, 100], temp: [0, 0]}
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
 data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
+data modify storage mcmmt:core_utils for_each set value {loop_cnt: 0, object: {}}
 
 # utils.rand
 scoreboard objectives add core_utils_rand dummy
@@ -83,24 +88,7 @@ scoreboard players set uuid4 core_utils_uuid_match 0
 scoreboard players set to_match core_utils_uuid_match 0
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.uuid_match
 
-# utils.bfs
-scoreboard objectives add core_utils_search dummy
-scoreboard players set origin_x core_utils_search 0
-scoreboard players set origin_y core_utils_search 0
-scoreboard players set origin_z core_utils_search 0
-scoreboard players set max_depth core_utils_search 50
-scoreboard players set max_steps core_utils_search 200
-scoreboard players set direction core_utils_search 63
-scoreboard players set x_pos_range core_utils_search 10
-scoreboard players set x_neg_range core_utils_search -10
-scoreboard players set y_pos_range core_utils_search 10
-scoreboard players set y_neg_range core_utils_search -10
-scoreboard players set z_pos_range core_utils_search 10
-scoreboard players set z_neg_range core_utils_search -10
-scoreboard players set steps core_utils_search 0
-scoreboard players set depth core_utils_search 0
-scoreboard players set temp core_utils_search 0
-execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.bfs
+function mmt_core:utils/bfs/__setup__
 
 # utils.timer
 scoreboard objectives add core_utils_timer dummy
@@ -118,45 +106,7 @@ scoreboard players display name second core_utils_display_timer "秒："
 scoreboard objectives modify core_utils_display_timer displayname {"type": "translatable", "translate": "计时器-[%s]", "with": [{"text": "停止", "color": "gray"}]}
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.timer
 
-# utils.to_bin
-scoreboard objectives add core_utils_to_bin dummy
-scoreboard players set input core_utils_to_bin 0
-scoreboard players set temp1 core_utils_to_bin 0
-scoreboard players set temp2 core_utils_to_bin 0
-scoreboard players set temp3 core_utils_to_bin 0
-scoreboard players set pos0 core_utils_to_bin 0
-scoreboard players set pos1 core_utils_to_bin 0
-scoreboard players set pos2 core_utils_to_bin 0
-scoreboard players set pos3 core_utils_to_bin 0
-scoreboard players set pos4 core_utils_to_bin 0
-scoreboard players set pos5 core_utils_to_bin 0
-scoreboard players set pos6 core_utils_to_bin 0
-scoreboard players set pos7 core_utils_to_bin 0
-scoreboard players set pos8 core_utils_to_bin 0
-scoreboard players set pos9 core_utils_to_bin 0
-scoreboard players set pos10 core_utils_to_bin 0
-scoreboard players set pos11 core_utils_to_bin 0
-scoreboard players set pos12 core_utils_to_bin 0
-scoreboard players set pos13 core_utils_to_bin 0
-scoreboard players set pos14 core_utils_to_bin 0
-scoreboard players set pos15 core_utils_to_bin 0
-scoreboard players set pos16 core_utils_to_bin 0
-scoreboard players set pos17 core_utils_to_bin 0
-scoreboard players set pos18 core_utils_to_bin 0
-scoreboard players set pos19 core_utils_to_bin 0
-scoreboard players set pos20 core_utils_to_bin 0
-scoreboard players set pos21 core_utils_to_bin 0
-scoreboard players set pos22 core_utils_to_bin 0
-scoreboard players set pos23 core_utils_to_bin 0
-scoreboard players set pos24 core_utils_to_bin 0
-scoreboard players set pos25 core_utils_to_bin 0
-scoreboard players set pos26 core_utils_to_bin 0
-scoreboard players set pos27 core_utils_to_bin 0
-scoreboard players set pos28 core_utils_to_bin 0
-scoreboard players set pos29 core_utils_to_bin 0
-scoreboard players set pos30 core_utils_to_bin 0
-scoreboard players set pos31 core_utils_to_bin 0
-execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.to_bin
+function mmt_core:utils/to_bin/__setup__
 
 # utils.color_panel
 scoreboard objectives add core_utils_color_panel dummy
@@ -208,15 +158,6 @@ scoreboard players set step core_utils_pillar_check 0
 scoreboard players set valid core_utils_pillar_check 0
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.pillar_check
 
-# statistics
-scoreboard objectives add stas_last_death dummy
-scoreboard objectives add stas_this_death deathCount
-scoreboard objectives add stas_last_walk dummy
-scoreboard objectives add stas_this_walk minecraft.custom:walk_one_cm
-scoreboard objectives add stas_last_elytra dummy
-scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
-execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
-
 # utils scoreboard bubble sort
 scoreboard objectives add core_utils_sbs_temp dummy
 scoreboard objectives add core_utils_sbs_rank dummy
@@ -224,6 +165,11 @@ scoreboard objectives add core_utils_sbs_prank dummy
 scoreboard objectives add core_utils_sbs_sort dummy
 scoreboard players set SBS_temp core_utils_sbs_sort 0
 execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.sbs
+
+# utils.for_each
+scoreboard objectives add core_utils_for_each dummy
+scoreboard players set iter core_utils_for_each 0
+execute if score logon core_setting matches 1 run say Inited scoreboards for core.utils.for_each
 
 # setup global variables
 scoreboard objectives add core_game_config dummy
@@ -234,6 +180,15 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for glo
 scoreboard objectives add personalscore trigger
 scoreboard players enable @a personalscore
 execute if score logon core_setting matches 1 run say Inited scoreboards for triggers
+
+# statistics
+scoreboard objectives add stas_last_death dummy
+scoreboard objectives add stas_this_death deathCount
+scoreboard objectives add stas_last_walk dummy
+scoreboard objectives add stas_this_walk minecraft.custom:walk_one_cm
+scoreboard objectives add stas_last_elytra dummy
+scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
+execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
 
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
