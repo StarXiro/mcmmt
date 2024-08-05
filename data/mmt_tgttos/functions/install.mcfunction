@@ -11,6 +11,9 @@ scoreboard players set @e[tag=map] map_name 0
 scoreboard players set secs tgttos 1200
 scoreboard players set secs2 tgttos 20
 
+#data initialize
+data modify storage mcmmt:tgttos max_score set value 32
+
 #scoreboard display initialization
 scoreboard objectives add tgttos_scoreboard dummy {"text":"TGTTOSAFTC","color":"gold","bold":true}
 summon marker 10000 100 10000 {CustomName:'{"text":"codake"}',Tags:[map]} 
