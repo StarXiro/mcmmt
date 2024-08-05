@@ -6,4 +6,6 @@ scoreboard players operation second core_utils_timer /= 20 core_datatemp
 execute if score second core_utils_timer > last_sec core_utils_timer run function mmt_core:utils/timer/private/per_sec
 scoreboard players operation last_sec core_utils_timer = second core_utils_timer
 
+function mmt_core:utils/timer/private/snowball_check
+
 schedule function mmt_core:utils/timer/private/per_tick 1t replace

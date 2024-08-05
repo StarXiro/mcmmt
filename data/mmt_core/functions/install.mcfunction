@@ -5,6 +5,8 @@ execute if data storage mcmmt:core installed run return fail
 
 # setup scoreboard for core
 # core
+function mmt_core:version
+
 scoreboard objectives add core_datatemp dummy
 scoreboard objectives add core_setting dummy
 scoreboard objectives add core_pid dummy
