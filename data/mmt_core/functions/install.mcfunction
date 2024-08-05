@@ -28,7 +28,7 @@ execute if score logon core_setting matches 1 run say Inited core
 data modify storage mcmmt:core_utils sincos set value {result: 0.0f, value: 0.0d}
 data modify storage mcmmt:core_utils sqrt set value {result: 0.0d, scaler: 1.0f, value: 0.0d}
 data modify storage mcmmt:core_utils rand set value {result: 0}
-data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d, 0.0d], success: 0b, iter_cnt: 0, rotation:[0.0f, 0.0f]}
+
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
 data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}, vec3_temp: [0, 0, 0]}
 data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
@@ -48,13 +48,7 @@ scoreboard players set rand core_utils_rand 1
 scoreboard players set result core_utils_rand 1
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.rand
 
-# utils.sight_cast
-scoreboard objectives add core_utils_scast dummy
-scoreboard players set scast_limit core_utils_scast 100
-scoreboard players set scast_last_iter core_utils_scast 0
-scoreboard players set scast_present core_utils_scast 0
-scoreboard players set scast_success core_utils_scast 0
-execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.sight_cast
+function mmt_core:utils/sight_cast/__setup__
 
 # utils.sqrt
 scoreboard objectives add core_utils_sqrt dummy

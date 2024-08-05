@@ -5,4 +5,4 @@ data modify entity @e[type=minecraft:armor_stand, tag=sight_cast_ptr_init, limit
 scoreboard players set scast_present core_utils_scast 0
 scoreboard players set scast_success core_utils_scast 0
 data modify storage mcmmt:core_utils sight_cast.success set value 0b
-execute as @e[type=minecraft:armor_stand, tag=sight_cast_ptr_init] at @s run function mmt_core:utils/private_sight_cast/ray_trace_enter
+execute as @e[type=minecraft:armor_stand, tag=sight_cast_ptr_init] at @s run function mmt_core:utils/sight_cast/private/ray_trace_enter
