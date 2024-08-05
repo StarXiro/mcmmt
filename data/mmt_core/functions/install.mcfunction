@@ -30,9 +30,10 @@ data modify storage mcmmt:core_utils sight_cast set value {end_pos: [0.0d, 0.0d,
 data modify storage mcmmt:core_utils uuid_match set value {base: [I;0,0,0,0], UUID: [I;0,0,0,0]}
 data modify storage mcmmt:core_utils timer set value {stamp: 1}
 data modify storage mcmmt:core_utils check_point set value {points: [{name: "example", pos: [0, 0, 0]}], call_bag: {callback: "mmt_core:utils/private_check_point/default_callback", target: {}}, max_index: 0, map_args: {from: [0, 0], to: [-1200, 1200]}, init_args: {x: 0, y: 0, z: 0, id: 0, r: 0.0d, g: 0.0d, b: 0.0d}, target: {name: "none", pos:[0, 0, 0]}, back: {call_id: 0}, pos_temp:{x: 0, y: 0, z: 0, r1: 0.0f, r2: 0.0f}, vec3_temp: [0, 0, 0]}
-execute if score logon core_setting matches 1 run say Inited storage for core.utils
 data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
 data modify storage mcmmt:core_utils for_each set value {loop_cnt: 0, object: {}}
+
+execute if score logon core_setting matches 1 run say Inited storage for core.utils
 
 # utils.rand
 scoreboard objectives add core_utils_rand dummy
@@ -123,13 +124,7 @@ execute if score logon core_setting matches 1 run say Inited scoreboard for core
 
 function mmt_core:utils/linear_map/__setup__
 
-# utils.pillar_check
-scoreboard objectives add core_utils_pillar_check dummy
-scoreboard players set max_steps core_utils_pillar_check 30
-scoreboard players set direction core_utils_pillar_check 0
-scoreboard players set step core_utils_pillar_check 0
-scoreboard players set valid core_utils_pillar_check 0
-execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.pillar_check
+function mmt_core:utils/pillar_check/__setup__
 
 # utils scoreboard bubble sort
 scoreboard objectives add core_utils_sbs_temp dummy
