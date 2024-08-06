@@ -12,7 +12,8 @@ scoreboard players set secs tgttos 1200
 scoreboard players set secs2 tgttos 20
 
 #data initialize
-data modify storage mcmmt:tgttos max_score set value 32
+data modify storage mcmmt:tgttos max_score set value 50
+data modify storage mcmmt:tgttos scorelist.reward set value [0,120,100,80,65,50,40,30,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 #scoreboard display initialization
 scoreboard objectives add tgttos_scoreboard dummy {"text":"TGTTOSAFTC","color":"gold","bold":true}
