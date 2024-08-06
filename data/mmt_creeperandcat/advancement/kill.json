@@ -1,0 +1,28 @@
+{
+    "display":
+    {
+        "icon":
+        {
+            "item": "minecraft:stone"
+        },
+        "title": "kill",
+        "description": "kill",
+        "show_toast": false,
+        "hidden":true,
+        "announce_to_chat":false
+    },
+    "criteria":
+    {
+        "hurtby":
+        {
+            "trigger":"player_hurt_entity",
+            "conditions":
+            {
+                "entity":
+                {
+                    "nbt":"{Tags:[player]}"
+                }
+            }
+        }
+    }
+}

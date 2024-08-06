@@ -1,0 +1,32 @@
+{
+    "display":
+    {
+        "icon":
+        {
+            "item": "minecraft:stone"
+        },
+        "title": "killby",
+        "description": "killby",
+        "show_toast": false,
+        "hidden":false,
+        "announce_to_chat":false
+    },
+    "criteria":
+    {
+        "hurtby":
+        {
+            "trigger":"entity_hurt_player",
+            "conditions":
+            {
+                "entity":
+                {
+                    "nbt":"{Tags:[player]}"
+                }
+            }
+        }
+    },
+    "rewards":
+    {
+        "function": "mmt_creeperandcat:game_process/deathmessage"
+    }
+}

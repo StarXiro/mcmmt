@@ -7,4 +7,8 @@ schedule clear mmt_creeperandcat:game_process/on_tick
 schedule clear mmt_creeperandcat:game_process/end
 schedule clear mmt_creeperandcat:game_process/startcountdown
 
+effect clear @a weakness
+effect clear @a glowing
+effect clear @a strength
+
 execute as @a run attribute @s generic.max_health base set 20
