@@ -4,7 +4,7 @@ kill @e[name="round_count",tag=config]
 function mmt_tgttos:stop
 
 #data del
-data remove storage tgttos_scoreboard *
+data remove storage mcmmt:tgttos *
 
 #scoreboard del
 scoreboard objectives remove tgttos_scoreboard
