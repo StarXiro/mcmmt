@@ -13,6 +13,8 @@ scoreboard objectives remove tgttos_finish_count
 scoreboard objectives remove tgttos_finish_check
 scoreboard objectives remove tgttos
 scoreboard objectives remove tgttos_config
+scoreboard objectives remove tgttos_player_score
+scoreboard objectives remove tgttos_team_score
 
 #marker del
 kill @e[type=marker,tag=config]

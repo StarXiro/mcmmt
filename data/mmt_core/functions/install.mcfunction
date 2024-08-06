@@ -22,6 +22,7 @@ scoreboard players set valid_check core_datatemp 0
 function mmt_core:register_constants
 
 data modify storage mcmmt:core installed set value 1b
+data modify storage mcmmt:core teamlist set value ["red","orange","yellow","lime","green","blue","aqua","pink"]
 execute if score logon core_setting matches 1 run say Core inited.
 
 # setup utils
