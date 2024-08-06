@@ -5,7 +5,7 @@ $scoreboard players operation @a[team=$(teamname)] core_player_score += reward2 
 $scoreboard players operation @a[team=$(teamname)] tgttos_player_score += reward2 tgttos_config
 
 #需要修改
-$tellraw @a {"translate":"%s第%s个完成了全部比赛","with":[{$(teamname)},{"score":{"name":"$(teamname)","objective":"team_rank"},"color":"gold"}]}
+$tellraw @a {"translate":"%s第%s个完成了全部比赛","with":[{"text":"$(teamname)"},{"score":{"name":"team_rank","objective":"tgttos_config"},"color":"gold"}]}
 
 #防止重复加和
-scoreboard players set $(teamname) tgttos_config 1
+$scoreboard players set $(teamname) tgttos_config 1
