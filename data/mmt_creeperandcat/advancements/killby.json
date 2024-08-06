@@ -18,9 +18,9 @@
             "trigger":"entity_hurt_player",
             "conditions":
             {
-                "entity":
+                "player":
                 {
-                    "nbt":"{Tags:[player]}"
+                    "nbt":"{Tags:[creeper]}"
                 }
             }
         }
