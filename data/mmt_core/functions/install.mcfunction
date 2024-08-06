@@ -57,6 +57,8 @@ function mmt_core:utils/pillar_check/__setup__
 
 function mmt_core:utils/sbs/__setup__
 
+function mmt_core:utils/for_each/__setup__
+
 # setup global variables
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy

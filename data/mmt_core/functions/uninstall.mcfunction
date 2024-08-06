@@ -3,7 +3,7 @@
 execute unless data storage mcmmt:core installed run return fail
 
 # stop utils.timer
-schedule clear mmt_core:utils/private_timer/per_tick
+schedule clear mmt_core:utils/timer/private/per_tick
 
 # stop core
 schedule clear mmt_core:per_sec
@@ -65,6 +65,8 @@ data remove storage mcmmt:core_utils color_panel
 data remove storage mcmmt:core_utils check_point
 data remove storage mcmmt:core_utils linear_map
 data remove storage mcmmt:core_utils SBSconfig
+
+function mmt_core:utils/for_each/__delete__
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
