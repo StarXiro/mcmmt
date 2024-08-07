@@ -12,3 +12,4 @@ effect clear @a glowing
 effect clear @a strength
 
 execute as @a run attribute @s generic.max_health base set 20
+effect give @a instant_health 2 10 false
