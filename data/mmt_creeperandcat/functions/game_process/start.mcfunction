@@ -1,7 +1,7 @@
 scoreboard players set redcreeper CACconfig 0
 #8teams
 
-execute as @a[team=red,tag=creeper] run scoreboard players add redrunner CACconfig 1
+execute as @a[team=red,tag=creeper] run scoreboard players add redcreeper CACconfig 1
 execute if score red CACconfig = redcreeper CACconfig run execute as @r[team=red,tag=creeper] run function mmt_creeperandcat:game_process/catchoose
 #8teams
 

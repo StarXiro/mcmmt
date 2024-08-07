@@ -23,7 +23,10 @@ function mmt_core:register_constants
 
 data modify storage mcmmt:core installed set value 1b
 data modify storage mcmmt:core teamlist set value ["red","orange","yellow","lime","green","blue","aqua","pink"]
+data modify storage mcmmt:core teamlist2 set value ["红队","橙队","黄队","酸橙","绿队","蓝队","水蓝","粉队"]
+data modify storage mcmmt:core teamcolor set value ["red","gold","yellow","green","dark_green","blue","aqua","light_purple"]
 data modify storage mcmmt:core team_data set value {}
+data modify storage mcmmt:core init_manager set value {for_each: {list: [], loop_body: ""}}
 execute if score logon core_setting matches 1 run say Core inited.
 
 # setup utils
@@ -74,6 +77,9 @@ execute if score logon core_setting matches 1 run say Inited scoreboards for glo
 scoreboard objectives add personalscore trigger
 scoreboard players enable @a personalscore
 execute if score logon core_setting matches 1 run say Inited scoreboards for triggers
+
+# auto make team_data
+function mmt_core:init_manager/team_data/generate
 
 # statistics
 scoreboard objectives add stas_last_death dummy
