@@ -16,5 +16,8 @@ scoreboard players operation score tgttos_config -= all tgttos_finish_count
 scoreboard players add score tgttos_config 1
 scoreboard players operation @s core_player_score += score tgttos_config
 scoreboard players operation @s tgttos_player_score += score tgttos_config
-tellraw @a {"translate":"[%s%s%s] %s%s%s%s","with":[{"text":"+","color":"gold"},{"score":{"name":"score","objective":"tgttos_config"},"color":"gold"},{"text":"分","color":"gold"},{"selector":"@s"},{"text":"第","color":"gray"},{"score":{"name":"all","objective":"tgttos_finish_count"},"color":"aqua"},{"text":"个到达了另一边！","color":"gray"}]}
+scoreboard players set @a tgttos_message_type 1
+scoreboard players set @s tgttos_message_type 0
+tellraw @a[scores={tgttos_message_type=1}] {"translate":" %s%s%s%s","with":[{"selector":"@s"},{"text":"第","color":"gray"},{"score":{"name":"all","objective":"tgttos_finish_count"},"color":"aqua"},{"text":"个到达了另一边！","color":"gray"}]}
+tellraw @s {"translate":"[%s%s%s] %s%s%s","with":[{"text":"+","color":"gold"},{"score":{"name":"score","objective":"tgttos_config"},"color":"gold"},{"text":"分","color":"gold"},{"text":"你第","color":"gray"},{"score":{"name":"all","objective":"tgttos_finish_count"},"color":"aqua"},{"text":"个到达了另一边！","color":"gray"}]}
 gamemode spectator @s

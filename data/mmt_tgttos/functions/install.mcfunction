@@ -8,6 +8,7 @@ scoreboard objectives add tgttos dummy
 scoreboard objectives add tgttos_config dummy
 scoreboard objectives add tgttos_team_score dummy
 scoreboard objectives add tgttos_player_score dummy
+scoreboard objectives add tgttos_message_type dummy
 scoreboard players set round_count tgttos 0
 scoreboard players set @e[tag=map] map_name 0
 scoreboard players set secs tgttos 1200
