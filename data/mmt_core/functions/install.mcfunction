@@ -23,6 +23,7 @@ function mmt_core:register_constants
 
 data modify storage mcmmt:core installed set value 1b
 data modify storage mcmmt:core teamlist set value ["red","orange","yellow","lime","green","blue","aqua","pink"]
+data modify storage mcmmt:core team_data set value {}
 execute if score logon core_setting matches 1 run say Core inited.
 
 # setup utils
@@ -61,6 +62,8 @@ function mmt_core:utils/sbs/__setup__
 function mmt_core:utils/for_each/__setup__
 
 function mmt_core:utils/range/__setup__
+
+function mmt_core:utils/make_match/__setup__
 
 # setup global variables
 scoreboard objectives add core_game_config dummy
