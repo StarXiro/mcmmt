@@ -30,6 +30,12 @@ fill -4950 105 -4970 -4952 105 -4970 red_stained_glass
 
 scoreboard players set second1 CACconfig 20
 scoreboard players set kill CACconfig 0
+scoreboard players set red CACconfig 0
+#8teams
+
+execute as @a[team=red] run scoreboard players add red CACconfig 1
+#8teams
+
 setblock -4998 121 -4967 stone_button[face=wall,facing=east]
 function mmt_creeperandcat:game_process/catbuttoncheck
 scoreboard players set timemode CACconfig 2
