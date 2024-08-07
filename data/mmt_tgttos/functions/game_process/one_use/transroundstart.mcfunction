@@ -18,4 +18,3 @@ scoreboard players set team_rank tgttos_config 0
 
 #go back 
 scoreboard players set gameprocess tgttos 3
-
