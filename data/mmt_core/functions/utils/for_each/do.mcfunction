@@ -2,6 +2,9 @@
 # list object list
 # loop_body function path
 
+# exit if not installed
+execute unless data storage mcmmt:core installed run return fail
+
 # push stack
 execute store result score temp core_utils_for_each run data get storage mcmmt:core_utils for_each.depth 1.0
 execute if score temp core_utils_for_each matches 1.. run function mmt_core:utils/for_each/private/push_stack
