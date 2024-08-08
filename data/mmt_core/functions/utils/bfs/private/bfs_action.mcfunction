@@ -20,7 +20,7 @@ data modify entity @s data.rgb.g set from storage mcmmt:core_utils color_panel.g
 data modify entity @s data.rgb.b set from storage mcmmt:core_utils color_panel.b
 
 # summon next
-function mmt_core:utils/private_bfs/summon_next
+function mmt_core:utils/bfs/private/summon_next
 
 # add step
 scoreboard players add steps core_utils_search 1
