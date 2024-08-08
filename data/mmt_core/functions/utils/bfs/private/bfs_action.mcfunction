@@ -1,11 +1,11 @@
 
 # custom validation
 scoreboard players set temp core_utils_search 0
-function mmt_core:utils/private_bfs/custom_validation with storage mcmmt:core_utils search
+function mmt_core:utils/bfs/private/custom_validation with storage mcmmt:core_utils search
 execute if score temp core_utils_search matches 1 run return run tag @s add cu_bfs_badptr
 
 # setting validation
-execute unless function mmt_core:utils/private_bfs/bfs_validation run return run tag @s add cu_bfs_badptr
+execute unless function mmt_core:utils/bfs/private/bfs_validation run return run tag @s add cu_bfs_badptr
 
 # ptr is valid
 tag @s add cu_bfs_alr
