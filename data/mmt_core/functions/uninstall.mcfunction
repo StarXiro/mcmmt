@@ -38,7 +38,7 @@ scoreboard objectives remove core_utils_sbs_temp
 scoreboard objectives remove core_utils_sbs_rank
 scoreboard objectives remove core_utils_sbs_prank
 scoreboard objectives remove core_utils_sbs_sort
-
+scoreboard objectives remove core_utils_mg
 scoreboard objectives remove core_datatemp
 scoreboard objectives remove stas_last_death
 scoreboard objectives remove stas_this_death
@@ -66,6 +66,7 @@ data remove storage mcmmt:core_utils check_point
 data remove storage mcmmt:core_utils linear_map
 data remove storage mcmmt:core_utils pillar_check
 data remove storage mcmmt:core_utils SBSconfig
+data remove storage mcmmt:core_utils mg
 
 function mmt_core:utils/for_each/__delete__
 function mmt_core:utils/range/__delete__
