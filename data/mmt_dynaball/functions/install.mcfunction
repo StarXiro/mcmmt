@@ -7,8 +7,6 @@ data modify storage mcmmt:dynaball macro_bag set value {for_each:{list:[], loop_
 
 execute if score logon core_setting matches 1 run function mmt_dynaball:info
 
-# test gpg sign
-
 # CutomModelData
 # tnt_arrow 11
 # tnt_chick teamB 12 teamA 13

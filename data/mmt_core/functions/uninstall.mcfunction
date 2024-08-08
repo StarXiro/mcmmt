@@ -71,6 +71,7 @@ function mmt_core:utils/for_each/__delete__
 function mmt_core:utils/range/__delete__
 function mmt_core:utils/make_match/__delete__
 function mmt_core:utils/shuffle/__delete__
+function mmt_core:utils/len/__delete__
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting

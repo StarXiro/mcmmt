@@ -69,6 +69,8 @@ function mmt_core:utils/make_match/__setup__
 
 function mmt_core:utils/shuffle/__setup__
 
+function mmt_core:utils/len/__setup__
+
 # setup global variables
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy
