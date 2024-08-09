@@ -31,7 +31,7 @@ Pos - -7020 72 -7010
 |:---:|:---:|---|---|---|
 |**scoreboard.mcfunction**|loop|玩家数量更新<br>完成数量更新<br>extra传参准备|$scoreboard/scoreboardextra.mcfunction|on_tick.mcfunction|
 |**scoreboardcextra.mcfunction**|loop|记分板宏函数执行|/|scoreboard.mcfunction|
-### time_check
+### time
 |文件名|类型|内容|调用函数|被调用|
 |:---:|:---:|---|---|---|
 |**timer.mcfunction**|loop|倒计时<br>分钟和秒数显示<br>显示修正|/|install.mcfunction|

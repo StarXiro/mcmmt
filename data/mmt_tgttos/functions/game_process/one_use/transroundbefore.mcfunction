@@ -1,6 +1,4 @@
 #prepare to round_start  //  code for round_start
-scoreboard players reset * tgttos_config
-scoreboard players set team_rank tgttos_config 0
 scoreboard players set countdown tgttos 2419
 effect clear @a[tag=tgttos]
 execute as @a[tag=player] at @s run playsound minecraft:music.tgttos ambient @s

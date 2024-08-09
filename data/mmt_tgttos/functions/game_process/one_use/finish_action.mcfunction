@@ -2,7 +2,7 @@
 scoreboard players set @s tgttos_finish_count 1
 
 #finish_count update
-function mmt_tgttos:scoreboard/scoreboard
+function mmt_tgttos:scoreboard/main
 
 #score_calculate
 execute store result score score tgttos_config run data get storage mcmmt:tgttos max_score

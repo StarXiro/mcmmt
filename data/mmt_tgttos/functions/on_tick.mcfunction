@@ -1,6 +1,6 @@
 #functions
-function mmt_tgttos:time_check/timer
-function mmt_tgttos:scoreboard/scoreboard
+function mmt_tgttos:time/timer
+function mmt_tgttos:scoreboard/main
 function mmt_tgttos:item/chaser
 execute if score countdown tgttos matches -1 run execute if score gameprocess tgttos matches 1 run function mmt_tgttos:game_process/one_use/transroundbefore
 execute if score countdown tgttos matches -1 run execute if score gameprocess tgttos matches 2 run function mmt_tgttos:game_process/one_use/transroundstart
