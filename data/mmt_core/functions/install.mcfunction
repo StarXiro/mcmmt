@@ -71,15 +71,17 @@ function mmt_core:utils/shuffle/__setup__
 
 function mmt_core:utils/len/__setup__
 
+function mmt_core:utils/mg/__setup__
+
 # setup global variables
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy
-execute if score logon core_setting matches 1 run say Inited scoreboards for global variables
+execute if score logon core_setting matches 1 run say Inited scoreboard for global variables
 
 # utils personalscore initialize
 scoreboard objectives add personalscore trigger
 scoreboard players enable @a personalscore
-execute if score logon core_setting matches 1 run say Inited scoreboards for triggers
+execute if score logon core_setting matches 1 run say Inited scoreboard for triggers
 
 # init_manager
 data modify storage mcmmt:core init_manager set value {for_each: {list: [], loop_body: ""}, team_data: {key: "", display: "", color: ""}}
@@ -94,7 +96,7 @@ scoreboard objectives add stas_last_walk dummy
 scoreboard objectives add stas_this_walk minecraft.custom:walk_one_cm
 scoreboard objectives add stas_last_elytra dummy
 scoreboard objectives add stas_this_elytra minecraft.custom:minecraft.aviate_one_cm
-execute if score logon core_setting matches 1 run say Inited scoreboards for statistics
+execute if score logon core_setting matches 1 run say Inited scoreboard for statistics
 
 # setup mini games
 execute if score logon core_setting matches 1 run say Installing mini games...
