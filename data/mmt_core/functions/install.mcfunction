@@ -31,7 +31,7 @@ execute if score logon core_setting matches 1 run say Core inited.
 # setup utils
 execute if score logon core_setting matches 1 run say Initializing utils...
 execute if score logon core_setting matches 1 run say Inited storage for core.utils
-data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 0}
+data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 1}
 
 function mmt_core:utils/rand/__setup__
 

@@ -3,7 +3,9 @@ tp @a 9000 101 9000
 
 #game begin
 scoreboard players add game_count config 1
-scoreboard objectives setdisplay sidebar tgttos_scoreboard
+scoreboard players set team_rank tgttos_config 0
+scoreboard players reset * tgttos_config
+scoreboard players set team_rank tgttos_config 0
 
 #work for players
 tag @a[tag=player] add tgttos
