@@ -107,7 +107,7 @@ bfs工具不使用函数返回值。
 自定义搜索标准通过调整`pred_path`参数指向的函数谓词达成。  
 
 对于熟悉NBT储存操作的使用者，可以直接修改`mcmmt:core_utils search.on_block`。  
-否则可以只用`mmt_core:utils/bfs/setting`函数，传入参数`on_block`进行修改。  
+否则可以使用`mmt_core:utils/bfs/setting`函数，传入参数`on_block`进行修改。  
 
 对于`pred_path`指向的函数谓词，其执行位置为一个当前搜索到的方块位置，无传入参数。谓词应该判断该方块是否符合搜索标准。  
 可以参考`mmt_core/functions/utils/bfs/private/presets`中的预设函数谓词。
@@ -135,7 +135,125 @@ bfs工具不使用函数返回值。
 
 ## Core.Utils.CheckPoint
 
-提供通用的检查点支持。
+提供通用的检查点支持。  
+在可能情况下，应在使用前召唤所有需要的检测点，并在使用完毕后清除所有检测点。
+
+### CP 参数列表
+
+|参数名|参数类型|作用|备注|
+|--|--|--|--|
+|position|list[double]|含3个double类型数据依次表示x,y,z坐标|-|
+|point|{pos(position), ...}|表示一个检查点，其中`pos`为必须项，其值代表了检查点的传送坐标。|-|
+|points|list[point]|point列表，表示一系列检查点|-|
+|point_id|int|检查点id|-|
+|force_ascend|int|是否强制检查点id升序（即玩家不能返回之前已到达的检查点）|以0/1表T/F|
+|callback|string(函数路径)|指向玩家到达检查点时触发的函数|-|
+|summon_data|{multi_pos(list[position]), id(point_id)}|multi_pos表示所有检测点的坐标列表，这些检测点都属于id编号的检查点|-|
+|summon_list|list[summon_data]|多个检测点配置的列表，用于批量生成检测点|-|
+
+### CP 使用流程
+
+check_point工具不直接使用函数返回值。  
+
+使用check_point工具时，请先给需要追踪检查点的玩家添加`mmt_cp_user`的计分板标签，然后使用`mmt_core:utils/check_point/setup`函数配置工具参数以及各个检查点的信息。在这之后，多次使用`mmt_core:utils/check_point/create`创建检测点，或使用批量生成工具`mmt_core:utils/check_point/batch`生成检测点。最后使用`mmt_core:utils/check_point/run`启动检测循环。  
+
+不再需要使用检查点后，调用函数`mmt_core:utils/check_point/reset`来重置。使用`reset`函数将会停止检测循环，删除所有检测点，清除所有玩家的`mmt_cp_user`的计分板标签，并重置所有玩家的检查点进度。  
+
+对于每个拥有`mmt_cp_user`计分板标签的玩家，可以以自身为执行者调用`mmt_core:utils/check_point/back`来返回最近一次到达的检查点指定的位置。  
+
+关于检测点与检查点的区别，请参考[检测点与检查点](#cp-检测点与检查点)。  
+关于如何设置检查点，请参考[配置检查点](#cp-配置检查点)。  
+关于如何自定义触发检查点时的行为，请参考[自定义检查点行为](#cp-自定义检查点行为)。
+
+### CP back
+
+- 函数路径：`mmt_core:utils/check_point/back`
+- 参数：无需传参
+
+将自身传送回最近一次到达的检查点指定的位置。
+
+### CP batch
+
+- 函数路径：`mmt_core:utils/check_point/batch`
+- 参数：`{summon_list(summon_list)}`
+
+批量生成检测点。
+
+### CP create
+
+- 函数路径：`mmt_core:utils/check_point/create`
+- 参数：`{point_id(point_id)}`
+
+在执行者位置生成检测点，属于`point_id`指定的检查点。  
+**注意：** 该函数使用了坐标对齐，生成的检测点位置将与方块中心对齐。  
+
+### CP display
+
+- 函数路径：`mmt_core:utils/check_point/display`
+- 参数：无需传参
+
+切换是否显示检测点。属于同一检查点的检测点显示颜色相同，显示颜色基于检查点id计算。  
+**注意：** 检测循环启动后才能显示检测点。
+
+### CP reset
+
+- 函数路径：`mmt_core:utils/check_point/reset`
+- 参数：无需传参
+
+重置检查点工具，将会停止检测循环，删除所有检测点，清除所有玩家的`mmt_cp_user`的计分板标签，并重置所有玩家的检查点进度。  
+**注意：** 该函数不会重置检查点配置。
+
+### CP run
+
+- 函数路径：`mmt_core:utils/check_point/run`
+- 参数：无需传参
+
+启动检测循环。
+
+### CP setup
+
+- 函数路径：`mmt_core:utils/check_point/setup`
+- 参数：`{points(points), callback(callback), force_ascend(force_ascend)}`
+
+更改检查点工具设置，重新配置检查点。
+
+### CP 检测点与检查点
+
+检测点以`minecraft:marker`为载体实际存在在游戏中，检查点无实际载体。  
+
+不同的检查点拥有不同且唯一的检查点id，且有唯一的配置项(point)与其对应。对于检测点，不同的检测点可以有相同的检查点id，代表他们同属于一个检查点。  
+
+基于这样的设计，使用者可以像使用方块一样生成多个检测点，以自定义每个检查点检测区域的具体形状。
+
+### CP 配置检查点
+
+通过调用`mmt_core:utils/check_point/setup`函数，传入`points`参数，可以配置检查点。对于熟悉储存操作的使用者，可以直接修改`mcmmt:core_utils check_point.points`来配置检查点。
+
+对于每一个检查点，有唯一的配置项(point)，例子如下：
+
+```snbt
+{name:"example", pos:[0, 100, 0]}
+```
+
+该配置项中`pos`为必须项，表示玩家到达该检查点后，调用`mmt_core:utils/check_point/back`应将其传送至的坐标。其他项，如本例中`name`项，可以任意添加，作为检查点的自定义数据。  
+
+多个point配置项形成points列表，如：
+
+```snbt
+[{name:"example1", pos:[0, 100, 0]}, {name:"example2", pos:[10, 100, 10]}]
+```
+
+检查点的唯一id由其配置项在列表中的下标确定。  
+
+每个检查点的配置项会在玩家到达此检查点时作为参数传递给自定义的回调函数，因此，自定义的检查点参数配合自定义回调函数可以自定义该工具函数的绝大多数行为。详细信息参考[自定义检查点行为](#cp-自定义检查点行为)。
+
+### CP 自定义检查点行为
+
+使用`mmt_core:utils/check_point/setup`函数时传递的`callback`参数指向自定义的回调函数。通过修改回调函数，可以自定义到达检查点时的行为。  
+
+当玩家到达检查点时（严格来说是检查点进度更新时），自定义的回调函数会被触发，同时，玩家到达的检查点所依赖的配置项也会被传递给回调函数。回调函数的执行者和执行位置均为到达检查点的玩家本身。  
+
+自行编写回调函数可以参考默认回调函数：`mmt_core:utils/check_point/private/default_callback`  
 
 ## Core.Utils.ColorPanel
 
