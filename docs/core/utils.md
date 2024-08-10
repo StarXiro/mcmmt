@@ -257,6 +257,58 @@ check_point工具不直接使用函数返回值。
 
 ## Core.Utils.ColorPanel
 
+提供类似调色盘的颜色计算支持。  
+rgb值在工具储存中以最大值1.0的实数值提供，在工具计分板中以最大值255的整数值提供。计算颜色需要提供`angle`与`distance`两个参数。  
+
+### CLP 参数列表
+
+|参数名|参数类型|作用|备注|
+|--|--|--|--|
+|angle|float|计算需要参数，取值范围：[-180.0, 180.0]|详见[计算规则](#clp-计算规则)|
+|distance|int|计算需要参数，取值范围：[0, 1000]|同上|
+|particle|string|粒子ID|-|
+|args|string|剩余参数|详见[particle](#clp-particle)|
+
+### CLP 使用指引
+
+使用调色盘工具时，可以通过调用`mmt_core:utils/color_panel/get`函数，传入`distance`和`angle`函数来计算颜色。对于熟悉计分板操作，或是希望减少性能消耗的使用者，推荐直接设置工具计分板中`distance`和`angle`计分项（此时`angle`参数需要乘以10传入），然后调用`mmt_core:utils/color_panel/private/calc_color`计算颜色。  
+
+使用输出结果时，以最大值1.0的实数值代表的R（G/B）值存放于`mcmmt:core_utils color_panel.r(g/b)`中，以最大值255的整数值代表的R（G/B）值存放于`core_utils_color_panel`计分板的计分项`red(green/blue)`中。
+
+### CLP get
+
+- 函数路径：`mmt_core:utils/color_panel/get`
+- 参数：{angle(angle), distance(distance)}
+
+计算对应的颜色值。
+
+### CLP particle
+
+- 函数路径：`mmt_core:utils/color_panel/particle`
+- 参数：{particle(particle), args(args)}
+
+为方便生成计算所得颜色粒子而设计的工具函数。  
+该函数本质上将计算出的颜色值传入`/particle`命令中，并以`args`参数补齐后续缺少的命令参数。  
+
+例如，生成`minecraft:dust`粒子：
+
+```mcfunction
+# 原命令
+particle minecraft:dust 1 1 1 1.4 ~ ~ ~ 0 0 0 1 1 force @a
+# 使用 mmt_core:utils/color_panel/particle
+function mmt_core:utils/color_panel/particle {particle:"minecraft:dust", args:"1.4 ~ ~ ~ 0 0 0 1 1 force @a"}
+# 上述命令会使用上一次计算所得的颜色值作为粒子的颜色
+```
+
+### CLP 计算规则
+
+颜色计算方法基于[CSDN博客](https://blog.csdn.net/raynadofan/article/details/126521974)。
+
+参数含义 & 效果例图：  
+![color_panel](./color_panel.png)
+
+`distance`即到圆心的距离，`angle`在计算前会乘以10（即参数传入时保留一位小数的精度）。
+
 ## Core.Utils.Cos
 
 提供基于打表的余弦值计算。  
