@@ -312,10 +312,21 @@ function mmt_core:utils/color_panel/particle {particle:"minecraft:dust", args:"1
 ## Core.Utils.Cos
 
 提供基于打表的余弦值计算。  
-提供的接口与`Core.Utils.Sin`完全一致，请参考其文档。  
+使用方式和函数设计与[Core.Utils.Sin](#coreutilssin)完全一致，请参考其文档。  
 
-- `mmt_core:utils/cos_do`
-- `mmt_core:utils/cos_with_score`
+### COS do  
+
+- 函数路径：`mmt_core:utils/cos/do`
+- 参数：{degree}
+
+略。
+
+### COS with_score
+
+- 函数路径：`mmt_core:utils/cos/with_score`
+- 参数：{subj, obj}
+
+略。
 
 ## Core.Utils.ForEach
 
@@ -405,30 +416,76 @@ function mmt_core:utils/sight_cast_clear
 输入的角度值在计算过程中只保留一位精度。  
 结果精度保留到小数点后6位。  
 
-**可用方法：**  
+### SIN 参数列表
 
-- `mmt_core:utils/sin_do`  
-  **需传入参数。** 例子：
+|参数名|参数类型|作用|备注|
+|--|--|--|--|
+|degree|float|需要计算正弦值的角度值，计算时精确到小数点后一位|-|
+|subj|string|计分板追踪项|-|
+|obj|string|计分板项|-|
+
+### SIN 使用说明
+
+在传入参数时，有如下的使用样例：
+
+```mcfunction
+# 使用mmt_core:utils/sin/do
+function mmt_core:utils/sin/do {degree: 22.5f}
+# 使用mmt_core:utils/sin/with_score
+function mmt_core:utils/sin/do {subj:"degree", obj:"test_board"}
+# 直接向计分板赋值
+scoreboard players operation input core_utils_sincos = degree test_board
+function mmt_core:utils/sin/private/sin_enter
+```
+
+使用计分板数据时，数值应该为具体角度值的10倍；使用储存数据时，输入精度为小数点后一位。例如：  
+
+|实际值|储存值|计分板值|计算使用值|
+|--|--|--|--|
+|22.5|22.5f|225|22.5|
+|30.15|30.15f|301|30.1|
+
+对于希望避免传参以提高性能表现的使用者，建议采用直接向计分板赋值的使用方式。
+
+在使用计算结果时，有如下途径：  
+
+- 使用计分板中的数据  
+  计算结果以扩大倍数的整数形式存放于`result core_utils_sincos`，参与运算完毕后需除以`100,000`以恢复其原本大小。也可使用如下命令提取至储存：  
 
   ```mcfunction
-  # degree 角度值
-  function mmt_core:utils/sin_do {degree:22.5f}
+  execute store result storage namespace:storage a.path double 0.000001 run scoreboard players get result core_utils_sincos
   ```
 
-  返回的数据值如下：  
-  |数据|计分板路径|储存路径|
-  |--|--|--|
-  |正弦值|`core_utils_sincos -> result`|`mcmmt:core_utils -> sincos.result`|
-  |结果放大系数（针对计分板数据）|`core_utils_sincos -> scaler`|无|
+- 使用储存数据  
+  储存中以恢复了原始大小的浮点数储存结果于`mcmmt:core_utils sincos.result`，类型为double。
 
-- `mmt_core:utils/sin_with_score`  
-  针对计分板特化的调用接口，注意传入的计分板数据应该为扩大10倍后的整数角度值。  
+例如：  
+|输入|计算结果|计分板值|储存值|
+|--|--|--|--|
+|22.5|0.382683|382683|0.382683d|
+|0.1|0.001745|1745|0.001745d|
 
-  ```mcfunction
-  # subj 追踪项
-  # obj 计分板名称
-  function mmt_core:utils/sin_with_score {subj:test, obj:test_board}
-  ```
+### SIN do
+
+- 函数路径：`mmt_core:utils/sin/do`
+- 参数：{degree(degree)}
+
+计算传入参数`degree`的正弦值。
+
+### SIN with_score
+
+- 函数路径：`mmt_core:utils/cos/with_score`
+- 参数：{subj(subj), obj(obj)}
+
+使用计分板`obj`中追踪项`subj`的数值作为输入，计算其正弦值。
+
+### SIN 复杂度估计
+
+该工具函数的输入值需要在扩大10倍后，仍落在int数据范围内（即`[-214748364.8, 214748364.7]`）。  
+
+所有输入值会通过诱导公式等价转换至`[0.0, 90.0]`范围内的正弦值。对于表内存放的900个正弦值，采用30等分的策略，预期最大复杂度为60条命令执行（不包括数据预处理的命令条数）。  
+
+输入数据不宜过大（或过小），太大的数据会显著增加角度值等价转换所需的命令条数。
 
 ## Core.Utils.Sqrt
 
