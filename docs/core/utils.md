@@ -330,6 +330,51 @@ function mmt_core:utils/color_panel/particle {particle:"minecraft:dust", args:"1
 
 ## Core.Utils.ForEach
 
+可直接嵌套使用的for_each循环实现，使用栈进行每层循环参数的暂存和释放。  
+若想进行计次循环，可配合`Core.Utils.Range`实现。
+
+### FE 参数列表
+
+|参数名|参数类型|作用|备注|
+|--|--|--|--|
+|list|list[any]|需要遍历的列表|列表元素可以是任意类型|
+|loop_body|string(函数路径)|循环体函数的路径|详见[循环体](#fe-循环体)|
+
+### FE 使用流程
+
+通过调用`mmt_core:utils/for_each/do`来使用循环。关于如何编写循环体和嵌套循环，详见[循环体](#fe-循环体)。
+
+### FE do
+
+- 函数路径：`mmt_core:utils/cos/do`
+- 参数：{list(list), loop_body(loop_body)}
+
+用给定的参数进行循环。
+
+### FE 循环体
+
+参数`loop_body`指向的函数在此处称作循环体，循环体在每次循环时会被调用，并传递以下参数：  
+
+|参数名|参数类型|作用|备注|
+|--|--|--|--|
+|index|int|当前循环的下标|从0开始|
+|object|any|当前对象|-|
+|extra_index|list[index]|外层循环的下标列表|越内层的循环下标位于列表的越前部|
+
+一个简单的使用样例如下：  
+
+```mcfunction
+# In a function that uses for_each
+function mmt_core:utils/for_each/do {list:[0, 4, 5, 6, 7, 8], loop_body:"namespace:your_loop_body"}
+
+# In namespace:your_loop_body
+# 用tellraw显示index和object
+$tellraw @a {"translate": "%s is at index %s in the list.", "color": "gray", "with": [{"text": "$(object)", "color": "blue"}, {"text": "$(index)", "color": "gold", "underlined": true}]}
+```
+
+在循环体中也可以使用for_each并使用其他的列表，形成嵌套循环的效果。  
+二层和三层循环，以及循环体的简单实例见[utils/for_each/examples](../../data/mmt_core/functions/utils/for_each/examples/)内的预置函数。
+
 ## Core.Utils.Len
 
 ## Core.Utils.LinearMap
