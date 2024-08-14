@@ -1,13 +1,15 @@
 
 # list any list
-# round int
 
-$data modify storage mcmmt:core_utils make_match.team_list set value $(list)
-$data modify storage mcmmt:core_utils make_match.macro_bag.list set from storage mcmmt:core_utils make_match.inner_map[$(round)]
-data modify storage mcmmt:core_utils make_match.macro_bag.loop_body set value "mmt_core:utils/make_match/private/body"
-data modify storage mcmmt:core_utils make_match.set set value {}
-data modify storage mcmmt:core_utils make_match.tuples set value []
-data modify storage mcmmt:core_utils make_match.list set value []
-data modify storage mcmmt:core_utils make_match.map set value {}
+# move args
+$data modify storage mcmmt:core_utils make_match.origin_list set value $(list)
+data modify storage mcmmt:core_utils make_match.macro_bag.len.list set from storage mcmmt:core_utils make_match.origin_list
 
-function mmt_core:utils/for_each/do with storage mcmmt:core_utils make_match.macro_bag
+# get len
+execute store result storage mcmmt:core_utils make_match.length int 1.0 run function mmt_core:utils/len/do with storage mcmmt:core_utils make_match.macro_bag.len
+execute store result score length core_utils_make_match run data get storage mcmmt:core_utils make_match.length
+
+data modify storage mcmmt:core_utils make_match.rounds set value []
+
+function mmt_core:utils/make_match/private/main
+
