@@ -19,9 +19,13 @@ $data modify storage mcmmt:core_utils for_each.macro_bag.loop_body set value "$(
 scoreboard players set iter core_utils_for_each 0
 
 # enter loop
+# reset terminate flag
+scoreboard players set terminate core_utils_for_each 0
 function mmt_core:utils/for_each/private/obj_list_iter
 
 # end loop
+# reset terminate flag
+scoreboard players set terminate core_utils_for_each 0
 execute store result score temp core_utils_for_each run data get storage mcmmt:core_utils for_each.depth 1.0
 execute if score temp core_utils_for_each matches 2.. run function mmt_core:utils/for_each/private/pop_stack
 

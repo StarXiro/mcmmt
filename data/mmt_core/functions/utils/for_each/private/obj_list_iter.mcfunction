@@ -1,4 +1,7 @@
 
+# terminate flag
+execute if score terminate core_utils_for_each matches 1 run return fail
+
 # index out of range
 execute store result storage mcmmt:core_utils for_each.macro_bag.args.index int 1.0 run scoreboard players get iter core_utils_for_each
 function mmt_core:utils/for_each/private/eol_pred with storage mcmmt:core_utils for_each.macro_bag.args

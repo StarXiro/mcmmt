@@ -6,4 +6,5 @@ data modify storage mcmmt:core_utils for_each set value {list: [], macro_bag:{ a
 scoreboard objectives add core_utils_for_each dummy
 scoreboard players set iter core_utils_for_each 0
 scoreboard players set temp core_utils_for_each 0
+scoreboard players set terminate core_utils_for_each 0
 execute if score logon core_setting matches 1 run say Inited scoreboard for core.utils.for_each
