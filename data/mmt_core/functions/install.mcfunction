@@ -71,6 +71,8 @@ function mmt_core:utils/shuffle/__setup__
 
 function mmt_core:utils/len/__setup__
 
+function mmt_core:utils/team/__setup__
+
 function mmt_core:utils/mg/__setup__
 
 # setup global variables
@@ -84,7 +86,7 @@ scoreboard players enable @a personalscore
 execute if score logon core_setting matches 1 run say Inited scoreboard for triggers
 
 # init_manager
-data modify storage mcmmt:core init_manager set value {for_each: {list: [], loop_body: ""}, team_data: {key: "", display: "", color: ""}}
+data modify storage mcmmt:core init_manager set value {for_each: {list: [], loop_body: ""}, team_data: {key: "", display: "", color: "", id: 0}}
 
 # auto make team_data
 function mmt_core:init_manager/team_data/generate
