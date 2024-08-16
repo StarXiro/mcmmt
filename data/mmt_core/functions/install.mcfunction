@@ -34,46 +34,28 @@ execute if score logon core_setting matches 1 run say Inited storage for core.ut
 data modify storage mcmmt:core_utils SBSconfig set value {score: 0, scoreboardname:"core_utils_sbs_temp",loop_max: 32,loop_cnt: 1}
 
 function mmt_core:utils/rand/__setup__
-
 function mmt_core:utils/sight_cast/__setup__
-
 function mmt_core:utils/sqrt/__setup__
-
 # use one setup
 # function mmt_core:utils/sin/__setup__
 function mmt_core:utils/cos/__setup__
-
 function mmt_core:utils/uuid_match/__setup__
-
 function mmt_core:utils/bfs/__setup__
-
 function mmt_core:utils/timer/__setup__
-
 function mmt_core:utils/to_bin/__setup__
-
 function mmt_core:utils/color_panel/__setup__
-
 function mmt_core:utils/check_point/__setup__
-
 function mmt_core:utils/linear_map/__setup__
-
 function mmt_core:utils/pillar_check/__setup__
-
 function mmt_core:utils/sbs/__setup__
-
 function mmt_core:utils/for_each/__setup__
-
 function mmt_core:utils/range/__setup__
-
 function mmt_core:utils/make_match/__setup__
-
 function mmt_core:utils/shuffle/__setup__
-
 function mmt_core:utils/len/__setup__
-
 function mmt_core:utils/team/__setup__
-
 function mmt_core:utils/mg/__setup__
+function mmt_core:utils/get_ground/__setup__
 
 # setup global variables
 scoreboard objectives add core_game_config dummy
