@@ -30,6 +30,16 @@ scoreboard players operation temp core_utils_get_ground *= 1000 core_utils_get_g
 scoreboard players add temp core_utils_get_ground 500
 scoreboard players operation dz core_utils_get_ground -= temp core_utils_get_ground
 
+# get direction
+execute if score dx core_utils_get_ground matches 1.. run scoreboard players set ix core_utils_get_ground 1
+execute if score dx core_utils_get_ground matches ..-1 run scoreboard players set ix core_utils_get_ground -1
+execute if score dz core_utils_get_ground matches 1.. run scoreboard players set iz core_utils_get_ground 1
+execute if score dz core_utils_get_ground matches ..-1 run scoreboard players set iz core_utils_get_ground -1
+
+# save
+scoreboard players operation sx core_utils_get_ground = dx core_utils_get_ground
+scoreboard players operation sz core_utils_get_ground = dz core_utils_get_ground
+
 # select
 # x
 execute if score dx core_utils_get_ground matches 1.. if block ~1 ~ ~ #mmt_core:all_air run scoreboard players set dx core_utils_get_ground 0
@@ -40,5 +50,7 @@ execute if score dy core_utils_get_ground matches ..-1 if block ~ ~-1 ~ #mmt_cor
 # z
 execute if score dz core_utils_get_ground matches 1.. if block ~ ~ ~1 #mmt_core:all_air run scoreboard players set dz core_utils_get_ground 0
 execute if score dz core_utils_get_ground matches ..-1 if block ~ ~ ~-1 #mmt_core:all_air run scoreboard players set dz core_utils_get_ground 0
+
+execute if score dx core_utils_get_ground matches 0 if score dz core_utils_get_ground matches 0 run return run function mmt_core:utils/get_ground/private/all_zero_check
 
 function mmt_core:utils/get_ground/private/xz

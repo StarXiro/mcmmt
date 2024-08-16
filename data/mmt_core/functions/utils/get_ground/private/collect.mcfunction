@@ -1,5 +1,5 @@
 
-execute if score axis core_utils_get_ground matches 0 run return fail
+execute if score axis core_utils_get_ground matches 0 run return run function mmt_core:utils/get_ground/private/not_full
 
 scoreboard players set offset core_utils_get_ground 1
 scoreboard players operation pos core_utils_get_ground = axis core_utils_get_ground
