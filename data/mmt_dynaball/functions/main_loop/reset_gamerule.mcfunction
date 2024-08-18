@@ -1,0 +1,2 @@
+# lp
+$gamerule commandModificationBlockLimit $(lp)

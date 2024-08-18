@@ -1,0 +1,1 @@
+$tp @a[tag=dnb_player] $(spawn)
