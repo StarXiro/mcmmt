@@ -32,6 +32,11 @@ scoreboard players remove max_map_id dnb_system 1
 data modify storage mcmmt:dynaball macro_bag.len.list set from storage mcmmt:dynaball map_slots
 execute store result score max_slot dnb_system run function mmt_core:utils/len/do with storage mcmmt:dynaball macro_bag.len
 
+# get rand item len
+data modify storage mcmmt:dynaball macro_bag.len.list set from storage mcmmt:dynaball weapons
+execute store result score #rand_item_len dnb_system run function mmt_core:utils/len/do with storage mcmmt:dynaball macro_bag.len
+scoreboard players remove #rand_item_len dnb_system 1
+
 # move progress
 data modify storage mcmmt:dynaball system.progress set from storage mcmmt:dynaball start_up.progress
 data modify storage mcmmt:dynaball system.max_progress set from storage mcmmt:dynaball start_up.max_progress

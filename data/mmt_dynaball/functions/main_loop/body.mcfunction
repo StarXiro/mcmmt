@@ -19,7 +19,6 @@ data modify storage mcmmt:dynaball system.board_names set value []
 function mmt_dynaball:prepare/round_prepare
 
 # before match
-title @a[tag=dnb_player] times 0t 20t 0t
 function mmt_dynaball:before_match/before_match
 
 # WARN modify game rule

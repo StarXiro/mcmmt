@@ -1,0 +1,1 @@
+$function mmt_dynaball:cg/frames/perform_etp $(object)

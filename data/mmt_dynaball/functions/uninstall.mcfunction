@@ -5,6 +5,11 @@ data remove storage mcmmt:dynaball games
 data remove storage mcmmt:dynaball maps
 data remove storage mcmmt:dynaball temp
 data remove storage mcmmt:dynaball macro_bag
+data remove storage mcmmt:dynaball weapons
+data remove storage mcmmt:dynaball lobby
+data remove storage mcmmt:dynaball map_slots
+data remove storage mcmmt:dynaball board_saves
+data remove storage mcmmt:dynaball build_slots
 
 scoreboard objectives remove dnb_system
 scoreboard objectives remove dnb_main_display
