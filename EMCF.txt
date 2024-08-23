@@ -47,8 +47,8 @@ def <event> <name>() {}
 
 变量嵌入方法： {% expression %}
 macro <var name> 宏嵌入
-score_o <var name> 嵌入计分板名
-score_s <var name> 嵌入计分板追踪项名
+score_o <var name> 嵌入记分板名
+score_s <var name> 嵌入记分板追踪项名
 data <var name> 嵌入储存路径
 func <function name> 嵌入函数路径
 object <object name> 嵌入实例的SNBT

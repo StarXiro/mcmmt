@@ -17,7 +17,7 @@ function mmt_tgttos:on_tick
 function mmt_tgttos:on_5tick
 
 #game_start  ****need to change
-function mmt_tgttos:game_process/one_use/transroundend
+function mmt_tgttos:game_process/one_use/prepare
 
 #intro
 function mmt_tgttos:game_process/intro
