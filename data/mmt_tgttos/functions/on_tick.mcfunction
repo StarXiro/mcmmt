@@ -6,6 +6,7 @@ function mmt_tgttos:item/main
 execute if score countdown tgttos matches -1 run execute if score gameprocess tgttos matches 1 run function mmt_tgttos:game_process/one_use/start_round
 execute if score countdown tgttos matches -1 run execute if score gameprocess tgttos matches 2 run function mmt_tgttos:game_process/one_use/end_round
 execute if score countdown tgttos matches -1 run execute if score gameprocess tgttos matches 3 run function mmt_tgttos:game_process/one_use/prepare_round
+execute if score countdown tgttos matches -1 run execute if score gameprocess tgttos matches 4 run function mmt_tgttos:game_process/one_use/game_end
 execute if score gameprocess tgttos matches 1 run function mmt_tgttos:game_process/loop/round_before
 execute if score gameprocess tgttos matches 2 run function mmt_tgttos:game_process/loop/round_start
 execute if score gameprocess tgttos matches 3 run function mmt_tgttos:game_process/loop/round_end

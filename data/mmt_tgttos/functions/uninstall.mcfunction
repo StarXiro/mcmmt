@@ -1,6 +1,4 @@
 #delete items
-scoreboard objectives remove tgttos
-kill @e[name="round_count",tag=config]
 function mmt_tgttos:stop
 
 #data del
@@ -26,7 +24,3 @@ scoreboard objectives remove tgttos_scoreboard_green
 scoreboard objectives remove tgttos_scoreboard_blue
 scoreboard objectives remove tgttos_scoreboard_aqua
 scoreboard objectives remove tgttos_scoreboard_pink
-
-#marker del
-kill @e[type=marker,tag=config]
-kill @e[type=marker,tag=map]
