@@ -1,0 +1,1 @@
+$tag @a[tag=dnb_player] remove dnb_slot_$(index)
