@@ -1,0 +1,1 @@
+$tag @a[team=$(team)] add $(tag)

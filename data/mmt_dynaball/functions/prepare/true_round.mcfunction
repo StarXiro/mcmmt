@@ -1,4 +1,12 @@
 
+# add tag to players
+data modify storage mcmmt:dynaball macro_bag.team_tag.team set from storage mcmmt:dynaball temp.teams[0]
+data modify storage mcmmt:dynaball macro_bag.team_tag.tag set value "team_a"
+function mmt_dynaball:prepare/tag_team_player with storage mcmmt:dynaball macro_bag.team_tag
+data modify storage mcmmt:dynaball macro_bag.team_tag.team set from storage mcmmt:dynaball temp.teams[1]
+data modify storage mcmmt:dynaball macro_bag.team_tag.tag set value "team_b"
+function mmt_dynaball:prepare/tag_team_player with storage mcmmt:dynaball macro_bag.team_tag
+
 # collect data to game
 data modify storage mcmmt:dynaball macro_bag.game.team_a set from storage mcmmt:dynaball temp.teams[0]
 data modify storage mcmmt:dynaball macro_bag.game.team_b set from storage mcmmt:dynaball temp.teams[1]
