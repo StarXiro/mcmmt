@@ -46,10 +46,14 @@ scoreboard objectives remove stas_last_walk
 scoreboard objectives remove stas_this_walk
 scoreboard objectives remove stas_last_elytra
 scoreboard objectives remove stas_this_elytra
+scoreboard objectives remove core_utils_item_check_count
+scoreboard objectives remove core_utils_item_check_number
+scoreboard objectives remove core_utils_item_check
 
 scoreboard objectives remove core_game_config
 scoreboard objectives remove core_player_score
 scoreboard objectives remove personalscore
+
 # remove storage
 execute if score logon core_setting matches 1 run say Removing storage
 data remove storage mcmmt:core installed
@@ -67,6 +71,7 @@ data remove storage mcmmt:core_utils linear_map
 data remove storage mcmmt:core_utils pillar_check
 data remove storage mcmmt:core_utils SBSconfig
 data remove storage mcmmt:core_utils mg
+
 
 function mmt_core:utils/for_each/__delete__
 function mmt_core:utils/range/__delete__

@@ -56,6 +56,7 @@ function mmt_core:utils/len/__setup__
 function mmt_core:utils/team/__setup__
 function mmt_core:utils/mg/__setup__
 function mmt_core:utils/get_ground/__setup__
+function mmt_core:utils/item_check/__setup__
 
 # setup global variables
 scoreboard objectives add core_game_config dummy

@@ -1,11 +1,2 @@
 #kill items
-kill @e[type=item,name="剪刀"]
-kill @e[type=item,name="红色羊毛"]
-kill @e[type=item,name="橙色羊毛"]
-kill @e[type=item,name="黄色羊毛"]
-kill @e[type=item,name="绿色羊毛"]
-kill @e[type=item,name="黄绿色羊毛"]
-kill @e[type=item,name="蓝色羊毛"]
-kill @e[type=item,name="青色羊毛"]
-kill @e[type=item,name="粉红色羊毛"]
-kill @e[type=item,name="生鳕鱼"]
+kill @e[type=item]

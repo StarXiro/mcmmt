@@ -14,10 +14,8 @@ gamemode adventure @a[tag=player]
 
 #trigger loop
 function mmt_tgttos:on_tick
-function mmt_tgttos:on_5tick
 
 #game_start  ****need to change
-function mmt_tgttos:game_process/one_use/prepare
-
+function mmt_tgttos:game_process/one_use/prepare_round
 #intro
 function mmt_tgttos:game_process/intro
