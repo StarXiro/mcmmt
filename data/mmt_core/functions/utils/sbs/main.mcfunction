@@ -10,4 +10,3 @@ $execute as @e[scores={$(scoreboardname)=-2147483648..2147483647}] run scoreboar
 
 #loop
 function mmt_core:utils/sbs/private/loop
-

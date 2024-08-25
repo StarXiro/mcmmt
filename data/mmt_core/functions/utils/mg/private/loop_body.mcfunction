@@ -1,5 +1,5 @@
-#需要传入参数 scoreboardname / name
-$kill @e[name=$(name),type=marker]
-$summon marker 0 0 0 {CustomName:"$(name)"}
-$scoreboard players operation @e[name=$(name),type=marker] $(scoreboardname) += $(name) $(scoreboardname)
-$scoreboard players display name @e[name=$(name),type=marker] $(scoreboardname) "$(name)"
+#需要传入参数 scoreboardname / name / displayname(非必要) / color(非必要)
+$kill @e[name="$(displayname)",type=marker]
+$summon marker 0 0 0 {CustomName:'{"type":"text","text":"$(displayname)","color":"$(color)"}'}
+$scoreboard players operation @e[name="$(displayname)",type=marker] $(scoreboardname) += $(name) $(scoreboardname)
+$scoreboard players display name @e[name="$(displayname)",type=marker] $(scoreboardname) {"text":"$(displayname)","color":"$(color)"}

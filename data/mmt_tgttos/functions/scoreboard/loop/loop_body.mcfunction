@@ -6,6 +6,10 @@ $scoreboard players operation $(team) tgttos_player_count += @a[tag=player,team=
 $scoreboard players reset $(team) tgttos_finish_count
 $scoreboard players operation $(team) tgttos_finish_count += @a[tag=player,team=$(team)] tgttos_finish_count
 
+#score set
+$scoreboard players reset $(team) tgttos_sum_score
+$scoreboard players operation $(team) tgttos_sum_score += @a[tag=player,team=$(team)] tgttos_player_score
+
 #get scoreboard marks for storage
 execute store result storage mcmmt:tgttos scoreboard.game_count int 1 run scoreboard players get game_count core_game_config
 execute store result storage mcmmt:tgttos scoreboard.round_count int 1 run scoreboard players get round_count tgttos

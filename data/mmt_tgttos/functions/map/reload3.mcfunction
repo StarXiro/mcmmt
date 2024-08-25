@@ -1,10 +1,10 @@
-# map 3 - My Go!!
+# map 3 - My_Go!!
 
 #kill
 kill @e[type=ocelot]
 
 #map reload
-scoreboard players set @e[name="My Go!!"] tgttos_config 1
+data modify storage mcmmt:tgttos scoreboard.map_name set value "My Go!!"
 
 #item supply
 item replace entity @a[tag=tgttos] hotbar.8 with cod 64

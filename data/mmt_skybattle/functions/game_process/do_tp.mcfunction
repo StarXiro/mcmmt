@@ -1,0 +1,1 @@
+$tp @a[team=$(team)] $(spawn)
