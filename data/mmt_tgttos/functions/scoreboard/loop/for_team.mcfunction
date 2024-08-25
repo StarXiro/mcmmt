@@ -2,7 +2,7 @@
 $scoreboard players display name 游戏进度 tgttos_scoreboard_$(team) [{"text":"游戏进度: ","color":"aqua"},{"text":"$(game_count)","color":"white"},{"text":"/8","color":"white"}]
 
 #map_name
-$scoreboard players display name 当前地图 tgttos_scoreboard_$(team) [{"text":"当前地图: ","color":"aqua"},{"color":"white","text":$(map_name)}]
+$scoreboard players display name 当前地图 tgttos_scoreboard_$(team) [{"text":"当前地图: ","color":"aqua"},{"color":"white","text":"$(map_name)"}]
 
 #player_finished with sum
 $scoreboard players display name 玩家数 tgttos_scoreboard_$(team) [{"text":"已完成玩家: ","color":"green"},{"text":"$(finish_count)","color":"green"},{"text":"/","color":"green"},{"text":"$(player_count)","color":"green"}]

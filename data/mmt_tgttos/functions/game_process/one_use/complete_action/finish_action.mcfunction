@@ -1,4 +1,4 @@
-#broadcast
+#update
 scoreboard players set @s tgttos_finish_count 1
 
 #finish_count update
@@ -22,6 +22,9 @@ tellraw @s {"translate":"[%s%s%s] %s%s%s","with":[{"text":"+","color":"gold"},{"
 gamemode spectator @s
 
 #team check
-function mmt_tgttos:game_process/one_use/score_give with storage mcmmt:tgttos
+function mmt_tgttos:game_process/one_use/complete_action/score_give with storage mcmmt:tgttos
 scoreboard players set loop_cnt tgttos_config 0
 function mmt_tgttos:game_process/loop/loop_check with storage mcmmt:tgttos
+execute if score all tgttos_finish_count = all tgttos_player_count run scoreboard players set countdown tgttos -1
+
+

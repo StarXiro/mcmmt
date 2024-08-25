@@ -14,6 +14,7 @@ scoreboard objectives remove tgttos_config
 scoreboard objectives remove tgttos_player_score
 scoreboard objectives remove tgttos_team_score
 scoreboard objectives remove tgttos_message_type
+scoreboard objectives remove tgttos_sum_score
 
 #硬编码
 scoreboard objectives remove tgttos_scoreboard_red
