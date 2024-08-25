@@ -1,4 +1,5 @@
 #intro
+#need change
 tellraw @a {"text":"-----------------------------------------------------","color":"gold"}
 tellraw @a {"text":"  "}
 tellraw @a {"text":"  在本游戏中，队伍中的一员将扮演猫猫，剩余玩家将扮演苦力怕试图逃离猫猫的抓捕"}
