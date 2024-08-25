@@ -8,7 +8,6 @@ function mmt_dynaball:before_match/refresh_board with storage mcmmt:dynaball mac
 
 # TODO summon building checker at 90s
 
-# TODO transport players at 60s
 # transport tip
 execute if score #waiting dnb_system matches 63 run title @a[tag=dnb_player] title {"type": "text", "color": "aqua", "text": "传送至场地..."}
 execute if score #waiting dnb_system matches 60 run function mmt_dynaball:cg/do_transportation

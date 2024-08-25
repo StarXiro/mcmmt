@@ -1,3 +1,4 @@
+execute unless function mmt_dynaball:tnt_proj/validate run kill @s
 tag @s add dnb_tnt_freeze
 tag @s remove dnb_tnt_inactive
 tag @s add dnb_tnt_active

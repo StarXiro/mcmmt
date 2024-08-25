@@ -13,6 +13,15 @@ data remove storage mcmmt:dynaball build_slots
 
 scoreboard objectives remove dnb_system
 scoreboard objectives remove dnb_main_display
+scoreboard objectives remove dnb_tnt_last_mx
+scoreboard objectives remove dnb_tnt_last_my
+scoreboard objectives remove dnb_tnt_last_mz
+scoreboard objectives remove dnb_tnt_motion_x
+scoreboard objectives remove dnb_tnt_motion_y
+scoreboard objectives remove dnb_tnt_motion_z
+scoreboard objectives remove dnb_dmg_source
+scoreboard objectives remove dnb_dmg_valid
+scoreboard objectives remove dnb_stuck_cnt
 
 # data remove storage mcmmt:dynaball shot_tnt
 # data remove storage mcmmt:dynaball random_motion
