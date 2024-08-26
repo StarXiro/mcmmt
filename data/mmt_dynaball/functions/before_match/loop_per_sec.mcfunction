@@ -6,7 +6,8 @@ execute if score #waiting dnb_system matches ..0 run return run function mmt_dyn
 execute store result storage mcmmt:dynaball macro_bag.before_match.second int 1.0 run scoreboard players get #waiting dnb_system
 function mmt_dynaball:before_match/refresh_board with storage mcmmt:dynaball macro_bag.before_match
 
-# TODO summon building checker at 90s
+execute if score #waiting dnb_system matches 91 run title @a[tag=dnb_player] actionbar {"type": "text", "color": "white", "text": "正在准备完整度检测..."}
+execute if score #waiting dnb_system matches 90 run function mmt_dynaball:checker/looper
 
 # transport tip
 execute if score #waiting dnb_system matches 63 run title @a[tag=dnb_player] title {"type": "text", "color": "aqua", "text": "传送至场地..."}
@@ -25,4 +26,4 @@ execute if score #waiting dnb_system matches 1..5 as @a[tag=dnb_player] at @s ru
 
 # next loop
 scoreboard players remove #waiting dnb_system 1
-schedule function mmt_dynaball:before_match/loop_per_sec 1s append
+schedule function mmt_dynaball:before_match/loop_per_sec 1s replace
