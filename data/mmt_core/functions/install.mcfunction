@@ -61,6 +61,7 @@ function mmt_core:utils/item_check/__setup__
 # setup global variables
 scoreboard objectives add core_game_config dummy
 scoreboard objectives add core_player_score dummy
+scoreboard objectives add core_team_score dummy
 execute if score logon core_setting matches 1 run say Inited scoreboard for global variables
 
 # utils personalscore initialize

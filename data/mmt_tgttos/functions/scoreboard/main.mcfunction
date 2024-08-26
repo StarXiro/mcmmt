@@ -5,6 +5,7 @@ scoreboard players operation all tgttos_finish_count += @a[tag=player] tgttos_fi
 scoreboard players reset all tgttos_player_count
 scoreboard players set @a[tag=player] tgttos_player_count 1
 scoreboard players operation all tgttos_player_count += @a[tag=player] tgttos_player_count
+function mmt_tgttos:score_list/main
 
 #run 宏function
 function mmt_tgttos:scoreboard/loop/variables_set with storage mcmmt:tgttos scoreboard
