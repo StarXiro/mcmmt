@@ -1,1 +1,1 @@
-execute as @e[type=marker,scores={tgttos_sum_score=0..}] run function mmt_tgttos:scoreboard/score_update/variables_set
+execute positioned 0 0 0 as @e[type=marker,scores={tgttos_sum_score=0..},sort=nearest] run function mmt_tgttos:scoreboard/score_update/variables_set

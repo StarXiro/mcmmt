@@ -15,11 +15,11 @@ data modify storage mcmmt:core_utils SBSconfig.loop_max set value 8
 function mmt_core:utils/sbs/main with storage mcmmt:core_utils SBSconfig
 
 #变量
-execute as @e if score @s core_utils_sbs_prank matches 1 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 2 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 3 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 4 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 5 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 6 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 7 run function mmt_tgttos:score_list/private/variables_set
-execute as @e if score @s core_utils_sbs_prank matches 8 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 1 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 2 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 3 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 4 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 5 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 6 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 7 run function mmt_tgttos:score_list/private/variables_set
+execute positioned 0 0 0 as @e[sort=nearest] if score @s core_utils_sbs_prank matches 8 run function mmt_tgttos:score_list/private/variables_set

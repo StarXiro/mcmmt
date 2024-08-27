@@ -23,7 +23,6 @@ function mmt_tgttos:game_process/intro
 
 #team_score display
 function mmt_tgttos:score_list/main
-function mmt_tgttos:score_list/main
 function mmt_tgttos:scoreboard/score_update/main
 function mmt_tgttos:scoreboard/score_update/main
 

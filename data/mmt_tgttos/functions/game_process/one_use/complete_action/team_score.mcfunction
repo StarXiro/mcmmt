@@ -1,6 +1,6 @@
 $execute store result score reward2 tgttos_config run data get storage mcmmt:tgttos scorelist.reward2[$(rank)]
-$scoreboard players operation $(teamname) tgttos_team_score += reward2 tgttos_config
-$scoreboard players operation reward2 tgttos_config /= $(teamname) tgttos_player_count
+#$scoreboard players operation $(teamname) tgttos_team_score += reward2 tgttos_config
+#$scoreboard players operation reward2 tgttos_config /= $(teamname) tgttos_player_count
 #$scoreboard players operation @a[team=$(teamname)] core_player_score += reward2 tgttos_config
 $scoreboard players operation @a[team=$(teamname)] tgttos_player_score += reward2 tgttos_config
 

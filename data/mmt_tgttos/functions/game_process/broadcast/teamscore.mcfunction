@@ -7,6 +7,7 @@ function mmt_core:utils/mg/main
 data modify storage mcmmt:core_utils SBSconfig.scoreboardname set value "tgttos_sum_score"
 data modify storage mcmmt:core_utils SBSconfig.loop_max set value 8
 function mmt_core:utils/sbs/main with storage mcmmt:core_utils SBSconfig
+
 execute as @e[type=marker] if score @s tgttos_sum_score = 1 core_utils_sbs_rank run tellraw @a {"translate":"1. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"tgttos_sum_score"}}]}
 execute as @e[type=marker] if score @s tgttos_sum_score = 2 core_utils_sbs_rank run tellraw @a {"translate":"2. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"tgttos_sum_score"}}]}
 execute as @e[type=marker] if score @s tgttos_sum_score = 3 core_utils_sbs_rank run tellraw @a {"translate":"3. %s: %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"tgttos_sum_score"}}]}

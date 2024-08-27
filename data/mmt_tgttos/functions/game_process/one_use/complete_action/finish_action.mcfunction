@@ -26,11 +26,7 @@ function mmt_tgttos:game_process/one_use/complete_action/score_give with storage
 scoreboard players set loop_cnt tgttos_config 0
 function mmt_tgttos:game_process/loop/loop_check with storage mcmmt:tgttos
 execute if score all tgttos_finish_count = all tgttos_player_count run scoreboard players set countdown tgttos -1
-
-function mmt_tgttos:scoreboard/score_update/main
-function mmt_tgttos:scoreboard/score_update/main
-
 function mmt_tgttos:scoreboard/main
-
 function mmt_tgttos:score_list/main
+function mmt_tgttos:scoreboard/score_update/main
 function mmt_tgttos:scoreboard/score_update/main

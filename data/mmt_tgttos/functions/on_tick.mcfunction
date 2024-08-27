@@ -19,6 +19,9 @@ execute if score countdown tgttos matches 719 if score gameprocess tgttos matche
 execute if score countdown tgttos matches 719 if score gameprocess tgttos matches 4 run tellraw @a {"text":"本场游戏最佳玩家:","bold":true}
 execute if score countdown tgttos matches 659 if score gameprocess tgttos matches 4 run function mmt_tgttos:game_process/broadcast/playerscore
 execute if score countdown tgttos matches 659 if score gameprocess tgttos matches 4 run execute as @a[tag=tgttos] run tellraw @s {"translate":"%s. %s: %s","with":[{"score":{"name":"@s","objective":"core_utils_sbs_prank"}},{"selector":"@s"},{"score":{"name":"@s","objective":"tgttos_player_score"}}]}
+execute if score countdown tgttos matches 579 if score gameprocess tgttos matches 4 run tellraw @a " "
+execute if score countdown tgttos matches 579 if score gameprocess tgttos matches 4 run tellraw @a {"text":"当前队伍分数排名:","bold":true}
+execute if score countdown tgttos matches 519 if score gameprocess tgttos matches 4 run function mmt_tgttos:game_process/broadcast/corescore
 
 #one_use
 
