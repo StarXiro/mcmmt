@@ -11,6 +11,7 @@ scoreboard objectives add tgttos_team_score dummy
 scoreboard objectives add tgttos_sum_score dummy
 scoreboard objectives add tgttos_player_score dummy
 scoreboard objectives add tgttos_message_type dummy
+scoreboard objectives add tgttos_team_list dummy
 scoreboard players set round_count tgttos 0
 scoreboard players set secs tgttos 1200
 scoreboard players set secs2 tgttos 20

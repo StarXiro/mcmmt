@@ -1,0 +1,1 @@
+execute as @e[type=marker,scores={tgttos_sum_score=0..}] run function mmt_tgttos:scoreboard/score_update/variables_set
