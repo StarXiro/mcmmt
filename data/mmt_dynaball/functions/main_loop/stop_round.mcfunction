@@ -1,5 +1,7 @@
 
 # reset player tag
+execute as @a[tag=dnb_spec] run tag @s add dnb_player
+tag @a[tag=dnb_player] remove dnb_spec
 tag @a[tag=dnb_player] remove team_a
 tag @a[tag=dnb_player] remove team_b
 # reset dnb_slot_$(index)

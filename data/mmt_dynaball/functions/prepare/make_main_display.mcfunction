@@ -1,6 +1,8 @@
 # progress
 # max_progress
 
+# TODO migrate to new fold <main_display>
+
 scoreboard objectives add dnb_main_display dummy {"type": "text", "text": "Dynaball", "color": "gold", "bold": true}
 
 scoreboard objectives modify dnb_main_display numberformat blank

@@ -41,6 +41,7 @@ scoreboard players remove #rand_item_len dnb_system 1
 data modify storage mcmmt:dynaball system.progress set from storage mcmmt:dynaball start_up.progress
 data modify storage mcmmt:dynaball system.max_progress set from storage mcmmt:dynaball start_up.max_progress
 
+# TODO fix, separate boards with team rank
 # create main_display
 function mmt_dynaball:prepare/make_main_display with storage mcmmt:dynaball system
 
