@@ -4,6 +4,12 @@ data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmm
 data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:prepare/add_force_load"
 function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
 
+# TODO fix, separate boards with team rank
+# create main_display: dnb_md_$(team)
+data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball start_up.team_list
+data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:main_display/entry"
+function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
+
 # add tag dnb_player for all team_members
 data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball start_up.team_list
 data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:prepare/tag_all_player"
@@ -40,10 +46,6 @@ scoreboard players remove #rand_item_len dnb_system 1
 # move progress
 data modify storage mcmmt:dynaball system.progress set from storage mcmmt:dynaball start_up.progress
 data modify storage mcmmt:dynaball system.max_progress set from storage mcmmt:dynaball start_up.max_progress
-
-# TODO fix, separate boards with team rank
-# create main_display
-function mmt_dynaball:prepare/make_main_display with storage mcmmt:dynaball system
 
 # reset round
 data modify storage mcmmt:dynaball round set value 0

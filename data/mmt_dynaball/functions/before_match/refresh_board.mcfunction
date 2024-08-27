@@ -1,2 +1,2 @@
-# second
-$scoreboard players display numberformat next_round dnb_main_display fixed {"type": "translatable", "translate": "%ss", "color": "red", "with": [{"type": "text", "text": "$(second)", "color": "yellow"}]}
+$data modify storage mcmmt:dynaball macro_bag.before_match.team set value "$(object)"
+function mmt_dynaball:before_match/perform_refresh with storage mcmmt:dynaball macro_bag.before_match

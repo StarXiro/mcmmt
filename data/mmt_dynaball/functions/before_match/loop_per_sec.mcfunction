@@ -4,7 +4,9 @@ execute if score #waiting dnb_system matches ..0 run return run function mmt_dyn
 
 # refresh board
 execute store result storage mcmmt:dynaball macro_bag.before_match.second int 1.0 run scoreboard players get #waiting dnb_system
-function mmt_dynaball:before_match/refresh_board with storage mcmmt:dynaball macro_bag.before_match
+data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball start_up.team_list
+data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:before_match/refresh_board"
+function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
 
 execute if score #waiting dnb_system matches 91 run title @a[tag=dnb_player] actionbar {"type": "text", "color": "white", "text": "正在准备完整度检测..."}
 execute if score #waiting dnb_system matches 90 run function mmt_dynaball:checker/looper
