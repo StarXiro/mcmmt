@@ -20,4 +20,4 @@ $scoreboard players set 游戏进度 tgttos_scoreboard_$(team) 7
 $scoreboard players display name 占位 tgttos_scoreboard_$(team) [{"text":"  "}]
 $scoreboard players display name 占位2 tgttos_scoreboard_$(team) [{"text":"  "}]
 $scoreboard players display name 游戏积分 tgttos_scoreboard_$(team) {"text":"本游戏积分:","color":"aqua"}
-$scoreboard objectives setdisplay sidebar.team.$(color) tgttos_scoreboard_$(team)
+$scoreboard players set $(team) tgttos_sum_score 0

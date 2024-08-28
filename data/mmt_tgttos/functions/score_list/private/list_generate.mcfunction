@@ -1,0 +1,1 @@
+$data modify storage mcmmt:tgttos team.list append value {name:"$(name)",score:$(score),rank:$(rank)}

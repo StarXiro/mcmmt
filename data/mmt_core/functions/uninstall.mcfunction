@@ -49,7 +49,7 @@ scoreboard objectives remove stas_this_elytra
 scoreboard objectives remove core_utils_item_check_count
 scoreboard objectives remove core_utils_item_check_number
 scoreboard objectives remove core_utils_item_check
-
+scoreboard objectives remove core_pid
 scoreboard objectives remove core_game_config
 scoreboard objectives remove core_player_score
 scoreboard objectives remove personalscore

@@ -1,0 +1,2 @@
+$data modify storage mcmmt:dynaball macro_bag.call_frame set from storage mcmmt:dynaball temp.cg.$(name)
+$execute as @e[type=block_display,tag=$(camera),limit=1] at @s run function mmt_dynaball:cg/frames/$(name) with storage mcmmt:dynaball macro_bag.call_frame

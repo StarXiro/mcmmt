@@ -11,7 +11,7 @@ execute as @r store result storage mcmmt:tgttos rank int 1 run scoreboard player
 #score_give
 scoreboard players operation score tgttos_config -= all tgttos_finish_count
 scoreboard players add score tgttos_config 1
-scoreboard players operation @s core_player_score += score tgttos_config
+#scoreboard players operation @s core_player_score += score tgttos_config
 scoreboard players operation @s tgttos_player_score += score tgttos_config
 scoreboard players set @a tgttos_message_type 1
 scoreboard players set @s tgttos_message_type 0
@@ -26,5 +26,7 @@ function mmt_tgttos:game_process/one_use/complete_action/score_give with storage
 scoreboard players set loop_cnt tgttos_config 0
 function mmt_tgttos:game_process/loop/loop_check with storage mcmmt:tgttos
 execute if score all tgttos_finish_count = all tgttos_player_count run scoreboard players set countdown tgttos -1
-
-
+function mmt_tgttos:scoreboard/main
+function mmt_tgttos:score_list/main
+function mmt_tgttos:scoreboard/score_update/main
+function mmt_tgttos:scoreboard/score_update/main
