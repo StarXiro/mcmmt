@@ -8,7 +8,7 @@ function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_ea
 function mmt_dynaball:before_match/perform_tp with storage mcmmt:dynaball lobby
 
 # inform all spectators
-execute as @a[tag=dnb_spec] at @s run function mmt_dynaball:spectators/inform
+function mmt_dynaball:spectators/inform
 
 # enter per_sec loop
 function mmt_dynaball:before_match/loop_per_sec

@@ -1,4 +1,7 @@
 
+# store to macro_bag.spec_display
+data modify storage mcmmt:dynaball macro_bag.spec_display.team set from storage mcmmt:dynaball temp.teams[0]
+
 # get members
 data modify storage mcmmt:dynaball macro_bag.get.path set from storage mcmmt:dynaball temp.teams[0]
 function mmt_dynaball:prepare/get_members with storage mcmmt:dynaball macro_bag.get

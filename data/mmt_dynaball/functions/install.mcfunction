@@ -1,6 +1,6 @@
 
 # adjustable
-data modify storage mcmmt:dynaball start_up set value {team_list: ["red", "blue"], progress: 0, max_progress: 8, force_load: ["0 0 100 100", "200 200 400 400"]}
+data modify storage mcmmt:dynaball start_up set value {team_list: ["red", "blue", "aqua"], progress: 0, max_progress: 8, force_load: ["0 0 100 100", "200 200 400 400"]}
 # config
 data modify storage mcmmt:dynaball maps set value [\
     {map_name: "nether", clone_a: "0 -20 0 50 50 50", clone_b: "0 -20 0 50 50 50", length: 10}\
@@ -9,6 +9,10 @@ data modify storage mcmmt:dynaball weapons set value [\
     {id:"minecraft:paper"},\
     {id:"minecraft:stick"}\
 ]
+data modify storage mcmmt:dynaball limitations set value {\
+    eliminate: 0,\
+    mid_divide: 0\
+}
 data modify storage mcmmt:dynaball lobby set value {spawn: "0 50 0"}
 data modify storage mcmmt:dynaball map_slots set value [\
     {\
@@ -16,6 +20,7 @@ data modify storage mcmmt:dynaball map_slots set value [\
         slot_b: "0 50 100", \
         team_a_spawn: "0 0", \
         team_b_spawn: "0 0", \
+        spec_tp: "100 50 100", \
         cg: {\
             transport: {pos: "75 102 120", face: "facing ^ ^-1 ^0.2"},\
             goto_side: {pos: "75 72 80", face: "0 20.0"}, \
@@ -34,6 +39,7 @@ data modify storage mcmmt:dynaball map_slots set value [\
         slot_b: "0 50 100", \
         team_a_spawn: "0 0", \
         team_b_spawn: "0 0", \
+        spec_tp: "100 50 100", \
         cg: {\
             transport: {pos: "75 102 120", face: "facing ^ ^-1 ^0.2"},\
             goto_side: {pos: "75 72 80", face: "0 20.0"}, \
@@ -56,6 +62,7 @@ data modify storage mcmmt:dynaball board_saves set value []
 data modify storage mcmmt:dynaball games set value []
 data modify storage mcmmt:dynaball temp set value {}
 data modify storage mcmmt:dynaball build_slots set value []
+data modify storage mcmmt:dynaball spec_teleport set value []
 
 data modify storage mcmmt:dynaball macro_bag set value {\
     bfs:{\
@@ -83,9 +90,13 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     checker: {index: 0, map_name:"", range: {out: [], in:[]}, summon: {team: "", index: 0, x: 0, y: 0, z: 0}}, \
     main_display: {team: "", color: "", p: 0, mp: 0},\
     add_slot_tag: {team_a:"", team_b: "", index: 0},\
+    spec_display: {team: "", p: 0, mp: 0, r: 0, mr: 0},\
+    sd_set_pair: {team_a: "", team_b: "", index: 0, ca:"", cb:""}\
 }
 
 scoreboard objectives add dnb_system dummy
+
+scoreboard players set game_running dnb_system 0
 
 scoreboard players set temp dnb_system 0
 scoreboard players set temp2 dnb_system 0
@@ -102,13 +113,15 @@ scoreboard players set max_round dnb_system 0
 scoreboard players set max_map_id dnb_system 0
 scoreboard players set #gr_save dnb_system 0
 scoreboard players set #wait_length dnb_system 120
-scoreboard players set #waiting dnb_system -1
+scoreboard players set #waiting dnb_system 120
 scoreboard players set #rand_item_len dnb_system 0
 scoreboard players set cg_second dnb_system 0
 scoreboard players set collision_limit dnb_system 5000
 scoreboard players set tnt_arrow_scaler dnb_system 70
 scoreboard players set checker_index dnb_system 0
 scoreboard players set checker_decay dnb_system 50
+scoreboard players set eliminate dnb_system 0
+scoreboard players set mid_divide dnb_system 0
 
 # tnt collision
 scoreboard objectives add dnb_tnt_motion_x dummy

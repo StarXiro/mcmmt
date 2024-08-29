@@ -1,0 +1,1 @@
+data modify storage mcmmt:dynaball macro_bag.spec_display.team set from storage mcmmt:core team_data.$(team).color

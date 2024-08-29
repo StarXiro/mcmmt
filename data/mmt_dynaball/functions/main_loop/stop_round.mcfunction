@@ -4,6 +4,11 @@ execute as @a[tag=dnb_spec] run tag @s add dnb_player
 tag @a[tag=dnb_player] remove dnb_spec
 tag @a[tag=dnb_player] remove team_a
 tag @a[tag=dnb_player] remove team_b
+tag @a[tag=dnb_player] remove dnb_broadcast
+
+# reset gamemode
+gamemode adventure @a[tag=dnb_player]
+
 # reset dnb_slot_$(index)
 data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball games
 data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:main_loop/reset_tag"
@@ -25,6 +30,13 @@ data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_d
 function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
 data modify storage mcmmt:dynaball system.board_names set value []
 
+# remove generated spec display
+scoreboard objectives remove dnb_spec_display
+
+# remove spec trigger
+scoreboard players reset @a dnb_spec_tp_trigger
+scoreboard objectives remove dnb_spec_tp_trigger
+
 # remove all planned frame
 schedule clear mmt_dynaball:air_drop/frame
 schedule clear mmt_dynaball:dmg_source/frame
@@ -32,6 +44,9 @@ schedule clear mmt_dynaball:stuck/frame
 schedule clear mmt_dynaball:collision/frame
 schedule clear mmt_dynaball:weapons/frame
 schedule clear mmt_dynaball:tnt_proj/frame
+schedule clear mmt_dynaball:spectators/frame
+schedule clear mmt_dynaball:before_match/loop_per_sec
+schedule clear mmt_dynaball:spectators/trigger_safe
 
 # remove cg
 schedule clear mmt_dynaball:cg/cg_second

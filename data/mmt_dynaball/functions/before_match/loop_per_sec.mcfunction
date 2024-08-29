@@ -15,6 +15,9 @@ execute if score #waiting dnb_system matches 90 run function mmt_dynaball:checke
 execute if score #waiting dnb_system matches 63 run title @a[tag=dnb_player] title {"type": "text", "color": "aqua", "text": "传送至场地..."}
 execute if score #waiting dnb_system matches 60 run function mmt_dynaball:cg/do_transportation
 
+# spectators
+execute if score #waiting dnb_system matches 20 run function mmt_dynaball:spectators/enable
+
 # show countdown title
 execute if score #waiting dnb_system matches 9 run title @a[tag=dnb_player] times 0t 20t 5t
 execute if score #waiting dnb_system matches 6..9 run title @a[tag=dnb_player] subtitle {"type": "translatable", "translate": "▶ %s ◀", "color": "white", "with": [{"type": "score", "score": {"name": "#waiting", "objective": "dnb_system"}, "color": "white"}]}
