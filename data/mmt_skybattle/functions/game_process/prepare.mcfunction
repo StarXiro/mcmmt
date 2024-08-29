@@ -38,7 +38,7 @@ execute if score pink SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb 
 execute if score orange SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb list append value orange
 execute if score lime SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb list append value lime
 
-function mmt_core:utils/shuffle/do with storage mcmmt:skb list
+function mmt_core:utils/shuffle/do with storage mcmmt:skb
 data modify storage mcmmt:skb randlist set from storage mcmmt:core_utils shuffle.list
 function mmt_skybattle:game_process/teamtp with storage mcmmt:skb randlist
 
@@ -53,11 +53,11 @@ execute as @a[tag=player] run setblock ~ ~ ~1 barrier
 execute as @a[tag=player] run setblock ~ ~ ~-1 barrier
 
 clear @a[tag=SKB]
-give @a[tag=SKB] iron_chestplate
 give @a[tag=SKB] stone_sword
 give @a[tag=SKB] iron_pickaxe
 give @a[tag=SKB] bow
 give @a[tag=SKB] cooked_beef 12
+give @a[tag=SKB] iron_chestplate
 
 give @a[tag=SKB,team=red] red_concrete 64
 give @a[tag=SKB,team=blue] blue_concrete 64
