@@ -7,7 +7,7 @@ clear @a[tag=CAC]
 gamemode adventure @a[tag=CAC]
 scoreboard players set timemode CACconfig 1
 scoreboard players set round CACconfig 0
-scoreboard players set second1 CACconfig 30
+scoreboard players set second CACconfig 30
 scoreboard players set playercount CACconfig 0
 scoreboard players set game_count CACconfig 1
 execute as @a[tag=player] run scoreboard players add playercount CACconfig 1

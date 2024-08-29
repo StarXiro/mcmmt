@@ -1,7 +1,13 @@
 scoreboard players set tick SKBconfig 0
-scoreboard players set second SKBconfig 0
+scoreboard players set second SKBconfig 15
 scoreboard players set timemode SKBconfig 1
 scoreboard players set 0 SKBconfig 0
+scoreboard players set @a SKBdeath 0
+scoreboard players add round SKBconfig 1
+scoreboard players set downborder SKBconfig 70
+
+gamemode survival @a[tag=player]
+spawnpoint @a 0 120 -5000
 
 scoreboard players set red SKBconfig 0
 scoreboard players set blue SKBconfig 0
@@ -32,7 +38,7 @@ execute if score pink SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb 
 execute if score orange SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb list append value orange
 execute if score lime SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb list append value lime
 
-function mmt_core:utils/shuffle/do with storage mcmmt:skb list
+function mmt_core:utils/shuffle/do with storage mcmmt:skb
 data modify storage mcmmt:skb randlist set from storage mcmmt:core_utils shuffle.list
 function mmt_skybattle:game_process/teamtp with storage mcmmt:skb randlist
 
@@ -51,6 +57,7 @@ give @a[tag=SKB] stone_sword
 give @a[tag=SKB] iron_pickaxe
 give @a[tag=SKB] bow
 give @a[tag=SKB] cooked_beef 12
+give @a[tag=SKB] iron_chestplate
 
 give @a[tag=SKB,team=red] red_concrete 64
 give @a[tag=SKB,team=blue] blue_concrete 64
@@ -62,6 +69,6 @@ give @a[tag=SKB,team=orange] orange_concrete 64
 give @a[tag=SKB,team=lime] lime_concrete 64
 
 summon marker 0 110 -5000 {Tags:[SKB_center]}
-function mmt_skybattle:game_process/marker
+function mmt_skybattle:border/marker
 
-function mmt_skybattle:gameprocess/startcountdown
+function mmt_skybattle:game_process/startcountdown
