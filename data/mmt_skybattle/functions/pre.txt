@@ -6,7 +6,7 @@ prepare:
 three rounds:
   in every round:
     start game:
-      teleport everyone to the cage
+      teleport everyone to the cage |
       10s game start countdown
       release players
     on game:

@@ -1,0 +1,32 @@
+{
+    "display":
+    {
+        "icon":
+        {
+            "item": "minecraft:stone"
+        },
+        "title": "killby",
+        "description": "killby",
+        "show_toast": false,
+        "hidden":false,
+        "announce_to_chat":false
+    },
+    "criteria":
+    {
+        "hurtby":
+        {
+            "trigger":"entity_killed_player",
+            "conditions":
+            {
+                "player":
+                {
+                    "nbt":"{Tags:[player]}"
+                }
+            }
+        }
+    },
+    "rewards":
+    {
+        "function": "mmt_skybattle:deathmessage/deathmessage_player"
+    }
+}
