@@ -18,8 +18,12 @@ execute if score #waiting dnb_system matches 60 run function mmt_dynaball:cg/do_
 # spectators
 execute if score #waiting dnb_system matches 20 run function mmt_dynaball:spectators/enable
 
+# show vs
+execute if score #waiting dnb_system matches 15 run title @a[tag=dnb_player] times 0t 60t 5t
+execute if score #waiting dnb_system matches 15 run function mmt_dynaball:before_match/show_vs
+
 # show countdown title
-execute if score #waiting dnb_system matches 9 run title @a[tag=dnb_player] times 0t 20t 5t
+execute if score #waiting dnb_system matches 10 run title @a[tag=dnb_player] times 0t 20t 5t
 execute if score #waiting dnb_system matches 6..9 run title @a[tag=dnb_player] subtitle {"type": "translatable", "translate": "▶ %s ◀", "color": "white", "with": [{"type": "score", "score": {"name": "#waiting", "objective": "dnb_system"}, "color": "white"}]}
 execute if score #waiting dnb_system matches 4..5 run title @a[tag=dnb_player] subtitle {"type": "translatable", "translate": "▶ %s ◀", "color": "white", "with": [{"type": "score", "score": {"name": "#waiting", "objective": "dnb_system"}, "color": "yellow"}]}
 execute if score #waiting dnb_system matches 1..3 run title @a[tag=dnb_player] subtitle {"type": "translatable", "translate": "▶ %s ◀", "color": "white", "with": [{"type": "score", "score": {"name": "#waiting", "objective": "dnb_system"}, "color": "red"}]}

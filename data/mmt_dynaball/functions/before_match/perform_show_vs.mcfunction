@@ -1,0 +1,2 @@
+$title @a[team=$(id)] subtitle {"type": "translatable", "translate": "%s 对战 %s", "color": "white", "with": [{"type": "text", "text": "$(team_a)", "color": "$(ca)", "bold": true}, {"type": "text", "text": "$(team_b)", "color": "$(cb)", "bold": true}]}
+$title @a[team=$(id)] title {"type": "translatable", "translate": "第 %s 轮", "color": "gold", "with": [{"type": "text", "text": "$(round)", "bold": true}]}

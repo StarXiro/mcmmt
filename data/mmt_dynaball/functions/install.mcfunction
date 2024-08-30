@@ -91,7 +91,8 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     main_display: {team: "", color: "", p: 0, mp: 0},\
     add_slot_tag: {team_a:"", team_b: "", index: 0},\
     spec_display: {team: "", p: 0, mp: 0, r: 0, mr: 0},\
-    sd_set_pair: {team_a: "", team_b: "", index: 0, ca:"", cb:""}\
+    sd_set_pair: {team_a: "", team_b: "", index: 0, ca:"", cb:""},\
+    show_vs: {team_a: "", team_b: "", round: 0, id: "", ca: "", cb: ""}\
 }
 
 scoreboard objectives add dnb_system dummy
