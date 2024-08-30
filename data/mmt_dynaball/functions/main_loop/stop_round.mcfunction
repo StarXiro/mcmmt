@@ -21,6 +21,7 @@ data modify storage mcmmt:dynaball build_slots set value []
 data modify storage mcmmt:dynaball board_saves set value []
 scoreboard players operation #waiting dnb_system = #wait_length dnb_system
 scoreboard players set checker_index dnb_system 0
+scoreboard players set ongoing_games dnb_system 0
 scoreboard players set @a[tag=dnb_player] dnb_dmg_source -1
 scoreboard players set @a[tag=dnb_player] dnb_dmg_valid 0
 
@@ -45,6 +46,10 @@ schedule clear mmt_dynaball:collision/frame
 schedule clear mmt_dynaball:weapons/frame
 schedule clear mmt_dynaball:tnt_proj/frame
 schedule clear mmt_dynaball:spectators/frame
+schedule clear mmt_dynaball:game_body/gl_tick/frame
+schedule clear mmt_dynaball:game_body/gl_tick/frame_second
+schedule clear mmt_dynaball:game_body/sl_tick/frame
+schedule clear mmt_dynaball:game_body/sl_tick/frame_second
 schedule clear mmt_dynaball:before_match/loop_per_sec
 schedule clear mmt_dynaball:spectators/trigger_safe
 

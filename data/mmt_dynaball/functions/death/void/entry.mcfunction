@@ -1,0 +1,1 @@
+$execute as @a[tag=$(tag)] at @s if function mmt_dynaball:death/void/void_check run function mmt_dynaball:death/void/void_death with storage mcmmt:dynaball save_load

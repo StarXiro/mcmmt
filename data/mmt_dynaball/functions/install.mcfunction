@@ -10,8 +10,8 @@ data modify storage mcmmt:dynaball weapons set value [\
     {id:"minecraft:stick"}\
 ]
 data modify storage mcmmt:dynaball limitations set value {\
-    eliminate: 0,\
-    mid_divide: 0\
+    eliminate: 18,\
+    mid_divide: 5021\
 }
 data modify storage mcmmt:dynaball lobby set value {spawn: "0 50 0"}
 data modify storage mcmmt:dynaball map_slots set value [\
@@ -63,6 +63,7 @@ data modify storage mcmmt:dynaball games set value []
 data modify storage mcmmt:dynaball temp set value {}
 data modify storage mcmmt:dynaball build_slots set value []
 data modify storage mcmmt:dynaball spec_teleport set value []
+data modify storage mcmmt:dynaball save_load set value {}
 
 data modify storage mcmmt:dynaball macro_bag set value {\
     bfs:{\
@@ -121,6 +122,7 @@ scoreboard players set collision_limit dnb_system 5000
 scoreboard players set tnt_arrow_scaler dnb_system 70
 scoreboard players set checker_index dnb_system 0
 scoreboard players set checker_decay dnb_system 50
+scoreboard players set ongoing_games dnb_system 0
 scoreboard players set eliminate dnb_system 0
 scoreboard players set mid_divide dnb_system 0
 
