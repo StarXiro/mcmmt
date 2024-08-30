@@ -1,5 +1,5 @@
-# uninstall mcmmt
 
+# uninstall mcmmt
 execute unless data storage mcmmt:core installed run return fail
 
 # stop utils.timer
@@ -72,7 +72,6 @@ data remove storage mcmmt:core_utils pillar_check
 data remove storage mcmmt:core_utils SBSconfig
 data remove storage mcmmt:core_utils mg
 
-
 function mmt_core:utils/for_each/__delete__
 function mmt_core:utils/range/__delete__
 function mmt_core:utils/make_match/__delete__
@@ -80,6 +79,11 @@ function mmt_core:utils/shuffle/__delete__
 function mmt_core:utils/len/__delete__
 function mmt_core:utils/team/__delete__
 function mmt_core:utils/get_ground/__delete__
+
+# remove teams
+data modify storage mcmmt:core init_manager.for_each.list set from storage mcmmt:core teamlist
+data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/rm_teams"
+function mmt_core:utils/for_each/do with storage mcmmt:core init_manager.for_each
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
