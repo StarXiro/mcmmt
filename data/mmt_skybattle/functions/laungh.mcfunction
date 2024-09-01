@@ -1,5 +1,5 @@
 gamemode spectator @a[tag=player]
-tp @a[tag=player] 25 112 -5049 facing 0 112 -5000
+#tp @a[tag=player] 25 112 -5049 facing 0 112 -5000
 scoreboard players set timemode SKBconfig 0
 scoreboard players set tick SKBconfig 0
 scoreboard players set second SKBconfig 10
@@ -7,6 +7,8 @@ scoreboard players set show1 SKBconfig 100
 scoreboard players set round SKBconfig 0
 scoreboard players set current_game core_setting 4
 
+summon marker ~ ~ ~ {Tags:[SKB_mapview]}
+tp @e[tag=SKB_mapview] 25 112 -5049 facing 0 112 -5000
 function mmt_skybattle:mapview
 #map view place
 

@@ -10,6 +10,7 @@ scoreboard players set second SKBconfig 0
 scoreboard players set second1 SKBconfig 300
 scoreboard players set borderx SKBconfig 80
 scoreboard players set border SKBconfig 80
+scoreboard players set tick SKBconfig 0
 
 function mmt_skybattle:game_process/ingame
 function mmt_skybattle:deathmessage/trigger
