@@ -9,6 +9,11 @@ data modify storage mcmmt:dynaball weapons set value [\
     {id:"minecraft:paper"},\
     {id:"minecraft:stick"}\
 ]
+data modify storage mcmmt:dynaball msg_list set value {\
+    no_source_death: [\
+        "%s 似了 ^u^",\
+    ]\
+}
 data modify storage mcmmt:dynaball limitations set value {\
     eliminate: -18,\
     mid_divide: 5021\
@@ -95,7 +100,10 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     add_slot_tag: {team_a:"", team_b: "", index: 0},\
     spec_display: {team: "", p: 0, mp: 0, r: 0, mr: 0},\
     sd_set_pair: {team_a: "", team_b: "", index: 0, ca:"", cb:""},\
-    show_vs: {team_a: "", team_b: "", round: 0, id: "", ca: "", cb: ""}\
+    show_vs: {team_a: "", team_b: "", round: 0, id: "", ca: "", cb: ""},\
+    message: {\
+        template: "", score: 0, index: 0 \
+    },\
 }
 
 scoreboard objectives add dnb_system dummy

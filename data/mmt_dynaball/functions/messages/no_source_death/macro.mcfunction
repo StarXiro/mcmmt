@@ -1,0 +1,1 @@
+$tellraw @s [{"type": "text", "text": "[PREFIX] "}, {"type": "translatable", "translate": "$(template)", "color": "white", "with": [{"type": "selector", "selector": "@s"}]}]

@@ -1,0 +1,2 @@
+function mmt_dynaball:messages/no_source_death/make
+function mmt_dynaball:messages/no_source_death/macro with storage mcmmt:dynaball macro_bag.message
