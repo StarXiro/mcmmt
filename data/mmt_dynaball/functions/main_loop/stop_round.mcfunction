@@ -1,4 +1,9 @@
 
+# reset temporary gray team members to their own teams
+data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball start_up.team_list
+data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:main_loop/reset_team"
+function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
+
 # reset player tag
 execute as @a[tag=dnb_spec] run tag @s add dnb_player
 tag @a[tag=dnb_player] remove dnb_spec

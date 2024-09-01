@@ -10,7 +10,7 @@ data modify storage mcmmt:dynaball weapons set value [\
     {id:"minecraft:stick"}\
 ]
 data modify storage mcmmt:dynaball limitations set value {\
-    eliminate: 18,\
+    eliminate: -18,\
     mid_divide: 5021\
 }
 data modify storage mcmmt:dynaball lobby set value {spawn: "0 50 0"}
@@ -32,7 +32,8 @@ data modify storage mcmmt:dynaball map_slots set value [\
             place_fix: {place: "115 68 123"}, \
             end: {fill: "114 67 122 116 67 124", place: "115 68 123", pos: "75.1 108 128.3", face: "-0.5 90"}\
         }, \
-        checker: {layer: 1, range_a: {x: [-10, 10], z: [-5, 0]}, range_b: {x: [-10, 10], z: [0, 5]}}\
+        checker: {layer: 1, range_a: {x: [-10, 10], z: [-5, 0]}, range_b: {x: [-10, 10], z: [0, 5]}},\
+        boundaries: {}\
     },\
     {\
         slot_a: "100 50 100",\
@@ -51,7 +52,8 @@ data modify storage mcmmt:dynaball map_slots set value [\
             place_fix: {place: "115 68 123"}, \
             end: {fill: "114 67 122 116 67 124", place: "115 68 123", pos: "75.1 108 128.3", face: "-0.5 90"}\
         }, \
-        checker: {layer: 1, range_a: {x: [-10, 10], z: [-5, 0]}, range_b: {x: [-10, 10], z: [0, 5]}}\
+        checker: {layer: 1, range_a: {x: [-10, 10], z: [-5, 0]}, range_b: {x: [-10, 10], z: [0, 5]}},\
+        boundaries: {}\
     } \
 ]
 
@@ -140,6 +142,10 @@ scoreboard objectives add dnb_dmg_source dummy
 
 # stuck countdown
 scoreboard objectives add dnb_stuck_cnt dummy
+
+# score management
+scoreboard objectives add dnb_player_score dummy
+scoreboard objectives add dnb_team_score dummy
 
 execute if score logon core_setting matches 1 run function mmt_dynaball:info
 

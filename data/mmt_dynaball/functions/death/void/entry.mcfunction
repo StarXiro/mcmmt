@@ -1,1 +1,1 @@
-$execute as @a[tag=$(tag)] at @s if function mmt_dynaball:death/void/void_check run function mmt_dynaball:death/void/void_death with storage mcmmt:dynaball save_load
+$execute as @a[tag=$(slot_tag), tag=dnb_player] at @s if function mmt_dynaball:death/void/void_check run function mmt_dynaball:death/void/void_death with storage mcmmt:dynaball save_load

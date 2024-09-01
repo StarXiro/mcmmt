@@ -11,6 +11,13 @@ data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmm
 data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:game_body/remove_cg"
 function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
 
+# remove barriers
+execute as @a[tag=dnb_player] at @s run fill ~-1 ~-1 ~-1 ~1 ~2 ~1 minecraft:air replace minecraft:barrier
+
+# give effect
+effect give @a[tag=dnb_player] resistance infinite 9 true
+effect give @a[tag=dnb_player] saturation infinite 0 true
+
 # begin frames
 function mmt_dynaball:collision/frame
 function mmt_dynaball:air_drop/frame

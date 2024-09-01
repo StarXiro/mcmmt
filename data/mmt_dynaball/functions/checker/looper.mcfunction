@@ -1,6 +1,7 @@
 
 execute if score checker_index dnb_system >= to_build dnb_system run return fail
 execute store result storage mcmmt:dynaball macro_bag.get.pos int 1.0 run scoreboard players get checker_index dnb_system
+data modify storage mcmmt:dynaball macro_bag.checker.index set from storage mcmmt:dynaball macro_bag.get.pos
 data modify storage mcmmt:dynaball macro_bag.get.path set value "games"
 function mmt_dynaball:tools/get with storage mcmmt:dynaball macro_bag.get
 

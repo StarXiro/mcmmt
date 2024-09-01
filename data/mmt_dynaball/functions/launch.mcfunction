@@ -1,4 +1,9 @@
 
+# add spectators team
+team add dnb_spectators
+team modify dnb_spectators color gray
+team modify dnb_spectators prefix {"type": "text", "text": "[旁观者] ", "color": "gray"}
+
 # add force_load
 data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball start_up.force_load
 data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:prepare/add_force_load"
@@ -16,6 +21,10 @@ function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_ea
 data modify storage mcmmt:dynaball macro_bag.for_each.list set from storage mcmmt:dynaball start_up.team_list
 data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_dynaball:prepare/tag_all_player"
 function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
+
+# init scores
+function mmt_dynaball:scores/init_team_score
+scoreboard players set @a[tag=dnb_player] dnb_player_score 0
 
 # shuffle team_list
 data modify storage mcmmt:dynaball macro_bag.shuffle.list set from storage mcmmt:dynaball start_up.team_list

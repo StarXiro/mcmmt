@@ -1,0 +1,1 @@
+$scoreboard players set $(object) dnb_team_score 0
