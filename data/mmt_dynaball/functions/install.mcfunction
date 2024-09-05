@@ -12,6 +12,9 @@ data modify storage mcmmt:dynaball weapons set value [\
 data modify storage mcmmt:dynaball msg_list set value {\
     no_source_death: [\
         "%s 似了 ^u^",\
+    ],\
+    source_death: [\
+        "%s 被 %s 炸似了",\
     ]\
 }
 data modify storage mcmmt:dynaball limitations set value {\
@@ -102,7 +105,7 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     sd_set_pair: {team_a: "", team_b: "", index: 0, ca:"", cb:""},\
     show_vs: {team_a: "", team_b: "", round: 0, id: "", ca: "", cb: ""},\
     message: {\
-        template: "", score: 0, index: 0 \
+        template: "", score: 0, index: 0, slot_tag: "" \
     },\
 }
 
