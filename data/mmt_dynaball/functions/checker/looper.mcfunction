@@ -53,6 +53,7 @@ execute as @e[type=minecraft:marker, tag=dnb_checker] at @s run function mmt_dyn
 
 # do check
 scoreboard players set direction core_utils_pillar_check 1
+scoreboard players set max_steps core_utils_pillar_check 40
 execute as @e[type=minecraft:marker, tag=dnb_checker] at @s if function mmt_core:utils/pillar_check/pred run kill @s
 
 # collect data

@@ -115,6 +115,7 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     message: {\
         template: "", score: 0, index: 0, slot_tag: "" \
     },\
+    update_checker: {ap: 0, bp: 0, id: 0}\
 }
 
 scoreboard objectives add dnb_system dummy
@@ -127,6 +128,7 @@ scoreboard players set temp3 dnb_system 0
 scoreboard players set temp4 dnb_system 0
 
 scoreboard players set -1 dnb_system -1
+scoreboard players set 100 dnb_system 100
 scoreboard players set to_build dnb_system 0
 scoreboard players set build_flag dnb_system 0
 scoreboard players set round dnb_system 0
