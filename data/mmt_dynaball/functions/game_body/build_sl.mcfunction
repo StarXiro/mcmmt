@@ -4,6 +4,9 @@ $data modify storage mcmmt:dynaball save_load.team_b set value $(team_b)
 $data modify storage mcmmt:dynaball temp set value $(cg)
 data modify storage mcmmt:dynaball save_load.slot_tag set from storage mcmmt:dynaball temp.tag
 
+# slot index
+data modify storage mcmmt:dynaball save_load.slot_index set string storage mcmmt:dynaball temp.tag 9
+
 # checker
 data modify storage mcmmt:dynaball save_load.checker set value {}
 $data modify storage mcmmt:dynaball save_load.checker.a_tot set value $(checker_a_tot)

@@ -48,6 +48,9 @@ scoreboard objectives remove dnb_spec_display
 scoreboard players reset @a dnb_spec_tp_trigger
 scoreboard objectives remove dnb_spec_tp_trigger
 
+# remove checkers
+kill @e[type=minecraft:marker, tag=dnb_checker]
+
 # remove all planned frame
 schedule clear mmt_dynaball:air_drop/frame
 schedule clear mmt_dynaball:dmg_source/frame

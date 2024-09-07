@@ -10,9 +10,8 @@ tag @s remove dnb_dying_person
 
 # show title
 title @s times 0t 30t 5t
-title @s subtitle {"type": "text", "text": "你出局了", "color": "gray"}
+title @s subtitle {"type": "text", "text": "你出局了", "color": "white"}
 title @s title {"type": "text", "text": "☹", "color": "aqua"}
-title @s reset
 
 scoreboard players set @s dnb_spec_tp_trigger -1
 tag @s add dnb_spec
