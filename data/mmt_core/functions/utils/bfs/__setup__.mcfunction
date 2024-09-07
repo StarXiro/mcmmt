@@ -1,6 +1,6 @@
 
 # setup core.utils.bfs
-data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/bfs/private/bfs_entry", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}, map_args: {from: [0, 0], to: [-1500, 1500]}, presets: {same_block: "minecraft:stone"}}
+data modify storage mcmmt:core_utils search set value {on_block: "mmt_core:utils/bfs/private/presets/same_block", args:{x:[I;0, 0], y:[I;0, 0], z:[I;0, 0]}, map_args: {from: [0, 0], to: [-1500, 1500]}, presets: {same_block: "minecraft:stone"}}
 
 # utils.bfs
 scoreboard objectives add core_utils_search dummy
