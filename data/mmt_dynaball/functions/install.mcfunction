@@ -2,6 +2,11 @@
 # adjustable
 data modify storage mcmmt:dynaball start_up set value {team_list: ["red", "blue", "aqua"], progress: 0, max_progress: 8, force_load: ["0 0 100 100", "200 200 400 400"]}
 # config
+data modify storage mcmmt:dynaball game_scores set value {\
+    eliminate: {ps: 20, ts: 0},\
+    survive: {ps: 50, ts: 0},\
+    win: {ps: 0, ts: 240}\
+}
 data modify storage mcmmt:dynaball maps set value [\
     {map_name: "nether", clone_a: "0 -20 0 50 50 50", clone_b: "0 -20 0 50 50 50", length: 10}\
 ]
@@ -70,7 +75,10 @@ data modify storage mcmmt:dynaball system set value {round: 0, rounds: [], prese
 
 data modify storage mcmmt:dynaball board_saves set value []
 data modify storage mcmmt:dynaball games set value []
+
 data modify storage mcmmt:dynaball temp set value {}
+data modify storage mcmmt:dynaball temp2 set value {}
+
 data modify storage mcmmt:dynaball build_slots set value []
 data modify storage mcmmt:dynaball spec_teleport set value []
 data modify storage mcmmt:dynaball save_load set value {}
@@ -157,6 +165,7 @@ scoreboard objectives add dnb_stuck_cnt dummy
 # score management
 scoreboard objectives add dnb_player_score dummy
 scoreboard objectives add dnb_team_score dummy
+scoreboard objectives add dnb_total_score dummy
 
 execute if score logon core_setting matches 1 run function mmt_dynaball:info
 

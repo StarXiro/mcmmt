@@ -1,0 +1,1 @@
+$scoreboard players add $(team) dnb_team_score $(ts)

@@ -23,8 +23,8 @@ data modify storage mcmmt:dynaball macro_bag.for_each.loop_body set value "mmt_d
 function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_each
 
 # init scores
-function mmt_dynaball:scores/init_team_score
 scoreboard players set @a[tag=dnb_player] dnb_player_score 0
+function mmt_dynaball:scores/sum_up_team
 
 # shuffle team_list
 data modify storage mcmmt:dynaball macro_bag.shuffle.list set from storage mcmmt:dynaball start_up.team_list

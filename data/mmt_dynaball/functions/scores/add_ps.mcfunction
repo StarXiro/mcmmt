@@ -1,0 +1,1 @@
+$scoreboard players add @s dnb_player_score $(ps)
