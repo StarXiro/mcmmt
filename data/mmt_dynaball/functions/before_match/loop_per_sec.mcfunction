@@ -20,6 +20,7 @@ execute if score #waiting dnb_system matches 20 run function mmt_dynaball:specta
 
 # show vs
 execute if score #waiting dnb_system matches 15 run title @a[tag=dnb_player] times 0t 60t 5t
+execute if score #waiting dnb_system matches 15 run execute as @a[tag=dnb_player] at @s run playsound minecraft:block.amethyst_cluster.hit ambient @s ~ ~ ~ 1.0 1.5
 execute if score #waiting dnb_system matches 15 run function mmt_dynaball:before_match/show_vs
 
 # show countdown title
