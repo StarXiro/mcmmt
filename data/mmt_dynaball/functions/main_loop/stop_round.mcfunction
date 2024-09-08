@@ -65,6 +65,7 @@ schedule clear mmt_dynaball:game_body/sl_tick/frame
 schedule clear mmt_dynaball:game_body/sl_tick/frame_second
 schedule clear mmt_dynaball:before_match/loop_per_sec
 schedule clear mmt_dynaball:spectators/trigger_safe
+schedule clear mmt_dynaball:boundaries/warn_frame
 
 # remove cg
 schedule clear mmt_dynaball:cg/cg_second

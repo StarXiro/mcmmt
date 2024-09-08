@@ -46,7 +46,40 @@ data modify storage mcmmt:dynaball map_slots set value [\
             end: {fill: "114 67 122 116 67 124", place: "115 68 123", pos: "75.1 108 128.3", face: "-0.5 90"}\
         }, \
         checker: {layer: 1, range_a: {x: [-10, 10], z: [-5, 0]}, range_b: {x: [-10, 10], z: [0, 5]}},\
-        boundaries: {}\
+        boundaries: {\
+            warn: {\
+                team_a: {\
+                    top: 60,\
+                    left: -10,\
+                    right: 10,\
+                    front: 10,\
+                    back: 10\
+                },\
+                team_b: {\
+                    top: 60,\
+                    left: -10,\
+                    right: 10,\
+                    front: 10,\
+                    back: 10\
+                }\
+            },\
+            refill: {\
+                team_a: {\
+                    top: "0 0 0 0 0 0",\
+                    left: "0 0 0 0 0 0",\
+                    right: "0 0 0 0 0 0",\
+                    front: "0 0 0 0 0 0",\
+                    back: "0 0 0 0 0 0"\
+                },\
+                team_b: {\
+                    top: "0 0 0 0 0 0",\
+                    left: "0 0 0 0 0 0",\
+                    right: "0 0 0 0 0 0",\
+                    front: "0 0 0 0 0 0",\
+                    back: "0 0 0 0 0 0" \
+                }\
+            }\
+        }\
     },\
     {\
         slot_a: "100 50 100",\
@@ -66,7 +99,40 @@ data modify storage mcmmt:dynaball map_slots set value [\
             end: {fill: "114 67 122 116 67 124", place: "115 68 123", pos: "75.1 108 128.3", face: "-0.5 90"}\
         }, \
         checker: {layer: 1, range_a: {x: [-10, 10], z: [-5, 0]}, range_b: {x: [-10, 10], z: [0, 5]}},\
-        boundaries: {}\
+        boundaries: {\
+            warn: {\
+                team_a: {\
+                    top: 60,\
+                    left: -10,\
+                    right: 10,\
+                    front: 10,\
+                    back: 10\
+                },\
+                team_b: {\
+                    top: 60,\
+                    left: -10,\
+                    right: 10,\
+                    front: 10,\
+                    back: 10\
+                }\
+            },\
+            refill: {\
+                team_a: {\
+                    top: "0 0 0 0 0 0",\
+                    left: "0 0 0 0 0 0",\
+                    right: "0 0 0 0 0 0",\
+                    front: "0 0 0 0 0 0",\
+                    back: "0 0 0 0 0 0" \
+                },\
+                team_b: {\
+                    top: "0 0 0 0 0 0",\
+                    left: "0 0 0 0 0 0",\
+                    right: "0 0 0 0 0 0",\
+                    front: "0 0 0 0 0 0",\
+                    back: "0 0 0 0 0 0" \
+                }\
+            }\
+        }\
     } \
 ]
 
@@ -78,6 +144,7 @@ data modify storage mcmmt:dynaball games set value []
 
 data modify storage mcmmt:dynaball temp set value {}
 data modify storage mcmmt:dynaball temp2 set value {}
+data modify storage mcmmt:dynaball temp3 set value {}
 
 data modify storage mcmmt:dynaball build_slots set value []
 data modify storage mcmmt:dynaball spec_teleport set value []
@@ -115,7 +182,8 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     message: {\
         template: "", score: 0, index: 0, slot_tag: "" \
     },\
-    update_checker: {ap: 0, bp: 0, id: 0}\
+    update_checker: {ap: 0, bp: 0, id: 0},\
+    perform_refill: {range: "0 0 0 0 0 0"} \
 }
 
 scoreboard objectives add dnb_system dummy
@@ -163,6 +231,9 @@ scoreboard objectives add dnb_dmg_source dummy
 
 # stuck countdown
 scoreboard objectives add dnb_stuck_cnt dummy
+
+# player temp
+scoreboard objectives add dnb_player_temp dummy
 
 # score management
 scoreboard objectives add dnb_player_score dummy

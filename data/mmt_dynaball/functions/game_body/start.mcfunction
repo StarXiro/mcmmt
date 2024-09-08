@@ -25,6 +25,7 @@ function mmt_dynaball:tnt_proj/frame
 function mmt_dynaball:weapons/frame
 function mmt_dynaball:dmg_source/frame
 function mmt_dynaball:stuck/frame
+function mmt_dynaball:boundaries/warn_frame
 function mmt_dynaball:game_body/sl_tick/frame
 function mmt_dynaball:game_body/gl_tick/frame
 function mmt_dynaball:game_body/gl_tick/frame_second
