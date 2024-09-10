@@ -7,6 +7,9 @@ function mmt_core:utils/for_each/do with storage mcmmt:dynaball macro_bag.for_ea
 # reset player tag
 execute as @a[tag=dnb_spec] run tag @s add dnb_player
 
+# reset title times
+title @a[tag=dnb_player] reset
+
 # reset effect
 effect clear @a[tag=dnb_player] minecraft:saturation
 effect clear @a[tag=dnb_player] minecraft:resistance

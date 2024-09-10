@@ -5,7 +5,8 @@ data modify storage mcmmt:dynaball start_up set value {team_list: ["red", "blue"
 data modify storage mcmmt:dynaball game_scores set value {\
     eliminate: {ps: 20, ts: 0},\
     survive: {ps: 50, ts: 0},\
-    win: {ps: 0, ts: 240}\
+    win: {ps: 0, ts: 240},\
+    draw: {ps: 0, ts: 120}\
 }
 data modify storage mcmmt:dynaball maps set value [\
     {map_name: "nether", clone_a: "0 -20 0 50 50 50", clone_b: "0 -20 0 50 50 50", length: 10}\
@@ -183,7 +184,9 @@ data modify storage mcmmt:dynaball macro_bag set value {\
         template: "", score: 0, index: 0, slot_tag: "" \
     },\
     update_checker: {ap: 0, bp: 0, id: 0},\
-    perform_refill: {range: "0 0 0 0 0 0"} \
+    perform_refill: {range: "0 0 0 0 0 0"}, \
+    end_slot_title: {color: "", team: "", tc: "", tag: ""}, \
+    end_slot_bc: {a: "", b: "", ac: "", bc: ""}\
 }
 
 scoreboard objectives add dnb_system dummy
