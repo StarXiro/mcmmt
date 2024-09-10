@@ -19,6 +19,11 @@ function mmt_tgttos:uninstall
 function mmt_creeperandcat:stop
 function mmt_creeperandcat:uninstall
 
+# remove teams
+data modify storage mcmmt:core init_manager.for_each.list set from storage mcmmt:core teamlist
+data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/gen_team/rm_teams"
+function mmt_core:utils/for_each/do with storage mcmmt:core init_manager.for_each
+
 # remove scoreboard
 execute if score logon core_setting matches 1 run say Removing scoreboards
 scoreboard objectives remove core_utils_rand
@@ -57,6 +62,7 @@ scoreboard objectives remove personalscore
 # remove storage
 execute if score logon core_setting matches 1 run say Removing storage
 data remove storage mcmmt:core installed
+data remove storage mcmmt:core init_manager
 data remove storage mcmmt:core_utils rand
 data remove storage mcmmt:core_utils sight_cast
 data remove storage mcmmt:core_utils sqrt
@@ -79,11 +85,6 @@ function mmt_core:utils/shuffle/__delete__
 function mmt_core:utils/len/__delete__
 function mmt_core:utils/team/__delete__
 function mmt_core:utils/get_ground/__delete__
-
-# remove teams
-data modify storage mcmmt:core init_manager.for_each.list set from storage mcmmt:core teamlist
-data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/gen_team/rm_teams"
-function mmt_core:utils/for_each/do with storage mcmmt:core init_manager.for_each
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
 scoreboard objectives remove core_setting
