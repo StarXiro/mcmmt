@@ -82,7 +82,7 @@ function mmt_core:utils/get_ground/__delete__
 
 # remove teams
 data modify storage mcmmt:core init_manager.for_each.list set from storage mcmmt:core teamlist
-data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/rm_teams"
+data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/gen_team/rm_teams"
 function mmt_core:utils/for_each/do with storage mcmmt:core init_manager.for_each
 
 execute if score logon core_setting matches 1 run say Uninstallation finished TnT
