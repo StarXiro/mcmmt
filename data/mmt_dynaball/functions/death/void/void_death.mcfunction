@@ -1,4 +1,3 @@
-# TODO fullfil kill logic
 execute if score @s dnb_dmg_source matches -1 run function mmt_dynaball:messages/no_source_death/send
 execute if score @s dnb_dmg_source matches 0.. run function mmt_dynaball:messages/source_death/send
 playsound minecraft:entity.firework_rocket.blast ambient @s
@@ -18,3 +17,4 @@ tag @s add dnb_spec
 tag @s remove dnb_player
 team join dnb_spectators @s
 gamemode spectator @s
+$tp @s $(spec_tp)
