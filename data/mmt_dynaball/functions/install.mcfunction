@@ -1,6 +1,6 @@
 
 # adjustable
-data modify storage mcmmt:dynaball start_up set value {team_list: ["red", "blue", "aqua"], progress: 0, max_progress: 8, force_load: ["0 0 100 100", "200 200 400 400"]}
+data modify storage mcmmt:dynaball start_up set value {team_list: ["red", "blue", "aqua"], progress: 0, max_progress: 8, force_load: ["200 200 100 100", "200 200 400 400"]}
 # config
 data modify storage mcmmt:dynaball game_scores set value {\
     eliminate: {ps: 20, ts: 0},\
