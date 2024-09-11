@@ -12,9 +12,11 @@ title @s times 0t 30t 5t
 title @s subtitle {"type": "text", "text": "你出局了", "color": "white"}
 title @s title {"type": "text", "text": "☹", "color": "aqua"}
 
+# update death count & tp spec_tp
+function mmt_dynaball:death/void/macro_void_death with storage mcmmt:dynaball save_load
+
 scoreboard players set @s dnb_spec_tp_trigger -1
 tag @s add dnb_spec
 tag @s remove dnb_player
 team join dnb_spectators @s
 gamemode spectator @s
-$tp @s $(spec_tp)

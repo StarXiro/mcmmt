@@ -28,6 +28,8 @@ execute store result storage mcmmt:dynaball save_load.player_a_tot int 1.0 run s
 scoreboard players set temp3 dnb_system 0
 $execute as @a[tag=dnb_player, team=$(team_b)] run scoreboard players add temp3 dnb_system 1
 execute store result storage mcmmt:dynaball save_load.player_b_tot int 1.0 run scoreboard players get temp3 dnb_system
+data modify storage mcmmt:dynaball save_load.player_a_died set value 0
+data modify storage mcmmt:dynaball save_load.player_b_died set value 0
 
 # slot boundaries
 $data modify storage mcmmt:dynaball save_load.boundaries set value $(boundaries)
