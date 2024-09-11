@@ -170,7 +170,7 @@ data modify storage mcmmt:dynaball macro_bag set value {\
     slot: {},\
     build_slot: {index: 0},\
     before_match: {second: 0, team: ""},\
-    set_main_display: {color: "", team: ""},\
+    set_main_display: {color: "", team: "", r: 0, mr: 0},\
     frame: {},\
     call_frame: {},\
     team_tag: {team: "", tag: ""},\
