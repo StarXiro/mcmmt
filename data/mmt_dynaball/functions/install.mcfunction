@@ -217,6 +217,7 @@ scoreboard players set tnt_arrow_scaler dnb_system 70
 scoreboard players set checker_index dnb_system 0
 scoreboard players set checker_decay dnb_system 50
 scoreboard players set ongoing_games dnb_system 0
+scoreboard players set rend_flg dnb_system 0
 scoreboard players set eliminate dnb_system 0
 scoreboard players set mid_divide dnb_system 0
 

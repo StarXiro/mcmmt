@@ -35,6 +35,7 @@ data modify storage mcmmt:dynaball board_saves set value []
 scoreboard players operation #waiting dnb_system = #wait_length dnb_system
 scoreboard players set checker_index dnb_system 0
 scoreboard players set ongoing_games dnb_system 0
+scoreboard players set rend_flg dnb_system 0
 scoreboard players set @a[tag=dnb_player] dnb_dmg_source -1
 scoreboard players set @a[tag=dnb_player] dnb_dmg_valid 0
 
