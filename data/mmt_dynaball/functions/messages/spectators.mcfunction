@@ -1,0 +1,2 @@
+tellraw @s {"type": "translatable", "translate": "使用 %s 来传送至对应场地。", "with": [{"type": "text", "text": "\"/trigger dnb_spec_tp_trigger set <对战ID>\"", "color": "yellow", "italic": true}], "color": "green"}
+tellraw @s {"type": "text", "text": "可用的对战ID见右侧计分板序号。", "color": "gray"}

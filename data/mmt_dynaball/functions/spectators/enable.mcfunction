@@ -10,8 +10,7 @@ scoreboard players set @a[tag=dnb_spec] dnb_spec_tp_trigger -1
 scoreboard players enable @a[tag=dnb_spec] dnb_spec_tp_trigger
 gamemode spectator @a[tag=dnb_spec]
 
-tellraw @a[tag=dnb_spec] {"type": "translatable", "translate": "使用 %s 来传送至对应场地。", "with": [{"type": "text", "text": "\"/trigger dnb_spec_tp_trigger set <对战ID>\"", "color": "yellow", "italic": true}], "color": "green"}
-tellraw @a[tag=dnb_spec] {"type": "text", "text": "可用的对战ID见右侧计分板序号。", "color": "gray"}
+execute as @a[tag=dnb_spec] run function mmt_dynaball:messages/spectators
 
 function mmt_dynaball:spectators/frame
 function mmt_dynaball:spectators/trigger_safe
