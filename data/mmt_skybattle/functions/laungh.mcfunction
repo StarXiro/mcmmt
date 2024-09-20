@@ -29,4 +29,4 @@ clear @a[tag=SKB]
 scoreboard players set second SKBconfig 10
 function mmt_skybattle:on_second
 
-function mmt_skybattle:intro
+function mmt_skybattle:intro__fix

@@ -1,4 +1,3 @@
-scoreboard players set tick SKBconfig 0
 scoreboard players set second SKBconfig 15
 scoreboard players set timemode SKBconfig 1
 scoreboard players set 0 SKBconfig 0
@@ -6,7 +5,6 @@ scoreboard players set @a SKBdeath 0
 scoreboard players add round SKBconfig 1
 scoreboard players set downborder SKBconfig 70
 
-gamemode survival @a[tag=player]
 spawnpoint @a 0 120 -5000
 
 scoreboard players set red SKBconfig 0
@@ -41,6 +39,8 @@ execute if score lime SKBconfig > 0 SKBconfig run data modify storage mcmmt:skb 
 function mmt_core:utils/shuffle/do with storage mcmmt:skb
 data modify storage mcmmt:skb randlist set from storage mcmmt:core_utils shuffle.list
 function mmt_skybattle:game_process/teamtp with storage mcmmt:skb randlist
+
+gamemode survival @a[tag=SKB]
 
 data modify storage mcmmt:skb macro_bag.for_each.list set from storage mcmmt:skb randlist
 data modify storage mcmmt:skb macro_bag.for_each.loop_body set value "mmt_skybattle:game_process/teamtp"
