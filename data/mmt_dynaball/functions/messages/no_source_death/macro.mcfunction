@@ -1,0 +1,1 @@
+$tellraw @a[tag=dnb_player, tag=$(slot_tag)] [{"type": "text", "text": "[☠] ", "color": "yellow"}, {"type": "translatable", "translate": "$(template)", "color": "white", "with": [{"type": "selector", "selector": "@s"}]}]

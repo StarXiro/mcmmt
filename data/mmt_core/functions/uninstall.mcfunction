@@ -1,5 +1,5 @@
-# uninstall mcmmt
 
+# uninstall mcmmt
 execute unless data storage mcmmt:core installed run return fail
 
 # stop utils.timer
@@ -18,6 +18,11 @@ function mmt_tgttos:stop
 function mmt_tgttos:uninstall
 function mmt_creeperandcat:stop
 function mmt_creeperandcat:uninstall
+
+# remove teams
+data modify storage mcmmt:core init_manager.for_each.list set from storage mcmmt:core teamlist
+data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/gen_team/rm_teams"
+function mmt_core:utils/for_each/do with storage mcmmt:core init_manager.for_each
 
 # remove scoreboard
 execute if score logon core_setting matches 1 run say Removing scoreboards
@@ -49,7 +54,7 @@ scoreboard objectives remove stas_this_elytra
 scoreboard objectives remove core_utils_item_check_count
 scoreboard objectives remove core_utils_item_check_number
 scoreboard objectives remove core_utils_item_check
-
+scoreboard objectives remove core_pid
 scoreboard objectives remove core_game_config
 scoreboard objectives remove core_player_score
 scoreboard objectives remove personalscore
@@ -57,6 +62,7 @@ scoreboard objectives remove personalscore
 # remove storage
 execute if score logon core_setting matches 1 run say Removing storage
 data remove storage mcmmt:core installed
+data remove storage mcmmt:core init_manager
 data remove storage mcmmt:core_utils rand
 data remove storage mcmmt:core_utils sight_cast
 data remove storage mcmmt:core_utils sqrt
@@ -71,7 +77,6 @@ data remove storage mcmmt:core_utils linear_map
 data remove storage mcmmt:core_utils pillar_check
 data remove storage mcmmt:core_utils SBSconfig
 data remove storage mcmmt:core_utils mg
-
 
 function mmt_core:utils/for_each/__delete__
 function mmt_core:utils/range/__delete__

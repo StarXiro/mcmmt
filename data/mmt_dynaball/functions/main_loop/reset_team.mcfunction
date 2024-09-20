@@ -1,0 +1,1 @@
+$execute as @a[tag=dnb_spec, team=dnb_spectators, tag=$(object)] run team join $(object)

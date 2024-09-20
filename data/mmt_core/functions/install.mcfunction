@@ -70,10 +70,15 @@ scoreboard players enable @a personalscore
 execute if score logon core_setting matches 1 run say Inited scoreboard for triggers
 
 # init_manager
-data modify storage mcmmt:core init_manager set value {for_each: {list: [], loop_body: ""}, team_data: {key: "", display: "", color: "", id: 0}}
+data modify storage mcmmt:core init_manager set value {for_each: {list: [], loop_body: ""}, team_data: {key: "", display: "", color: "", id: 0}, temp: {}, make_team: {id: "", color: "", name: ""}}
 
 # auto make team_data
 function mmt_core:init_manager/team_data/generate
+
+# auto add team
+data modify storage mcmmt:core init_manager.for_each.list set from storage mcmmt:core teamlist
+data modify storage mcmmt:core init_manager.for_each.loop_body set value "mmt_core:init_manager/gen_team/generate"
+function mmt_core:utils/for_each/do with storage mcmmt:core init_manager.for_each
 
 # statistics
 scoreboard objectives add stas_last_death dummy

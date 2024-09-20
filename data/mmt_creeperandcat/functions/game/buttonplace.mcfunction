@@ -1,0 +1,1 @@
+$setblock $(temp) stone_button[facing=$(temppos),face=wall]

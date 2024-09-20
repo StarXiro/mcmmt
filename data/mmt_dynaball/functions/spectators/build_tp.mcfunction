@@ -1,0 +1,1 @@
+$data modify storage mcmmt:dynaball spec_teleport append from storage mcmmt:dynaball games[$(index)].spec_tp

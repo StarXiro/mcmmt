@@ -1,0 +1,1 @@
+$execute as @a[tag=dnb_player, tag=$(slot_tag), tag=!dnb_dying_person] run function mmt_dynaball:scores/add_ps with storage mcmmt:dynaball game_scores.survive

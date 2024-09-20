@@ -1,1 +1,0 @@
-$tellraw @a {"translate":"[%s] %s%s","with":[{"text":"楒","color":"red"},{"selector":"@s"},{"text":"$(message)","color":"gray"}]}

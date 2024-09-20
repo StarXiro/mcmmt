@@ -1,0 +1,2 @@
+$scoreboard players display numberformat comp_a dnb_gen_display_$(id) fixed [{"type": "text", "text": "$(ap)", "color": "red"}, {"type": "text", "text": "%", "color": "gray"}]
+$scoreboard players display numberformat comp_b dnb_gen_display_$(id) fixed [{"type": "text", "text": "$(bp)", "color": "red"}, {"type": "text", "text": "%", "color": "gray"}]

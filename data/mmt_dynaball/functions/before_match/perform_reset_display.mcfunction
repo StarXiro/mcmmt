@@ -1,2 +1,2 @@
-$scoreboard objectives setdisplay sidebar.team.$(ac) dnb_main_display
-$scoreboard objectives setdisplay sidebar.team.$(bc) dnb_main_display
+$scoreboard objectives setdisplay sidebar.team.$(color) dnb_md_$(team)
+$scoreboard players display numberformat present_round dnb_md_$(team) fixed {"type": "translatable", "translate": "%s/%s", "color": "gray", "with": [{"type": "text", "text": "$(r)", "color": "green"}, {"type": "text", "text": "$(mr)"}]}

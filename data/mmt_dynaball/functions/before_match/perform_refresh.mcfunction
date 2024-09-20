@@ -1,0 +1,1 @@
+$scoreboard players display numberformat next_round dnb_md_$(team) fixed {"type": "translatable", "translate": "%ss", "color": "red", "with": [{"type": "text", "text": "$(second)", "color": "yellow"}]}

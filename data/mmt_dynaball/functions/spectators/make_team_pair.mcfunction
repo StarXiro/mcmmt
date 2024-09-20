@@ -1,0 +1,2 @@
+$scoreboard players operation team_pair_$(index) dnb_spec_display = temp2 dnb_system
+$scoreboard players display name team_pair_$(index) dnb_spec_display {"type": "translatable", "translate": "%s. %s vs. %s", "color": "white", "italic": true, "with": [{"type": "text", "text": "$(index)", "color": "aqua", "italic": false}, {"type": "text", "text": "$(team_a)", "color": "$(ca)", "italic": false}, {"type": "text", "text": "$(team_b)", "color": "$(cb)", "italic": false}]}

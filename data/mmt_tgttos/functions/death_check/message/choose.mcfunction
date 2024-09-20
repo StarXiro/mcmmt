@@ -1,1 +1,0 @@
-$data modify storage mcmmt:tgttos death.message set from storage mcmmt:tgttos death.messagelist[$(index)]

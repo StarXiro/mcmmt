@@ -1,0 +1,1 @@
+$tellraw @a[tag=dnb_broadcast] {"type": "translatable", "translate": "%s %s 与 %s 间的比赛已结束。", "with": [{"type": "text", "text": "[ⓘ]", "color": "aqua"}, {"type": "text", "text": "$(a)", "color": "$(ac)"}, {"type": "text", "text": "$(b)", "color": "$(bc)"}]}

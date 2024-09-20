@@ -1,5 +1,5 @@
 #info
-execute if score logon core_setting matches 1 run function mmt_tgttos:info
+#execute if score logon core_setting matches 1 run function mmt_tgttos:info
 
 #init
 scoreboard objectives add CreeperAndCat dummy
@@ -24,6 +24,41 @@ data modify storage creeperandcat map append value Village
 data modify storage creeperandcat round append value 1
 data modify storage creeperandcat second append value 1
 
+data modify storage mcmmt:creeperandcat teampre.1 append value "-4987 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.1 append value "-4951 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.2 append value "-5087 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.2 append value "-5051 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.3 append value "-5187 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.3 append value "-5151 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.4 append value "-5287 119 -4967"
+data modify storage mcmmt:creeperandcat teampre.4 append value "-5251 119 -4967"
+
+data modify storage mcmmt:creeperandcat cat append value "-4951 103 -4967"
+data modify storage mcmmt:creeperandcat cat append value "-4951 103 -5067"
+data modify storage mcmmt:creeperandcat cat append value "-5051 103 -4967"
+data modify storage mcmmt:creeperandcat cat append value "-5051 103 -5067"
+data modify storage mcmmt:creeperandcat cat append value "-5151 103 -4967"
+data modify storage mcmmt:creeperandcat cat append value "-5151 103 -5067"
+data modify storage mcmmt:creeperandcat cat append value "-5251 103 -4967"
+data modify storage mcmmt:creeperandcat cat append value "-5251 103 -5067"
+
+data modify storage mcmmt:creeperandcat creeper append value "-4987 103 -4967"
+data modify storage mcmmt:creeperandcat creeper append value "-4987 103 -5067"
+data modify storage mcmmt:creeperandcat creeper append value "-5087 103 -4967"
+data modify storage mcmmt:creeperandcat creeper append value "-5087 103 -5067"
+data modify storage mcmmt:creeperandcat creeper append value "-5187 103 -4967"
+data modify storage mcmmt:creeperandcat creeper append value "-5187 103 -5067"
+data modify storage mcmmt:creeperandcat creeper append value "-5287 103 -4967"
+data modify storage mcmmt:creeperandcat creeper append value "-5287 103 -5067"
+
+data modify storage mcmmt:creeperandcat button.1 append value "-4998 121 -4967"
+data modify storage mcmmt:creeperandcat button.1 append value "-4940 121 -4967"
+data modify storage mcmmt:creeperandcat button.2 append value "-5098 121 -4967"
+data modify storage mcmmt:creeperandcat button.2 append value "-5040 121 -4967"
+data modify storage mcmmt:creeperandcat button.3 append value "-5198 121 -4967"
+data modify storage mcmmt:creeperandcat button.3 append value "-5140 121 -4967"
+data modify storage mcmmt:creeperandcat button.4 append value "-5298 121 -4967"
+data modify storage mcmmt:creeperandcat button.4 append value "-5240 121 -4967"
 
 #temp time display
 #scoreboard objectives setdisplay list 

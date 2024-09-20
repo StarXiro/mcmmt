@@ -1,0 +1,2 @@
+playsound minecraft:block.amethyst_block.resonate ambient @s ~ ~ ~ 1.0 1.5
+tellraw @s {"type": "translatable", "translate": "%s 你正在接近建筑范围边界，请注意脚下！", "color": "yellow", "with": [{"type": "text", "text": "[⚠]", "color": "red"}]}
