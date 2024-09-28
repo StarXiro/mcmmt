@@ -10,6 +10,10 @@ schedule clear mmt_skybattle:game_process/round_end
 schedule clear mmt_skybattle:game_process/startcountdown
 schedule clear mmt_skybattle:mapview
 
+kill @e[tag=SKB_center]
+kill @e[tag=SKB_border]
+kill @e[tag=SKB_mapview]
+
 scoreboard players set current_game core_setting 0
 
 data remove storage mcmmt:skb randlist

@@ -7,7 +7,8 @@ scoreboard players set show1 SKBconfig 100
 scoreboard players set round SKBconfig 0
 scoreboard players set current_game core_setting 4
 
-summon marker ~ ~ ~ {Tags:[SKB_mapview]}
+summon armor_stand 25 112 -5049 {Tags:[SKB_mapview],NoAI:1}
+effect give @e[tag=SKB_mapview] invisibility infinite 1 true
 tp @e[tag=SKB_mapview] 25 112 -5049 facing 0 112 -5000
 function mmt_skybattle:mapview
 #map view
