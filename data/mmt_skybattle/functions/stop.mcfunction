@@ -9,6 +9,7 @@ schedule clear mmt_skybattle:border/playerpos
 schedule clear mmt_skybattle:game_process/round_end
 schedule clear mmt_skybattle:game_process/startcountdown
 schedule clear mmt_skybattle:mapview
+schedule clear mmt_skybattle:border/bordermark
 
 kill @e[tag=SKB_center]
 kill @e[tag=SKB_border]
