@@ -1,1 +1,1 @@
-execute as @e[tag=SKB_border] run tp @s ~ ~ ~ facing 0 120 -5000
+execute as @e[tag=SKB_border] at @s run tp @s ~ ~ ~ facing 0 120 -5000

@@ -15,7 +15,7 @@ execute if score second1 SKBconfig matches 120 run scoreboard players set border
 execute if score second1 SKBconfig matches 60 run scoreboard players set borderx SKBconfig 8
 
 #void
-execute as @a[tag=player,gamemode=survival] run execute if score @s SKBposy <= lowborder SKBconfig run kill @s
+execute as @a[tag=player,gamemode=survival] run execute if score @s SKBposy <= downborder SKBconfig run kill @s
 
 #round end
 execute if score second1 SKBconfig matches 0 run schedule clear mmt_skybattle:game_process/4_ingame
