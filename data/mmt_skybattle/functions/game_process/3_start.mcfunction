@@ -12,7 +12,7 @@ scoreboard players set borderx SKBconfig 80
 scoreboard players set border SKBconfig 80
 scoreboard players set tick SKBconfig 0
 
-function mmt_skybattle:game_process/ingame
+function mmt_skybattle:game_process/4_ingame
 function mmt_skybattle:deathmessage/trigger
 function mmt_skybattle:border/playerpos
 function mmt_skybattle:border/bordermove

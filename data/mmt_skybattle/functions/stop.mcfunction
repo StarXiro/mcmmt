@@ -16,6 +16,7 @@ kill @e[tag=SKB_border]
 kill @e[tag=SKB_mapview]
 
 scoreboard players set current_game core_setting 0
+scoreboard players set AS SKBconfig 0
 
 data remove storage mcmmt:skb randlist
 data remove storage mcmmt:skb macro_bag

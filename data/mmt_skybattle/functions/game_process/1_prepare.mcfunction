@@ -5,7 +5,7 @@ scoreboard players set @a SKBdeath 0
 scoreboard players add round SKBconfig 1
 scoreboard players set downborder SKBconfig 70
 
-spawnpoint @a 0 120 -5000
+spawnpoint @a[tag=player] 0 120 -5000
 
 scoreboard players set red SKBconfig 0
 scoreboard players set blue SKBconfig 0
@@ -68,6 +68,6 @@ give @a[tag=SKB,team=pink] pink_concrete 64
 give @a[tag=SKB,team=orange] orange_concrete 64
 give @a[tag=SKB,team=lime] lime_concrete 64
 
-function mmt_skybattle:border/marker
+function mmt_skybattle:border/1_marker
 
-function mmt_skybattle:game_process/startcountdown
+function mmt_skybattle:game_process/2_startcountdown

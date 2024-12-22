@@ -10,7 +10,7 @@ scoreboard players set current_game core_setting 4
 summon armor_stand 25 112 -5049 {Tags:[SKB_mapview],NoAI:1}
 effect give @e[tag=SKB_mapview] invisibility infinite 1 true
 tp @e[tag=SKB_mapview] 25 112 -5049 facing 0 112 -5000
-function mmt_skybattle:mapview
+function mmt_skybattle:2_mapview
 #map view
 
 scoreboard objectives setdisplay sidebar SKBconfig
@@ -28,6 +28,6 @@ tag @a[tag=player] add SKB
 clear @a[tag=SKB]
 
 scoreboard players set second SKBconfig 10
-function mmt_skybattle:on_second
+function mmt_skybattle:2_on_second
 
-function mmt_skybattle:intro__fix
+function mmt_skybattle:2_intro__fix
