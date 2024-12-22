@@ -46,11 +46,11 @@ data modify storage mcmmt:skb macro_bag.for_each.list set from storage mcmmt:skb
 data modify storage mcmmt:skb macro_bag.for_each.loop_body set value "mmt_skybattle:game_process/teamtp"
 function mmt_core:utils/for_each/do with storage mcmmt:skb macro_bag.for_each
 
-execute as @a[tag=player] at @s run setblock ~1 ~ ~ barrier
-execute as @a[tag=player] at @s run setblock ~-1 ~ ~ barrier
-execute as @a[tag=player] at @s run setblock ~ ~2 ~ barrier
-execute as @a[tag=player] at @s run setblock ~ ~ ~1 barrier
-execute as @a[tag=player] at @s run setblock ~ ~ ~-1 barrier
+execute as @a[tag=player] at @s run setblock ~1 ~ ~ red_stained_glass
+execute as @a[tag=player] at @s run setblock ~-1 ~ ~ red_stained_glass
+execute as @a[tag=player] at @s run setblock ~ ~2 ~ red_stained_glass
+execute as @a[tag=player] at @s run setblock ~ ~ ~1 red_stained_glass
+execute as @a[tag=player] at @s run setblock ~ ~ ~-1 red_stained_glass
 
 clear @a[tag=SKB]
 give @a[tag=SKB] stone_sword
