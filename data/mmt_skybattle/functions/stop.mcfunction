@@ -1,15 +1,15 @@
-schedule clear mmt_skybattle:on_second
-schedule clear mmt_skybattle:border/summonborder
+schedule clear mmt_skybattle:2_on_second
+schedule clear mmt_skybattle:border/2_summonborder
 schedule clear mmt_skybattle:border/borderdmg
-schedule clear mmt_skybattle:border/bordermark
+schedule clear mmt_skybattle:border/2_bordermark
 schedule clear mmt_skybattle:border/bordermove
 schedule clear mmt_skybattle:deathmessage/trigger
-schedule clear mmt_skybattle:game_process/ingame
+schedule clear mmt_skybattle:game_process/4_ingame
 schedule clear mmt_skybattle:border/playerpos
-schedule clear mmt_skybattle:game_process/round_end
-schedule clear mmt_skybattle:game_process/startcountdown
-schedule clear mmt_skybattle:mapview
-schedule clear mmt_skybattle:border/bordermark
+schedule clear mmt_skybattle:game_process/5_round_end
+schedule clear mmt_skybattle:game_process/2_startcountdown
+schedule clear mmt_skybattle:2_mapview
+schedule clear mmt_skybattle:border/2_bordermark
 
 kill @e[tag=SKB_center]
 kill @e[tag=SKB_border]
